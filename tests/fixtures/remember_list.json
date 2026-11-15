@@ -1,0 +1,298 @@
+{
+ "data": [
+  {
+   "id": 318037,
+   "title": "소프트웨어 개발 신입-경력 3년 이하",
+   "application_type": "apply",
+   "job_posting_type": "general",
+   "status": "published",
+   "job_rank_category": "사원/대리",
+   "job_role": "사원~대리",
+   "min_salary": null,
+   "max_salary": null,
+   "total_compensation": null,
+   "min_experience": null,
+   "max_experience": 3,
+   "education_requirement": "bachelor",
+   "link": "",
+   "starts_at": "2026-11-05T00:00:00.000+09:00",
+   "ends_at": "2026-11-30T23:59:59.000+09:00",
+   "explicit_due": true,
+   "highend": false,
+   "leader_position": false,
+   "matching_reward": 500000,
+   "image_url": "https://career-cdn.rememberapp.co.kr/upload/attachments/image/qrg4eu1zu7ghrmz6enw7dfg9u8mp",
+   "thumbnail_url": "https://career-api.rememberapp.co.kr/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsiZGF0YSI6NjcwNTI1MSwicHVyIjoiYmxvYl9pZCJ9fQ==--04778a48b9af847b550ff7bffe64fb0bcbc05539/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJ3ZWJwIiwicmVzaXplX3RvX2xpbWl0IjpbMjcwLG51bGxdLCJzYXZlciI6eyJxdWFsaXR5Ijo5MH19LCJwdXIiOiJ2YXJpYXRpb24ifX0=--7415ce8e5629e86e157d4752f126c17db4e67840/2d41627f431b42988fb232158d38e569",
+   "recruiter": {
+    "name": "홍길동"
+   },
+   "organization": {
+    "id": 36563,
+    "name": "(주)엠엑스온",
+    "company_id": 49209,
+    "account_type": "team",
+    "headhunter": false,
+    "logo": "https://career-cdn.rememberapp.co.kr/upload/attachments/logo/c9kfu3lguy23wc0rnui1892duulm",
+    "url": "www.mxon.co.kr",
+    "registration_no": "1000000001",
+    "application_response_metrics": {
+     "response_rate": 0,
+     "response_duration_days": null
+    }
+   },
+   "job_category_ids": [
+    310
+   ],
+   "job_categories": [
+    {
+     "id": 310,
+     "level1": "SW개발",
+     "level2": "백엔드"
+    }
+   ],
+   "industries": [],
+   "addresses": [
+    {
+     "address_level1": "경기도",
+     "address_level2": "안양시 동안구"
+    }
+   ],
+   "normalized_address": {
+    "level1": "경기",
+    "level2": "안양시"
+   },
+   "job_rank": null,
+   "matching_reward_request": null,
+   "starred_job_posting": null,
+   "application": null,
+   "matching_gift": {
+    "type": "cash",
+    "amount": 500000
+   },
+   "viewed_at": null,
+   "chips": [
+    {
+     "category": "certification",
+     "value": "벤처 인증"
+    }
+   ],
+   "applicant_manager": null,
+   "ad_types": null,
+   "spotlight": false
+  },
+  {
+   "id": 352562,
+   "title": "[채널톡] Forward Deployed Engineer",
+   "application_type": "apply",
+   "job_posting_type": "general",
+   "status": "published",
+   "job_rank_category": "사원/대리",
+   "job_role": "",
+   "min_salary": null,
+   "max_salary": null,
+   "total_compensation": null,
+   "min_experience": null,
+   "max_experience": null,
+   "education_requirement": "bachelor",
+   "link": "",
+   "starts_at": "2026-11-05T00:00:00.000+09:00",
+   "ends_at": "2026-12-04T23:59:59.000+09:00",
+   "explicit_due": true,
+   "highend": false,
+   "leader_position": false,
+   "matching_reward": 500000,
+   "image_url": "https://career-cdn.rememberapp.co.kr/upload/attachments/image/zizbav98ii1p45mqumiywfspxdzp",
+   "thumbnail_url": "https://career-api.rememberapp.co.kr/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MjY1MDI1MiwicHVyIjoiYmxvYl9pZCJ9fQ==--45239785175acdcbddf76c4b0b6bdca7aaa52ba2/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJqcGciLCJyZXNpemVfdG9fbGltaXQiOlsyNzAsbnVsbF0sInNhdmVyIjp7InF1YWxpdHkiOjkwfX0sInB1ciI6InZhcmlhdGlvbiJ9fQ==--97793e309d24446f7f1c809115752c09fa820c67/e598709afe8d6df375332bf19a2105d2",
+   "recruiter": {
+    "name": "김영희"
+   },
+   "organization": {
+    "id": 2553,
+    "name": "(주)채널코퍼레이션",
+    "company_id": 1706612,
+    "account_type": "team",
+    "headhunter": false,
+    "logo": "https://career-cdn.rememberapp.co.kr/upload/attachments/logo/mhqclcaboe1y53l4xltitlbbqgqt",
+    "url": "https://channel.io/ko/team",
+    "registration_no": "1000000002",
+    "application_response_metrics": {
+     "response_rate": 99,
+     "response_duration_days": 4
+    }
+   },
+   "job_category_ids": [
+    310,
+    311,
+    330,
+    333
+   ],
+   "job_categories": [
+    {
+     "id": 310,
+     "level1": "SW개발",
+     "level2": "백엔드"
+    },
+    {
+     "id": 311,
+     "level1": "SW개발",
+     "level2": "프론트엔드"
+    },
+    {
+     "id": 330,
+     "level1": "SW개발",
+     "level2": "솔루션즈아키텍트"
+    },
+    {
+     "id": 333,
+     "level1": "SW개발",
+     "level2": "소프트웨어아키텍트"
+    }
+   ],
+   "industries": [],
+   "addresses": [
+    {
+     "address_level1": "서울특별시",
+     "address_level2": "강남구"
+    }
+   ],
+   "normalized_address": {
+    "level1": "서울",
+    "level2": "강남구"
+   },
+   "job_rank": null,
+   "matching_reward_request": null,
+   "starred_job_posting": null,
+   "application": null,
+   "matching_gift": {
+    "type": "cash",
+    "amount": 500000
+   },
+   "viewed_at": null,
+   "chips": [
+    {
+     "category": "certification",
+     "value": "벤처 인증"
+    },
+    {
+     "category": "investment",
+     "value": "누적 투자 400억↑"
+    }
+   ],
+   "applicant_manager": null,
+   "ad_types": null,
+   "spotlight": false
+  },
+  {
+   "id": 352187,
+   "title": "Product Engineer (AgentOS)",
+   "application_type": "apply",
+   "job_posting_type": "general",
+   "status": "published",
+   "job_rank_category": "",
+   "job_role": "",
+   "min_salary": null,
+   "max_salary": null,
+   "total_compensation": null,
+   "min_experience": 5,
+   "max_experience": null,
+   "education_requirement": "none",
+   "link": "",
+   "starts_at": "2026-11-04T00:00:00.000+09:00",
+   "ends_at": "2026-11-24T23:59:59.000+09:00",
+   "explicit_due": true,
+   "highend": false,
+   "leader_position": false,
+   "matching_reward": null,
+   "image_url": "https://career-cdn.rememberapp.co.kr/upload/attachments/image/94c7g44p9xtafoqhxik6a6sc9nzs",
+   "thumbnail_url": "https://career-api.rememberapp.co.kr/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MzEwNjE1MCwicHVyIjoiYmxvYl9pZCJ9fQ==--b6e6a1ef8c4e301505929bcd59e2af8159dc41e7/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJqcGciLCJyZXNpemVfdG9fbGltaXQiOlsyNzAsbnVsbF0sInNhdmVyIjp7InF1YWxpdHkiOjkwfX0sInB1ciI6InZhcmlhdGlvbiJ9fQ==--97793e309d24446f7f1c809115752c09fa820c67/c4a99c31572f019fee57c266d13db7b4",
+   "recruiter": {
+    "name": "이철수"
+   },
+   "organization": {
+    "id": 79556,
+    "name": "(주)인핸스",
+    "company_id": 3323215,
+    "account_type": "team",
+    "headhunter": false,
+    "logo": "https://career-cdn.rememberapp.co.kr/upload/attachments/logo/s623fsm3eh4jruznfe8ufn0vuyce",
+    "url": "https://www.enhans.ai/kr",
+    "registration_no": "1000000003",
+    "application_response_metrics": {
+     "response_rate": 89,
+     "response_duration_days": 16
+    }
+   },
+   "job_category_ids": [
+    310,
+    323,
+    327,
+    329,
+    333
+   ],
+   "job_categories": [
+    {
+     "id": 310,
+     "level1": "SW개발",
+     "level2": "백엔드"
+    },
+    {
+     "id": 323,
+     "level1": "SW개발",
+     "level2": "DevOps"
+    },
+    {
+     "id": 327,
+     "level1": "SW개발",
+     "level2": "클라우드 엔지니어"
+    },
+    {
+     "id": 329,
+     "level1": "SW개발",
+     "level2": "데이터아키텍트"
+    },
+    {
+     "id": 333,
+     "level1": "SW개발",
+     "level2": "소프트웨어아키텍트"
+    }
+   ],
+   "industries": [],
+   "addresses": [
+    {
+     "address_level1": "서울특별시",
+     "address_level2": "전체"
+    }
+   ],
+   "normalized_address": {
+    "level1": "서울",
+    "level2": "전체"
+   },
+   "job_rank": null,
+   "matching_reward_request": null,
+   "starred_job_posting": null,
+   "application": null,
+   "matching_gift": null,
+   "viewed_at": null,
+   "chips": [
+    {
+     "category": "certification",
+     "value": "벤처 인증"
+    },
+    {
+     "category": "investment",
+     "value": "누적 투자 100억↑"
+    }
+   ],
+   "applicant_manager": null,
+   "ad_types": null,
+   "spotlight": false
+  }
+ ],
+ "meta": {
+  "total_count": 596,
+  "total_pages": 20,
+  "per": 30,
+  "page": 1,
+  "seed": 44883606
+ }
+}
