@@ -1,0 +1,351 @@
+{
+ "site": "wanted",
+ "field": "job_ids",
+ "fetched_at": "2026-11-14T16:40:28+09:00",
+ "options": [
+  {
+   "value": 872,
+   "name": "서버 개발자",
+   "group": "개발",
+   "terms": [
+    "서버"
+   ]
+  },
+  {
+   "value": 1634,
+   "name": "AI·머신러닝 엔지니어",
+   "group": "개발",
+   "terms": [
+    "ai",
+    "머신러닝"
+   ]
+  },
+  {
+   "value": 674,
+   "name": "DevOps / 시스템 관리자",
+   "group": "개발",
+   "terms": [
+    "devops",
+    "시스템관리자"
+   ]
+  },
+  {
+   "value": 10110,
+   "name": "소프트웨어 엔지니어",
+   "group": "개발",
+   "terms": [
+    "소프트웨어"
+   ]
+  },
+  {
+   "value": 899,
+   "name": "파이썬 개발자",
+   "group": "개발",
+   "terms": [
+    "파이썬"
+   ]
+  },
+  {
+   "value": 669,
+   "name": "프론트엔드 개발자",
+   "group": "개발",
+   "terms": [
+    "프론트엔드"
+   ]
+  },
+  {
+   "value": 655,
+   "name": "데이터 엔지니어",
+   "group": "개발",
+   "terms": [
+    "데이터"
+   ]
+  },
+  {
+   "value": 660,
+   "name": "자바 개발자",
+   "group": "개발",
+   "terms": [
+    "자바"
+   ]
+  },
+  {
+   "value": 1024,
+   "name": "데이터 사이언티스트",
+   "group": "개발",
+   "terms": [
+    "데이터사이언티스트"
+   ]
+  },
+  {
+   "value": 900,
+   "name": "C,C++ 개발자",
+   "group": "개발",
+   "terms": [
+    "c",
+    "c++"
+   ]
+  },
+  {
+   "value": 665,
+   "name": "시스템,네트워크 관리자",
+   "group": "개발",
+   "terms": [
+    "네트워크관리자",
+    "시스템"
+   ]
+  },
+  {
+   "value": 658,
+   "name": "임베디드 개발자",
+   "group": "개발",
+   "terms": [
+    "임베디드"
+   ]
+  },
+  {
+   "value": 877,
+   "name": "개발 매니저",
+   "group": "개발",
+   "terms": [
+    "개발매니저"
+   ]
+  },
+  {
+   "value": 1026,
+   "name": "기술지원",
+   "group": "개발",
+   "terms": [
+    "기술지원"
+   ]
+  },
+  {
+   "value": 676,
+   "name": "QA,테스트 엔지니어",
+   "group": "개발",
+   "terms": [
+    "qa",
+    "테스트"
+   ]
+  },
+  {
+   "value": 895,
+   "name": "Node.js 개발자",
+   "group": "개발",
+   "terms": [
+    "node.js"
+   ]
+  },
+  {
+   "value": 876,
+   "name": "프로덕트 매니저",
+   "group": "개발",
+   "terms": [
+    "프로덕트매니저"
+   ]
+  },
+  {
+   "value": 873,
+   "name": "웹 개발자",
+   "group": "개발",
+   "terms": [
+    "웹"
+   ]
+  },
+  {
+   "value": 1025,
+   "name": "빅데이터 엔지니어",
+   "group": "개발",
+   "terms": [
+    "빅데이터"
+   ]
+  },
+  {
+   "value": 672,
+   "name": "하드웨어 엔지니어",
+   "group": "개발",
+   "terms": [
+    "하드웨어"
+   ]
+  },
+  {
+   "value": 677,
+   "name": "안드로이드 개발자",
+   "group": "개발",
+   "terms": [
+    "안드로이드"
+   ]
+  },
+  {
+   "value": 678,
+   "name": "iOS 개발자",
+   "group": "개발",
+   "terms": [
+    "ios"
+   ]
+  },
+  {
+   "value": 10230,
+   "name": "ERP전문가",
+   "group": "개발",
+   "terms": [
+    "erp전문가"
+   ]
+  },
+  {
+   "value": 896,
+   "name": "영상,음성 엔지니어",
+   "group": "개발",
+   "terms": [
+    "영상",
+    "음성"
+   ]
+  },
+  {
+   "value": 10111,
+   "name": "크로스플랫폼 앱 개발자",
+   "group": "개발",
+   "terms": [
+    "크로스플랫폼앱"
+   ]
+  },
+  {
+   "value": 10231,
+   "name": "DBA",
+   "group": "개발",
+   "terms": [
+    "dba"
+   ]
+  },
+  {
+   "value": 1027,
+   "name": "블록체인 플랫폼 엔지니어",
+   "group": "개발",
+   "terms": [
+    "블록체인플랫폼"
+   ]
+  },
+  {
+   "value": 795,
+   "name": "CTO,Chief Technology Officer",
+   "group": "개발",
+   "terms": [
+    "chieftechnologyofficer",
+    "cto"
+   ]
+  },
+  {
+   "value": 661,
+   "name": ".NET 개발자",
+   "group": "개발",
+   "terms": [
+    ".net"
+   ]
+  },
+  {
+   "value": 898,
+   "name": "그래픽스 엔지니어",
+   "group": "개발",
+   "terms": [
+    "그래픽스"
+   ]
+  },
+  {
+   "value": 939,
+   "name": "웹 퍼블리셔",
+   "group": "개발",
+   "terms": [
+    "웹퍼블리셔"
+   ]
+  },
+  {
+   "value": 893,
+   "name": "PHP 개발자",
+   "group": "개발",
+   "terms": [
+    "php"
+   ]
+  },
+  {
+   "value": 1022,
+   "name": "BI 엔지니어",
+   "group": "개발",
+   "terms": [
+    "bi"
+   ]
+  },
+  {
+   "value": 10808,
+   "name": "AI 서비스 개발자",
+   "group": "개발",
+   "terms": [
+    "ai서비스"
+   ]
+  },
+  {
+   "value": 10112,
+   "name": "VR 엔지니어",
+   "group": "개발",
+   "terms": [
+    "vr"
+   ]
+  },
+  {
+   "value": 10536,
+   "name": "테크니컬 라이터",
+   "group": "개발",
+   "terms": [
+    "테크니컬라이터"
+   ]
+  },
+  {
+   "value": 10805,
+   "name": "AI 에이전트 엔지니어",
+   "group": "개발",
+   "terms": [
+    "ai에이전트"
+   ]
+  },
+  {
+   "value": 10806,
+   "name": "FDE",
+   "group": "개발",
+   "terms": [
+    "fde"
+   ]
+  },
+  {
+   "value": 894,
+   "name": "루비온레일즈 개발자",
+   "group": "개발",
+   "terms": [
+    "루비온레일즈"
+   ]
+  },
+  {
+   "value": 10531,
+   "name": "RPA 엔지니어",
+   "group": "개발",
+   "terms": [
+    "rpa"
+   ]
+  },
+  {
+   "value": 793,
+   "name": "CIO,Chief Information Officer",
+   "group": "개발",
+   "terms": [
+    "chiefinformationofficer",
+    "cio"
+   ]
+  },
+  {
+   "value": 10807,
+   "name": "AI 데이터 제작자",
+   "group": "개발",
+   "terms": [
+    "ai데이터제작자"
+   ]
+  }
+ ]
+}

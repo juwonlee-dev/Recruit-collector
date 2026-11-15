@@ -1,0 +1,241 @@
+{
+ "data": [
+  {
+   "id": 396871,
+   "reward_total": "100만원",
+   "is_bookmark": false,
+   "company": {
+    "id": 5290,
+    "name": "크라우드웍스",
+    "application_response_stats": {
+     "avg_rate": 0.0,
+     "level": "very_low"
+    }
+   },
+   "title_img": {
+    "origin": "https://static.wanted.co.kr/images/company/5290/uow0hck0npmtnrzh__1080_790.jpg",
+    "thumb": "https://static.wanted.co.kr/images/company/5290/uow0hck0npmtnrzh__400_400.jpg",
+    "video": null
+   },
+   "address": {
+    "country": "한국",
+    "location": "서울",
+    "district": "강남구"
+   },
+   "position": "Document AI Engineer (Backend)",
+   "category_tag": {
+    "parent_id": 518,
+    "id": 872
+   },
+   "attraction_tags": [
+    10433,
+    10403,
+    10436,
+    10467,
+    10468,
+    10439,
+    10440,
+    10437,
+    10408,
+    10447,
+    10416,
+    10423,
+    10425,
+    10426,
+    10395
+   ],
+   "skill_tags": [
+    2217,
+    1554,
+    10291,
+    3569
+   ],
+   "user_oriented_tags": [
+    10245,
+    10377,
+    10249,
+    10385,
+    10265,
+    10266
+   ],
+   "annual_from": 1,
+   "annual_to": 100,
+   "is_newbie": false,
+   "reward": {
+    "id": null,
+    "wd_id": null,
+    "country": "kr",
+    "user_country": "KR",
+    "reward_recommender": 500000,
+    "reward_recommendee": 500000,
+    "reward_recommender_unit": "KRW",
+    "reward_recommendee_unit": "KRW",
+    "formatted_total": "100만원",
+    "formatted_recommender": "50만원",
+    "formatted_recommendee": "50만원"
+   },
+   "employment_type": "regular",
+   "additional_apply_type": null,
+   "preferred_languages": null,
+   "visa_information": {
+    "preferred_visas": null,
+    "supported_visas": null
+   },
+   "is_outlink": false
+  },
+  {
+   "id": 373691,
+   "reward_total": "100만원",
+   "is_bookmark": false,
+   "company": {
+    "id": 1245,
+    "name": "헤렌",
+    "application_response_stats": {
+     "avg_rate": 0.0,
+     "level": "very_low"
+    }
+   },
+   "title_img": {
+    "origin": "https://static.wanted.co.kr/images/company/1245/2ydmxnhmuvclvdhy__1080_790.jpg",
+    "thumb": "https://static.wanted.co.kr/images/company/1245/2ydmxnhmuvclvdhy__400_400.jpg",
+    "video": null
+   },
+   "address": {
+    "country": "한국",
+    "location": "서울",
+    "district": "성동구"
+   },
+   "position": "[공비서] 백엔드 엔지니어링 매니저 (8년 이상)",
+   "category_tag": {
+    "parent_id": 518,
+    "id": 674
+   },
+   "attraction_tags": [
+    10433,
+    10402,
+    10436,
+    10468,
+    10526,
+    10409,
+    10413,
+    10509,
+    10423,
+    10426,
+    10462,
+    10399
+   ],
+   "skill_tags": [
+    1544,
+    10169,
+    1698,
+    1540
+   ],
+   "user_oriented_tags": [
+    10245,
+    10377,
+    10249,
+    10385,
+    10264,
+    10266
+   ],
+   "annual_from": 8,
+   "annual_to": 15,
+   "is_newbie": false,
+   "reward": {
+    "id": null,
+    "wd_id": null,
+    "country": "kr",
+    "user_country": "KR",
+    "reward_recommender": 500000,
+    "reward_recommendee": 500000,
+    "reward_recommender_unit": "KRW",
+    "reward_recommendee_unit": "KRW",
+    "formatted_total": "100만원",
+    "formatted_recommender": "50만원",
+    "formatted_recommendee": "50만원"
+   },
+   "employment_type": "regular",
+   "additional_apply_type": null,
+   "preferred_languages": null,
+   "visa_information": {
+    "preferred_visas": null,
+    "supported_visas": null
+   },
+   "is_outlink": false
+  },
+  {
+   "id": 396855,
+   "reward_total": "100만원",
+   "is_bookmark": false,
+   "company": {
+    "id": 24899,
+    "name": "빌리지베이비",
+    "application_response_stats": {
+     "avg_rate": 0.0,
+     "level": "very_low"
+    }
+   },
+   "title_img": {
+    "origin": "https://static.wanted.co.kr/images/company/24899/nxdmfu5timosvu8m__1080_790.jpg",
+    "thumb": "https://static.wanted.co.kr/images/company/24899/nxdmfu5timosvu8m__400_400.jpg",
+    "video": null
+   },
+   "address": {
+    "country": "한국",
+    "location": "서울",
+    "district": "영등포구"
+   },
+   "position": "육아 플랫폼 재택유연근무 병행 베이비빌리 백엔드 개발자 (NestJS·TypeScript)",
+   "category_tag": {
+    "parent_id": 518,
+    "id": 872
+   },
+   "attraction_tags": [
+    10433,
+    10402,
+    10436,
+    10468,
+    10440,
+    10408,
+    10418,
+    10680,
+    10395
+   ],
+   "skill_tags": [],
+   "user_oriented_tags": [
+    10264,
+    10249,
+    10266,
+    10385
+   ],
+   "annual_from": 2,
+   "annual_to": 5,
+   "is_newbie": false,
+   "reward": {
+    "id": null,
+    "wd_id": null,
+    "country": "kr",
+    "user_country": "KR",
+    "reward_recommender": 500000,
+    "reward_recommendee": 500000,
+    "reward_recommender_unit": "KRW",
+    "reward_recommendee_unit": "KRW",
+    "formatted_total": "100만원",
+    "formatted_recommender": "50만원",
+    "formatted_recommendee": "50만원"
+   },
+   "employment_type": "regular",
+   "additional_apply_type": null,
+   "preferred_languages": null,
+   "visa_information": {
+    "preferred_visas": null,
+    "supported_visas": null
+   },
+   "is_outlink": false
+  }
+ ],
+ "links": {
+  "prev": null,
+  "next": "/api/chaos/navigation/v1/results?job_group_id=518&country=kr&job_sort=job.latest_order&years=-1&locations=seoul.all&locations=gyeonggi.all&limit=20&offset=20&job_ids=872&job_ids=873&job_ids=660"
+ }
+}
