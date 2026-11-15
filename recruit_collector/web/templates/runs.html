@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block title %}수집 기록{% endblock %}
+{% block content %}
+<h1 class="page-title">수집 기록{% if search %} · {{ search }} <a class="reset" href="/runs">전체</a>{% endif %}</h1>
+<p class="muted small">SUCCESS만 삭제 판정을 합니다. PARTIAL(최대 페이지 도달·도중 오류·건수 급변)은 추가·갱신만 반영합니다.</p>
+
+{# 채용 플랫폼별 최근 실행 요약·그래프 (그래프는 static/runs.js가 그림). 크롤러가 여럿인 플랫폼(사람인)은 크롤러별 그래프를 나란히 #}
+{% if charts %}
+{% set status_ko = {'SUCCESS': '성공', 'PARTIAL': '부분', 'FAILED': '실패', 'CANCELED': '취소', 'RUNNING': '진행 중'} %}
+{% macro last_run(c) %}<span class="muted small nowrap">최근 {{ c.last.started_at | kst('%m-%d %H:%M') }}</span>
+      <span class="pill run-{{ c.last.status | lower }}">{{ c.last.status }}</span>{% endmacro %}
+<section class="run-cards" aria-label="플랫폼별 최근 수집">
+  {% for g in charts %}
+  {% set multi = g.crawlers | length > 1 %}
+  <article class="run-card{% if multi %} is-wide{% endif %}" style="--site: var(--{{ g.platform }})">
+    <header class="run-card-head">
+      <h2><span class="site-dot" aria-hidden="true"></span>{{ g.label }}</h2>
+      {% if multi %}<span class="muted small">{{ g.crawlers | map(attribute='kind') | join(' · ') }}</span>{% else %}{{ last_run(g.crawlers[0]) }}{% endif %}
+    </header>
+    <div class="run-panels">
+    {% for c in g.crawlers %}
+    <section class="run-panel" style="--site: var(--{{ c.site }})" aria-label="{{ c.label }}">
+    {% if multi %}<div class="run-panel-head"><h3>{{ c.kind or c.label }}</h3>{{ last_run(c) }}</div>{% endif %}
+    <dl class="run-stats">
+      <div><dt>성공률</dt><dd>{{ c.success_rate ~ '%' if c.success_rate is not none else '-' }}</dd></div>
+      <div><dt>평균 소요</dt><dd>{{ duration_label(c.avg_secs) }}</dd></div>
+      <div><dt>최근 발견</dt><dd>{{ "{:,}".format(c.last.found) }}건</dd></div>
+    </dl>
+    <div class="run-chart" data-site="{{ c.site }}"></div>
+    <p class="run-card-foot">
+      최근 {{ c.count }}회 ·
+      {% for k, n in c.status_counts.items() if n %}<span class="run-key"><i class="run-strip-key is-{{ k | lower }}" aria-hidden="true"></i>{{ status_ko[k] }} {{ n }}</span>{% endfor %}
+    </p>
+    </section>
+    {% endfor %}
+    </div>
+  </article>
+  {% endfor %}
+</section>
+<script type="application/json" id="run-charts">{{ chart_data | tojson }}</script>
+<script src="/static/runs.js?v=2" defer></script>
+{% endif %}
+
+{% if rows %}
+<h2 class="runs-list-title">실행 기록 <span class="muted small">{{ "{:,}".format(total) }}건</span></h2>
+<div class="table-wrap">
+<table class="runs">
+  <thead>
+    <tr><th>시작</th><th>검색 조건</th><th>실행</th><th>상태</th><th class="num">페이지</th><th class="num">발견</th><th class="num">신규</th><th class="num">변경</th><th class="num">재등장</th><th class="num">삭제</th><th>소요</th><th>오류</th></tr>
+  </thead>
+  <tbody>
+    {% for r in rows %}
+    <tr>
+      <td class="nowrap">{{ r.started_at | kst }}</td>
+      <td><a href="/runs?search={{ r.search_name | urlencode }}">{{ r.search_name }}</a></td>
+      <td class="nowrap">{{ {'manual': '수동', 'schedule': '자동', 'cli': 'CLI'}.get(r.trigger, r.trigger or '') }}</td>
+      <td><span class="pill run-{{ r.status | lower }}">{{ r.status }}</span></td>
+      <td class="num">{{ r.pages }}</td>
+      <td class="num">{{ "{:,}".format(r.found) }}</td>
+      {% for n in [r.created, r.updated, r.reactivated, r.deleted] %}<td class="num">{{ "{:,}".format(n) if n else '' }}</td>{% endfor %}
+      <td class="nowrap">{% if r.finished_at %}{{ ((r.finished_at - r.started_at).total_seconds() // 60) | int }}분 {{ ((r.finished_at - r.started_at).total_seconds() % 60) | int }}초{% else %}진행 중{% endif %}</td>
+      <td class="error">{{ r.error or '' }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+{% if pages > 1 %}
+<nav class="pager" aria-label="페이지">
+  {% if page > 1 %}<a href="{{ page_url(page - 1) }}">← 이전</a>{% else %}<span class="disabled">← 이전</span>{% endif %}
+  <span class="pager-pos">{{ page }} / {{ pages }}</span>
+  {% if page < pages %}<a href="{{ page_url(page + 1) }}">다음 →</a>{% else %}<span class="disabled">다음 →</span>{% endif %}
+</nav>
+{% endif %}
+{% else %}
+<div class="empty">수집 기록이 없습니다.</div>
+{% endif %}
+{% endblock %}
