@@ -1,0 +1,191 @@
+{% extends "base.html" %}
+{% block title %}이력서{% endblock %}
+{% block content %}
+{# 이력서: 내 이력서 / 템플릿 / 위젯 (web/resumes_web.py). 이력서 내용은 본인만 보고, 템플릿·위젯은 공개를 고르면 다른 사용자도 쓴다 #}
+<h1 class="page-title">이력서</h1>
+<nav class="tabs" aria-label="이력서 메뉴" data-tab-nav="block">
+  {% for key, label in tabs.items() %}
+  <a href="/resumes?tab={{ key }}" {% if tab == key %}aria-current="page"{% endif %}>{{ label }}</a>
+  {% endfor %}
+</nav>
+
+{% if message %}<p class="notice {% if is_error %}is-error{% endif %}" role="status">{{ message }}</p>{% endif %}
+
+{% macro template_options(selected=None) -%}
+  {% set groups = [('기본 템플릿', usable_templates | selectattr('owner_id', 'none') | list),
+                   ('내 템플릿', usable_templates | selectattr('owner_id', 'equalto', uid) | list),
+                   ('공개 템플릿', usable_templates | rejectattr('owner_id', 'none') | rejectattr('owner_id', 'equalto', uid) | list)] %}
+  {% for label, items in groups if items %}
+  <optgroup label="{{ label }}">
+    {% for t in items %}<option value="{{ t.id }}" {% if t.id == selected %}selected{% endif %}>{{ t.name }}</option>{% endfor %}
+  </optgroup>
+  {% endfor %}
+{%- endmacro %}
+
+{% macro owner_pill(row) -%}
+  {% if row.owner_id is none %}<span class="pill pill-admin">기본</span>
+  {% elif row.owner_id == uid %}<span class="pill {% if row.visibility == 'public' %}pill-public{% endif %}">{{ resume_visibility[row.visibility] }}</span>
+  {% else %}<span class="pill pill-public">공개</span>{% endif %}
+{%- endmacro %}
+
+{% macro widget_row(w, mine) -%}
+<li class="rs-item">
+  <div class="rs-item-main">
+    {% if mine %}<a class="rs-item-title" href="/resumes/widgets/{{ w.id }}/edit">{{ w.name }}</a>{% else %}<span class="rs-item-title">{{ w.name }}</span>{% endif %}
+    <span class="pill">{{ resume_widget_kinds[w.kind] }}</span> {{ owner_pill(w) }}
+    {% if w.kind == 'form' %}
+    <div class="small rs-fields">{% if w.config.repeatable %}<span class="rs-repeat" title="여러 개 입력">반복</span>{% endif %}{{ w.config.fields | map(attribute='label') | join(' · ') }}</div>
+    {% elif w.description %}<div class="small">{{ w.description }}</div>{% endif %}
+  </div>
+  <div class="rs-actions">
+    {% if mine %}<a class="device-btn" href="/resumes/widgets/{{ w.id }}/edit">편집</a>{% endif %}
+    <form method="post" action="/resumes/widgets/new"><input type="hidden" name="from_id" value="{{ w.id }}"><button class="device-btn" type="submit">{{ '복사' if mine else '복사해서 편집' }}</button></form>
+    {% if mine %}<form method="post" action="/resumes/widgets/{{ w.id }}/delete" data-confirm="'{{ w.name }}' 위젯을 지울까요? 이미 템플릿에 넣은 위젯은 그대로 남습니다."><button class="device-btn is-all" type="submit">삭제</button></form>{% endif %}
+  </div>
+</li>
+{%- endmacro %}
+
+{% if tab == 'resumes' %}
+<section class="crawl settings-block">
+  <div class="crawl-head"><h2>새 이력서</h2><span class="crawl-meta">템플릿을 골라 시작합니다. 템플릿의 예시 텍스트가 미리 채워집니다.</span></div>
+  <form method="post" action="/resumes/new" class="rs-new">
+    <label class="rs-new-field"><span class="small muted">템플릿</span>
+      <select name="template_id" required>{{ template_options() }}</select></label>
+    <label class="rs-new-field is-grow"><span class="small muted">이력서 이름</span>
+      <input name="title" maxlength="100" placeholder="예) 2026 백엔드 개발자 지원용"></label>
+    <button type="submit" class="btn-origin">만들기</button>
+  </form>
+</section>
+
+<section class="crawl settings-block">
+  <div class="crawl-head"><h2>내 이력서</h2><span class="crawl-meta">{{ resumes | length }}개 · 나만 볼 수 있습니다</span></div>
+  {% if resumes %}
+  <ul class="rs-list">
+    {% for r in resumes %}
+    <li class="rs-item">
+      <div class="rs-item-main">
+        <a class="rs-item-title" href="/resumes/{{ r.id }}/edit">{{ r.title }}</a>
+        <div class="muted small"><span class="nowrap">템플릿 {{ r.template_name or '-' }}</span> · <span class="nowrap">수정 {{ r.updated_at | kst }}</span></div>
+      </div>
+      <div class="rs-actions">
+        <a class="device-btn" href="/resumes/{{ r.id }}/edit">작성</a>
+        <a class="device-btn" href="/resumes/{{ r.id }}/preview" target="_blank" rel="noopener">미리보기</a>
+        <a class="device-btn" href="/resumes/{{ r.id }}/pdf" data-pdf-download>PDF</a>
+        <form method="post" action="/resumes/{{ r.id }}/copy"><button class="device-btn" type="submit">복사</button></form>
+        <form method="post" action="/resumes/{{ r.id }}/delete" data-confirm="'{{ r.title }}' 이력서를 지울까요? 되돌릴 수 없습니다."><button class="device-btn is-all" type="submit">삭제</button></form>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="crawl-line muted">아직 만든 이력서가 없습니다. 위에서 템플릿을 골라 시작해 보세요.</p>
+  {% endif %}
+</section>
+
+{% elif tab == 'templates' %}
+<section class="crawl settings-block">
+  <div class="crawl-head">
+    <h2>내 템플릿</h2>
+    <form method="post" action="/resumes/templates/new"><button type="submit" class="btn-origin">새 템플릿</button></form>
+  </div>
+  <p class="crawl-line muted small wrap-text">위젯을 행·칸에 끌어다 놓아 문서 틀을 만듭니다. 공개로 두면 로그인한 다른 사용자도 이 템플릿을 보고 쓸 수 있습니다(만든 사람은 표시되지 않음). 공개 템플릿에는 개인정보를 넣지 마세요.</p>
+  {# 처음 쓰는 사람용 순서 안내. 편집 화면에서는 '사용법'으로 단계별 안내를 본다 (static/resume_tour.js) #}
+  <details class="rs-guide"{% if not mine %} open{% endif %}>
+    <summary>처음이라면: 템플릿 만드는 순서</summary>
+    <ol>
+      <li>아래 <b>기본 이력서</b>의 '복사해서 편집'으로 시작하면 가장 빠릅니다 (빈 틀은 '새 템플릿').</li>
+      <li>필요 없는 위젯은 지우고, 필요한 위젯은 위젯 목록(휴대폰은 '+ 위젯' 버튼)에서 넣습니다.</li>
+      <li>위젯을 눌러 제목·입력 칸을 고치고, 행·칸으로 배치를 정합니다. 글꼴·색은 '문서 스타일'에서 바꿉니다.</li>
+      <li>'미리보기'로 문서 모양을 확인하고 저장한 뒤, 목록에서 '이력서 작성'을 누릅니다.</li>
+    </ol>
+    <p class="muted small">편집 화면 위쪽의 <b>? 사용법</b>을 누르면 화면을 짚어 가며 단계별로 안내합니다.</p>
+  </details>
+  {% if mine %}
+  <ul class="rs-list">
+    {% for t in mine %}
+    <li class="rs-item">
+      <div class="rs-item-main">
+        <a class="rs-item-title" href="/resumes/templates/{{ t.id }}/edit">{{ t.name }}</a> {{ owner_pill(t) }}
+        {% if t.description %}<div class="small">{{ t.description }}</div>{% endif %}
+        <div class="muted small">수정 {{ t.updated_at | kst }}</div>
+      </div>
+      <div class="rs-actions">
+        <a class="device-btn" href="/resumes/templates/{{ t.id }}/edit">편집</a>
+        <a class="device-btn" href="/resumes/templates/{{ t.id }}/preview" target="_blank" rel="noopener">미리보기</a>
+        <form method="post" action="/resumes/new"><input type="hidden" name="template_id" value="{{ t.id }}"><button class="device-btn" type="submit">이력서 작성</button></form>
+        <form method="post" action="/resumes/templates/new"><input type="hidden" name="from_id" value="{{ t.id }}"><button class="device-btn" type="submit">복사</button></form>
+        <form method="post" action="/resumes/templates/{{ t.id }}/delete" data-confirm="'{{ t.name }}' 템플릿을 지울까요? 이 템플릿으로 만든 이력서는 그대로 남습니다."><button class="device-btn is-all" type="submit">삭제</button></form>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="crawl-line muted">아직 만든 템플릿이 없습니다. 아래 템플릿을 복사하거나 새로 만들어 보세요.</p>
+  {% endif %}
+</section>
+
+<section class="crawl settings-block rs-shared">
+  <div class="crawl-head"><h2>기본·공개 템플릿</h2><span class="crawl-meta">복사하면 내 템플릿으로 고칠 수 있습니다</span></div>
+  <ul class="rs-list">
+    {% for t in others %}
+    <li class="rs-item">
+      <div class="rs-item-main">
+        <span class="rs-item-title">{{ t.name }}</span> {{ owner_pill(t) }}
+        {% if t.description %}<div class="small">{{ t.description }}</div>{% endif %}
+      </div>
+      <div class="rs-actions">
+        <a class="device-btn" href="/resumes/templates/{{ t.id }}/preview" target="_blank" rel="noopener">미리보기</a>
+        <form method="post" action="/resumes/new"><input type="hidden" name="template_id" value="{{ t.id }}"><button class="device-btn" type="submit">이력서 작성</button></form>
+        <form method="post" action="/resumes/templates/new"><input type="hidden" name="from_id" value="{{ t.id }}"><button class="device-btn" type="submit">복사해서 편집</button></form>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
+{% else %}
+<section class="crawl settings-block">
+  <div class="crawl-head">
+    <h2>내 위젯</h2>
+    <form method="post" action="/resumes/widgets/new" class="rs-inline-form">
+      <select name="kind" aria-label="위젯 종류">{% for k, label in resume_widget_kinds.items() %}<option value="{{ k }}">{{ label }}</option>{% endfor %}</select>
+      <button type="submit" class="btn-origin">새 위젯</button>
+    </form>
+  </div>
+  <p class="crawl-line muted small wrap-text">위젯은 이력서의 항목 하나입니다. 입력 칸마다 힌트(입력 칸에 흐리게 보이는 안내)와 예시 텍스트(이력서를 만들 때 미리 채워지는 내용)를 정할 수 있고, 여러 템플릿에서 조합해 씁니다. 템플릿에 넣은 위젯은 그때의 내용이 복사되므로, 여기서 고쳐도 이미 만든 템플릿은 바뀌지 않습니다.</p>
+  <details class="rs-guide"{% if not mine %} open{% endif %}>
+    <summary>처음이라면: 위젯 만드는 순서</summary>
+    <ol>
+      <li>종류를 고르고 '새 위젯'을 누릅니다. <b>입력 항목</b>은 이력서에 적을 칸(경력, 자격증 등), <b>제목·고정문구·구분선</b>은 문서에 그대로 찍히는 장식입니다. 비슷한 위젯이 있으면 '복사해서 편집'이 빠릅니다.</li>
+      <li>입력 항목이면 제목, 반복 여부(경력처럼 여러 개), 문서 표시 형식을 정합니다.</li>
+      <li>입력 칸을 추가하고 종류(글·날짜·전화번호 등)·너비·힌트·예시 텍스트를 정합니다.</li>
+      <li>저장한 뒤 템플릿 편집 화면의 위젯 목록에서 넣어 씁니다. 넣을 때 내용이 복사되므로, 나중에 위젯을 고쳐도 이미 넣은 템플릿은 그대로입니다.</li>
+    </ol>
+    <p class="muted small">편집 화면 위쪽의 <b>? 사용법</b>을 누르면 화면을 짚어 가며 단계별로 안내합니다.</p>
+  </details>
+  {% if mine %}
+  <ul class="rs-list">
+    {% for w in mine %}{{ widget_row(w, true) }}{% endfor %}
+  </ul>
+  {% else %}
+  <p class="crawl-line muted">아직 만든 위젯이 없습니다. 아래 위젯을 복사하거나 새로 만들어 보세요.</p>
+  {% endif %}
+</section>
+
+<section class="crawl settings-block rs-shared">
+  <div class="crawl-head"><h2>기본·공개 위젯</h2><span class="crawl-meta">템플릿 편집기에서 바로 쓸 수 있고, 복사하면 고칠 수 있습니다</span></div>
+  <ul class="rs-list">
+    {% for w in others %}{{ widget_row(w, false) }}{% endfor %}
+  </ul>
+</section>
+{% endif %}
+
+<script src="/static/pdf_download.js?v=1" defer></script>
+<script>
+  // 삭제 확인
+  document.addEventListener("submit", (e) => {
+    const msg = e.target.dataset?.confirm;
+    if (msg && !window.confirm(msg)) e.preventDefault();
+  });
+</script>
+{% endblock %}

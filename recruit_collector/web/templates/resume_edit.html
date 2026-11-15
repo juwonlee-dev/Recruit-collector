@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}이력서 작성 · {{ resume.title }}{% endblock %}
+{% block content %}
+{# 이력서 작성: 템플릿 배치대로 입력 칸을 보여 주고 고칠 때마다 자동 저장한다 (static/resume_editor.js) #}
+{# 위쪽 고정 막대: 이력서 이름·미리보기·저장·PDF (static/sticky_bar.js가 사이트 머리 바로 아래에 붙인다) #}
+<div class="ed-bar" data-sticky-bar>
+<div class="rb-top">
+  <a class="rb-back" href="/resumes">← 내 이력서</a>
+  <span class="rb-status muted small" id="re-status" role="status" aria-live="polite"></span>
+</div>
+<div class="re-head">
+  <label class="re-title"><span class="small muted ed-label">이력서 이름 (나만 보임)</span><input id="re-title" maxlength="100"></label>
+  <div class="rb-meta-actions">
+    <a class="device-btn" id="re-preview" href="/resumes/{{ resume.id }}/preview" target="_blank" rel="noopener">미리보기</a>
+    <button type="button" class="device-btn" id="re-save" title="지금 저장 (Ctrl+S). 입력하면 자동으로도 저장됩니다">저장</button>
+    <a class="btn-origin" id="re-pdf" href="/resumes/{{ resume.id }}/pdf">PDF 다운로드</a>
+  </div>
+</div>
+</div>
+<p class="muted small">템플릿: {{ resume.template_name or '-' }} · 입력하면 자동으로 저장되고, 저장 버튼(Ctrl+S)으로 바로 저장할 수도 있습니다. 비워 둔 칸은 문서에 나오지 않습니다.</p>
+<div id="re-app" class="re-doc">
+  <noscript><p class="notice is-error">이력서 작성은 자바스크립트가 필요합니다.</p></noscript>
+</div>
+<script id="re-state" type="application/json">{{ state | tojson }}</script>
+<script src="/static/sticky_bar.js?v=1" defer></script>
+<script src="/static/datepicker.js?v=2" defer></script>
+<script src="/static/address.js?v=1" defer></script>
+<script src="/static/pdf_download.js?v=1" defer></script>
+<script src="/static/resume_editor.js?v=8" defer></script>
+{% endblock %}

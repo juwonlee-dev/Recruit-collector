@@ -1,0 +1,313 @@
+<!doctype html>
+{# 이력서 문서: 미리보기(화면)와 PDF(WeasyPrint, for_pdf)가 같은 HTML을 쓴다. 바깥 CSS 없이 이 파일 안에서 모두 정한다.
+   글꼴·크기·색·간격은 사람인 이력서 PDF와 같게 맞췄다: 사람인 화면의 px 값 × 0.5808 = pt (예: 본문 15px = 8.71pt).
+   글꼴은 기본 Pretendard, 템플릿·위젯 스타일로 바꿀 수 있다 (static/fonts, SIL OFL). font_faces는 이 문서에서 쓰는 글꼴만,
+   font_base는 글꼴 파일 위치 (화면 /static/fonts, PDF는 파일 경로).
+   행은 표(table)로 가로 칸을 나누고(PDF에서도 페이지를 자연스럽게 넘기도록), 입력 칸은 순서대로 12칸씩 줄을 채운다. #}
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>{{ title }}</title>
+<style>
+  {% for f in font_faces %}@font-face { font-family: "{{ f.family }}"; font-weight: {{ f.weight }}; font-style: normal; src: url("{{ font_base }}/{{ f.file }}.woff2") format("woff2"); }
+  {% endfor %}
+  /* 색·글자 크기 변수: 기본값은 사람인 이력서. 템플릿·위젯 스타일은 .doc / 위젯의 style 속성에서 덮어쓴다 (web/resumes.py theme_style, widget_style).
+     글자 크기는 calc(사람인 크기 × --k)라 템플릿 본문 크기·위젯 배율대로 함께 커지고 작아진다. */
+  :root { --k: 1; --c-text: #000000; --c-text2: #151822; --c-head: #151822; --c-title: #000000; --c-muted: #67738e; --c-accent: #003fe5;
+    --c-accent-soft: #ccdaff; --c-line: #d7dce5; --c-soft-line: #eef0f4; --c-strong: #5c667b; --c-strong-2: #8491a7; --c-sub: #475067; }
+  @page { size: A4; margin: 28pt; }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; color: #000; font-size: 8.71pt; line-height: 1.8;
+    font-family: Pretendard, "Noto Sans CJK KR", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    word-break: keep-all; overflow-wrap: anywhere; -webkit-font-smoothing: antialiased; }
+  .doc, .w { font-size: calc(8.71pt * var(--k)); color: var(--c-text); }  /* 위젯이 --k·색을 바꾸면 그 안에서 다시 계산 */
+  a { color: inherit; text-decoration: none; }
+  td { padding: 0; }  /* 기본 칸 여백(1px)을 없애 사람인과 같은 위치에 */
+  .doc-row { width: 100%; border-collapse: separate; border-spacing: 0; table-layout: fixed; }
+  .doc-col { vertical-align: top; padding: 0 9pt; }
+  .doc-col:first-child { padding-left: 0; }
+  .doc-col:last-child { padding-right: 0; }
+  .w { margin: 0; }
+
+  /* 제목·고정 문구·구분선 */
+  .w-heading { font-weight: 700; color: var(--c-head); line-height: 1.3; margin: 0 0 10pt; }
+  .w-heading.lg { font-size: calc(13.94pt * var(--k)); }
+  .w-heading.md { font-size: calc(10.45pt * var(--k)); }
+  .w-heading.sm { font-size: calc(9.29pt * var(--k)); }
+  .w-note { color: var(--c-muted); margin: 10pt 0; white-space: pre-wrap; }
+  .al-left { text-align: left; }
+  .al-center { text-align: center; }
+  .al-right { text-align: right; }
+  .w-divider { border: 0; border-top: 0.6pt solid var(--c-line); margin: 18pt 0 18.5pt; }
+  .w-divider.wt-normal { border-top-width: 1.2pt; }
+  .w-divider.wt-thick { border-top-width: 2.4pt; }
+  .w-divider.ds-dashed { border-top-style: dashed; }
+  .w-divider.ds-dotted { border-top-style: dotted; }
+  .w-divider.sp-narrow { margin: 8pt 0; }
+  .w-divider.sp-wide { margin: 30pt 0 30.5pt; }
+
+  /* 위젯 제목: 밑줄(line) / 굵은 윗선 + 큰 제목(bar, 사람인 섹션) / 굵은 글씨만(plain, 사람인 간략 소개·나의 스킬) */
+  .w-title { font-size: calc(9.29pt * var(--k)); font-weight: 700; line-height: 1.5; margin: 0 0 6pt; padding-bottom: 4pt; color: var(--c-title);
+    border-bottom: 0.6pt solid var(--c-line); break-after: avoid; }
+  .w-title.is-plain { border: 0; padding: 0; margin-bottom: 3pt; }
+  .w-title.is-bar { font-size: calc(12.77pt * var(--k)); font-weight: 400; line-height: 1.3; border-top: 0.6pt solid var(--c-strong);
+    border-bottom: 0.6pt solid var(--c-line); padding: 11.6pt 0 9pt; margin: 31.5pt 0 15pt; }
+  .w-total { font-size: calc(8.13pt * var(--k)); color: var(--c-accent); margin-left: 4pt; }
+  .k { color: var(--c-muted); font-size: calc(8.13pt * var(--k)); }
+  .hint { color: #a3abbd; }
+
+  /* 기본(grid): 이름 아래 값 */
+  .entry { break-inside: avoid; }
+  .is-grid .entry + .entry { margin-top: 10pt; padding-top: 10pt; border-top: 0.6pt solid var(--c-soft-line); }
+  .line { width: 100%; border-collapse: collapse; table-layout: fixed; }
+  .cell { vertical-align: top; padding: 0 8pt 5pt 0; }
+  .cell.is-link { padding-bottom: 0; }
+  .cell-label { display: block; font-size: calc(8.13pt * var(--k)); color: var(--c-muted); line-height: 1.5; }
+  .cell-value { display: block; white-space: pre-wrap; }
+  .cell.is-emphasis .cell-label { display: none; }
+  .cell.is-emphasis .cell-value { font-size: calc(13.94pt * var(--k)); font-weight: 700; color: var(--c-head); line-height: 1.3; }
+  .tag { display: inline-block; max-width: 100%; min-height: calc(20.3pt * var(--k));  /* 긴 태그는 잘리지 않고 줄을 바꾼다 */
+    line-height: calc(19.1pt * var(--k)); padding: 0 6.7pt; margin: 4pt 5.8pt 1.6pt 0;
+    border: 0.6pt solid var(--c-accent-soft); border-radius: calc(10.2pt * var(--k)); font-size: calc(7.55pt * var(--k)); color: var(--c-text);
+    background: #fff; }
+  .link { display: inline-block; max-width: 100%; margin-top: 5pt; font-size: calc(8.13pt * var(--k)); line-height: 1.6; color: var(--c-sub); }
+  .link-icon { display: inline-block; width: calc(15pt * var(--k)); height: calc(15pt * var(--k)); margin-right: 6.5pt; border: 0.6pt solid var(--c-line);
+    border-radius: 3pt; vertical-align: middle; text-align: center; line-height: calc(13pt * var(--k)); }
+  .link-icon svg { width: calc(9pt * var(--k)); height: calc(9pt * var(--k)); vertical-align: middle; }
+  .link-text { text-decoration: underline; text-decoration-color: var(--c-sub); vertical-align: middle; }
+
+  /* 프로필 (사람인 머리) */
+  .pf { padding-top: 39pt; margin-bottom: 1.3pt; }
+  .pf-head { line-height: 1.3; }
+  .pf-name { font-size: calc(13.94pt * var(--k)); font-weight: 700; color: var(--c-head); vertical-align: middle; }
+  .pf-badge { display: inline-block; height: calc(13.9pt * var(--k)); line-height: calc(13.9pt * var(--k)); padding: 0 5.3pt; margin-left: 4pt;
+    border-radius: calc(7pt * var(--k)); background: var(--c-sub); color: #fff; font-size: calc(8.13pt * var(--k)); font-weight: 600; vertical-align: middle; }
+  .pf-meta { color: var(--c-muted); margin-top: 3pt; }
+  .pf-row { margin-top: 4.3pt; color: var(--c-text2); }
+  .pf-head + .pf-meta + .pf-row, .pf-head + .pf-row { margin-top: 12.5pt; }
+  .pf-row .k { margin-right: 3.5pt; }
+  .sep { display: inline-block; width: 0.6pt; height: calc(7pt * var(--k)); background: var(--c-line); margin: 0 10pt; vertical-align: middle; }
+
+  /* 카드 (사람인 요약 상자) */
+  .cards-wrap { margin: 0 0 25pt; }
+  .cards { width: 100%; border-collapse: collapse; table-layout: fixed; }
+  .card-cell { vertical-align: top; padding: 0 4.35pt; }  /* 상자 사이 8.7pt */
+  .card-cell:first-child { padding-left: 0; }
+  .card-cell:last-child { padding-right: 0; }
+  .card { min-height: calc(71.4pt * var(--k)); padding: 12.1pt 11.3pt; border: 0.6pt solid var(--c-line); border-radius: 5.8pt; line-height: 1.5; }
+  .card-label { font-size: calc(7.55pt * var(--k)); color: var(--c-text2); margin-bottom: 11.5pt; }
+  .card-label svg { width: calc(8.2pt * var(--k)); height: calc(8.2pt * var(--k)); margin-right: 6pt; vertical-align: -1pt; }
+  .card-main { font-size: calc(8.13pt * var(--k)); font-weight: 700; color: var(--c-text2); }
+  .card-sub { font-size: calc(7.55pt * var(--k)); color: var(--c-muted); margin-top: 2.2pt; }
+  .card-empty { font-size: calc(9.29pt * var(--k)); color: var(--c-text2); }
+
+  /* 목록 (사람인 경력·학력 등): 왼쪽 기간 101pt, 오른쪽 제목·내용 */
+  .tl, .lb { width: 100%; border-collapse: collapse; table-layout: fixed; }
+  .tl { break-inside: avoid; }
+  .tl + .tl .tl-side, .tl + .tl .tl-main { padding-top: 24pt; }
+  .tl-side { width: calc(101pt * var(--k)); vertical-align: top; padding-right: 10pt; }
+  .tl-dur { font-size: calc(7.55pt * var(--k)); color: var(--c-muted); line-height: 1.5; }
+  .tl-period + .tl-dur { margin-top: 0.3pt; }
+  .tl-main, .lb-main { vertical-align: top; }
+  .tl-title { line-height: 1.5; }
+  .tl-name { font-size: calc(10.45pt * var(--k)); font-weight: 700; color: var(--c-title); }
+  .tl-meta { font-size: calc(8.13pt * var(--k)); color: var(--c-muted); margin-left: 6pt; }
+  .badge { display: inline-block; height: calc(13.4pt * var(--k)); line-height: calc(12.2pt * var(--k)); padding: 0 3.8pt; margin-left: 5pt;
+    border: 0.6pt solid var(--c-line); border-radius: 2.3pt; font-size: calc(6.97pt * var(--k)); color: var(--c-sub); vertical-align: 1.5pt; }
+  .kv-row { margin-top: 8pt; font-size: calc(8.13pt * var(--k)); line-height: 1.6; }
+  .kv-row .k { margin-right: 3.5pt; white-space: nowrap; }  /* 값이 길어도 항목 이름(점수/급수)은 한 줄로 */
+  .tl-title + .ln, .tl-title + .body { margin-top: 8pt; }
+  .body { white-space: pre-wrap; }
+  .kv-row + .body, .kv-row + .ln, .ln + .body, .body + .ln, .body + .body { margin-top: 8pt; }
+
+  /* 왼쪽 제목 (사람인 경력기술서) */
+  .lb { margin-top: 28pt; border-top: 0.6pt solid var(--c-strong-2); }
+  .lb-side { width: calc(101pt * var(--k)); vertical-align: top; padding: 19pt 10pt 0 0; font-size: calc(10.45pt * var(--k)); line-height: 1.5;
+    color: var(--c-title); }
+  .lb-main { padding-top: 18.3pt; }
+  .lb-main .tl-entry + .tl-entry { margin-top: 24pt; }
+
+  .empty { color: #a3abbd; text-align: center; padding: 40pt 0; }
+  {% if not for_pdf %}
+  /* 화면 미리보기: 회색 바탕 위 A4 종이 (PDF와 같은 pt 단위) */
+  body { background: #e5e7eb; }
+  .bar { position: sticky; top: 0; z-index: 1; display: flex; gap: 8px; justify-content: center; align-items: center; flex-wrap: wrap;
+    padding: 10px 16px; background: rgba(255, 255, 255, .92); border-bottom: 1px solid #d1d5db; font-size: 13px; line-height: 1.4; }
+  .bar b { margin-right: auto; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+  .bar a, .bar button { font: inherit; padding: 6px 12px; border-radius: 8px; border: 1px solid #d1d5db; background: #fff; color: #1f2937; cursor: pointer; }
+  .bar .primary { background: #2c5ddb; border-color: #2c5ddb; color: #fff; display: inline-flex; align-items: center; justify-content: center; gap: 6px; }
+  .bar .primary.is-busy { opacity: .85; cursor: progress; }
+  .bar .primary.is-done { background: #1f8a4c; border-color: #1f8a4c; }
+  /* PDF 다운로드 진행 표시 (static/pdf_download.js) */
+  .spinner { width: 12px; height: 12px; border-radius: 50%; display: inline-block; border: 2px solid currentColor; border-right-color: transparent; animation: spin .7s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .toast-region { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 100; display: flex; flex-direction: column; gap: 8px; align-items: center; }
+  .toast { padding: 10px 16px; border-radius: 10px; font-size: 14px; line-height: 1.4; background: #1d2330; color: #fff; box-shadow: 0 6px 20px rgb(0 0 0 / 22%); transition: opacity .25s, transform .25s; }
+  .toast.is-error { background: #c2413a; }
+  .toast.is-leaving { opacity: 0; transform: translateY(6px); }
+  .paper { width: 595.28pt; max-width: calc(100% - 32px); min-height: 841.89pt; margin: 20px auto 40px; padding: 28pt; background: #fff;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, .12); }
+  @media (max-width: 640px) {
+    .paper { max-width: 100%; margin: 0; padding: 20px 16px; min-height: 0; box-shadow: none; }
+    .doc-row, .doc-row tbody, .doc-row tr, .doc-col { display: block; width: 100% !important; padding: 0 !important; }
+    .doc-col + .doc-col { margin-top: 12pt; }
+    .pf { padding-top: 0; }
+    .cards-wrap { margin: 0 0 20pt; }
+    .cards, .cards tbody { display: block; width: 100%; }
+    .cards tr { display: flex; flex-wrap: wrap; gap: 8px; }
+    .cards td { display: block; width: calc(50% - 4px) !important; padding: 0 !important; }
+    .tl-side, .lb-side { width: 30%; }
+  }
+  @media print { body { background: #fff; } .bar { display: none; } .paper { margin: 0; padding: 0; box-shadow: none; width: auto; min-height: 0; } }
+  {% endif %}
+</style>
+</head>
+<body>
+{% set icons = {
+  'briefcase': '<rect x="2" y="5" width="12" height="9" rx="1.2"/><path d="M5.5 5V3.5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1V5M2 9h12"/>',
+  'cap': '<path d="M1 6.5 8 3l7 3.5L8 10z"/><path d="M4 8v3.2c1 .9 2.4 1.3 4 1.3s3-.4 4-1.3V8M15 6.5v3.5"/>',
+  'won': '<circle cx="8" cy="8" r="6.5"/><path d="m4.8 5.5 1.4 5 1.8-5 1.8 5 1.4-5M4.2 7.4h7.6"/>',
+  'folder': '<path d="M1.8 4.2a1 1 0 0 1 1-1h3.4l1.5 1.6h5.5a1 1 0 0 1 1 1v6.9a1 1 0 0 1-1 1H2.8a1 1 0 0 1-1-1z"/>',
+  'github': '<path d="M8 1.3a6.7 6.7 0 0 0-2.1 13c.3.1.5-.1.5-.3v-1.2c-1.9.4-2.3-.8-2.3-.8-.3-.8-.7-1-.7-1-.6-.4 0-.4 0-.4.7 0 1 .7 1 .7.6 1 1.6.7 2 .5 0-.4.2-.7.4-.9-1.5-.2-3-.7-3-3.3 0-.7.2-1.3.7-1.8-.1-.2-.3-.9.1-1.8 0 0 .6-.2 1.8.7a6.2 6.2 0 0 1 3.3 0c1.3-.9 1.8-.7 1.8-.7.4.9.2 1.6.1 1.8.4.5.7 1.1.7 1.8 0 2.6-1.6 3.1-3 3.3.2.2.4.6.4 1.2v1.8c0 .2.2.4.5.3A6.7 6.7 0 0 0 8 1.3z" fill="currentColor" stroke="none"/>',
+  'link': '<path d="M6.6 9.4a2.8 2.8 0 0 0 4 0l2-2a2.8 2.8 0 0 0-4-4l-.7.7M9.4 6.6a2.8 2.8 0 0 0-4 0l-2 2a2.8 2.8 0 0 0 4 4l.7-.7"/>',
+} %}
+{% macro icon(name, color='#151822') -%}
+<svg viewBox="0 0 16 16" fill="none" stroke="{{ color }}" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" style="color: {{ color }}" aria-hidden="true">{{ icons[name] | safe }}</svg>
+{%- endmacro %}
+{# 카드 제목에 붙는 아이콘 (사람인 요약 상자): 칸 이름으로 고른다 #}
+{% macro card_icon(label) -%}
+  {%- if '경력' in label %}{{ icon('briefcase') }}{% elif '학력' in label or '학교' in label %}{{ icon('cap') }}
+  {%- elif '연봉' in label or '급여' in label %}{{ icon('won') }}{% elif '포트폴리오' in label %}{{ icon('folder') }}{% endif -%}
+{%- endmacro %}
+{% macro val(c) -%}
+  {%- if c.hint -%}<span class="hint">{{ c.value }}</span>
+  {%- elif c.field.type == 'tags' -%}{% for t in c.value %}<span class="tag">{{ t }}</span>{% endfor %}
+  {%- elif c.field.type == 'url' and (c.value.startswith('http://') or c.value.startswith('https://')) -%}<a href="{{ c.value }}">{{ c.value }}</a>
+  {%- else -%}{{ c.text }}{%- endif -%}
+{%- endmacro %}
+{% macro plain(c) -%}{{ c.value if c.hint else ((c.value | join(', ')) if c.field.type == 'tags' else c.text) }}{%- endmacro %}
+{% macro head(it) -%}
+  {%- if it.config.show_title and it.config.title -%}
+  <h2 class="w-title is-{{ it.config.title_style or 'line' }}">{{ it.config.title }}{% if it.total %}<span class="w-total">총 {{ it.total }}</span>{% endif %}</h2>
+  {%- endif -%}
+{%- endmacro %}
+{% macro kvs(cells) -%}
+  {% for c in cells %}<span class="kv">{% if not c.field.hide_label %}<span class="k">{{ c.field.label }}</span><wbr>{% endif %}{{ val(c) }}</span>{% if not loop.last %}<span class="sep"></span>{% endif %}{% endfor %}
+{%- endmacro %}
+{% macro main(e) -%}
+  {% if e.title or e.meta or e.badge %}
+  <div class="tl-title">{% for c in e.title %}<span class="tl-name">{{ val(c) }}</span>{% endfor %}{% if e.meta %}<wbr><span class="tl-meta">{% for c in e.meta %}{{ plain(c) }}{% if not loop.last %} · {% endif %}{% endfor %}</span>{% endif %}{% for c in e.badge %}<span class="badge">{{ plain(c) }}</span>{% endfor %}</div>
+  {% endif %}
+  {% if e.info %}<div class="kv-row">{{ kvs(e.info) }}</div>{% endif %}
+  {#- '이름: 값' 줄과 본문은 위젯의 칸 순서대로 #}
+  {% for c in e.cells if c.field.slot in ('line', 'body') %}
+  {% if c.field.slot == 'line' %}<div class="ln">{% if not c.field.hide_label %}{{ c.field.label }}: {% endif %}{{ val(c) }}</div>
+  {% else %}<div class="body">{% if not c.field.hide_label %}<span class="k">{{ c.field.label }}</span>
+{% endif %}{{ val(c) }}</div>{% endif %}
+  {% endfor %}
+{%- endmacro %}
+{% if not for_pdf %}
+<div class="bar">
+  <b>{{ title }}{% if show_hints %} · 템플릿 미리보기 (예시 텍스트와 힌트){% endif %}</b>
+  {% if pdf_url %}<a class="primary" href="{{ pdf_url }}" data-pdf-download>PDF 다운로드</a>{% endif %}
+  <button type="button" onclick="window.close()">닫기</button>
+</div>
+<div class="paper">
+{% endif %}
+<div class="doc" style="{{ doc_style }}">
+{% for row in rows %}
+<table class="doc-row"><tr>
+  {% for col in row.cols %}
+  <td class="doc-col" style="width: {{ (col.span / 12 * 100) | round(4) }}%">
+    {% for it in col['items'] %}
+      {% if it.kind == 'heading' %}
+      <div class="w w-heading {{ it.config.size or 'lg' }} al-{{ it.config.align or 'left' }}" style="{{ it.css }}">{{ it.config.text }}</div>
+      {% elif it.kind == 'note' %}
+      <p class="w w-note al-{{ it.config.align or 'center' }}" style="{{ it.css }}">{{ it.config.text }}</p>
+      {% elif it.kind == 'divider' %}
+      <hr class="w w-divider wt-{{ it.config.weight or 'thin' }} ds-{{ it.config.dash or 'solid' }} sp-{{ it.config.space or 'normal' }}" style="{{ it.css }}">
+      {% else %}
+      <section class="w is-{{ it.display }}" style="{{ it.css }}">
+        {% if it.display != 'labeled' %}{{ head(it) }}{% endif %}
+        {% if it.display == 'grid' %}
+        {% for lines in it.entries %}
+        <div class="entry">
+          {% for line in lines %}
+          <table class="line"><tr>
+            {% for c in line.cells %}
+            <td class="cell {% if c.field.emphasis %}is-emphasis{% endif %} {% if c.hint %}is-hint{% endif %} {% if c.field.type == 'url' %}is-link{% endif %}" style="width: {{ (c.field.span / 12 * 100) | round(4) }}%">
+              {%- if not c.empty %}
+              {% if not c.field.hide_label %}<span class="cell-label">{{ c.field.label }}</span>{% endif %}
+              {%- if c.field.type == 'url' and not c.hint -%}
+              <a class="link" href="{{ c.value if (c.value.startswith('http://') or c.value.startswith('https://')) else '' }}"><span class="link-icon">{{ icon('github' if 'github.com' in c.value else 'link', '#151822') }}</span><span class="link-text">{{ c.value }}</span></a>
+              {%- else %}
+              <span class="cell-value">{{ val(c) }}</span>
+              {%- endif %}
+              {%- endif %}
+            </td>
+            {% endfor %}
+            {% if line.rest %}<td style="width: {{ (line.rest / 12 * 100) | round(4) }}%"></td>{% endif %}
+          </tr></table>
+          {% endfor %}
+        </div>
+        {% endfor %}
+        {% elif it.display == 'profile' %}
+        {% for e in it.entries %}
+        <div class="pf entry">
+          <div class="pf-head">{% for c in e.title %}<span class="pf-name">{{ val(c) }}</span>{% endfor %}{% for c in e.badge %}<span class="pf-badge">{{ plain(c) }}</span>{% endfor %}</div>
+          {% if e.meta or e.side %}<div class="pf-meta">{% for c in e.meta + e.side %}{{ plain(c) }}{% if not loop.last %}, {% endif %}{% endfor %}</div>{% endif %}
+          {% if e.info %}<div class="pf-row">{{ kvs(e.info) }}</div>{% endif %}
+          {% for c in e.line %}<div class="pf-row">{% if not c.field.hide_label %}<span class="k">{{ c.field.label }}</span>{% endif %}{{ val(c) }}</div>{% endfor %}
+          {% for c in e.body %}<div class="pf-row body">{{ val(c) }}</div>{% endfor %}
+        </div>
+        {% endfor %}
+        {% elif it.display == 'cards' %}
+        {% for e in it.entries %}
+        <div class="cards-wrap entry"><table class="cards"><tr>
+          {# 상자 너비를 같게: 바깥 칸은 간격의 절반, 안쪽 칸은 간격만큼 넓게 (간격 8.7pt = 본문 540pt의 1.611%) #}
+          {% set n = e.all | length %}{% set gap = 8.7 / 540 * 100 %}{% set box = (100 - (n - 1) * gap) / n %}
+          {% for c in e.all %}
+          <td class="card-cell" style="width: {{ (100 if n == 1 else box + (gap / 2 if loop.first or loop.last else gap)) | round(4) }}%"><div class="card">
+            <div class="card-label">{{ card_icon(c.field.label) }}{{ c.field.label }}</div>
+            {% if c.empty %}<div class="card-empty">-</div>
+            {% else %}
+            {% set text = (c.value | join(', ')) if c.field.type == 'tags' else (c.value if c.hint else c.text) | string %}
+            {% for l in text.split('\n') %}<div class="{{ 'card-main' if loop.first else 'card-sub' }}{% if c.hint %} hint{% endif %}">{{ l }}</div>{% endfor %}
+            {% endif %}
+          </div></td>
+          {% endfor %}
+        </tr></table></div>
+        {% endfor %}
+        {% elif it.display == 'labeled' %}
+        <table class="lb"><tr>
+          <td class="lb-side">{{ it.config.title }}</td>
+          <td class="lb-main">{% for e in it.entries %}<div class="tl-entry">{{ main(e) }}</div>{% endfor %}</td>
+        </tr></table>
+        {% else %}
+        {% for e in it.entries %}
+        <table class="tl"><tr>
+          {% if it.has_side %}<td class="tl-side">
+            {% if e.period %}<div class="tl-period">{{ e.period }}</div>{% endif %}
+            {% if e.duration %}<div class="tl-dur">{{ e.duration }}</div>{% endif %}
+            {% for c in e.side %}<div class="tl-dur">{{ plain(c) }}</div>{% endfor %}
+          </td>{% endif %}
+          <td class="tl-main">{{ main(e) }}</td>
+        </tr></table>
+        {% endfor %}
+        {% endif %}
+      </section>
+      {% endif %}
+    {% endfor %}
+  </td>
+  {% endfor %}
+</tr></table>
+{% else %}
+<p class="empty">아직 입력한 내용이 없습니다.</p>
+{% endfor %}
+</div>
+{% if not for_pdf %}</div>{% if pdf_url %}<script src="/static/pdf_download.js?v=1" defer></script>{% endif %}{% endif %}
+</body>
+</html>
