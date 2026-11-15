@@ -1,0 +1,153 @@
+<!doctype html>
+{% from "_avatar.html" import avatar %}
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <title>{% block title %}채용공고{% endblock %} · Recruit Collector</title>
+  <link rel="icon" href="/static/favicon.svg?v=1" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico?v=1" sizes="16x16 32x32 48x48">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=1">
+  <link rel="stylesheet" href="/static/style.css?v=92">
+</head>
+<body>
+  <div class="nav-progress" aria-hidden="true"></div>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="/"><img class="brand-logo" src="/static/favicon.svg?v=1" alt="" width="24" height="24">Recruit Collector</a>
+      <nav>
+        {# 즐겨찾기 알림 수: 최근 7일 변경된 즐겨찾기 공고 + 관심 회사 새 공고 (web/favorites.py) #}
+        <a href="/" {% if request.url.path == '/' %}aria-current="page"{% endif %}>공고{% if fav_alerts and fav_alerts.total %}<span class="nav-badge" data-alert-count title="최근 7일 변경된 즐겨찾기 공고 {{ fav_alerts.changed }}건 · 관심 회사 새 공고 {{ fav_alerts.new }}건" aria-label="알림 {{ fav_alerts.total }}건">{{ fav_alerts.total if fav_alerts.total < 100 else '99+' }}</span>{% endif %}</a>
+        {% if access.can_view_salary %}<a href="/salary" {% if request.url.path.startswith('/salary') %}aria-current="page"{% endif %}>연봉·인원</a>{% endif %}
+        <a href="/runs" {% if request.url.path == '/runs' %}aria-current="page"{% endif %}>수집 기록</a>
+        {% if access.can_manage %}<a href="/settings" {% if request.url.path == '/settings' %}aria-current="page"{% endif %}>설정</a>{% endif %}
+      </nav>
+      {# 로그인: 구글 로그인이 설정된 경우에만 보인다 (로그인 사용을 켜려면 관리자로 먼저 로그인해야 함) #}
+      {% if access.user %}
+      {# 사용자 메뉴: 프로필 사진·이름을 누르면 마이페이지·로그아웃 (static/usermenu.js) #}
+      <details class="userbox usermenu">
+        <summary class="usermenu-btn" aria-haspopup="true" aria-expanded="false" aria-label="내 계정 메뉴 ({{ access.user.name or access.user.email }})">
+          {{ avatar(access.user, 28) }}<span class="user-name">{{ access.user.name or access.user.email }}</span><svg class="usermenu-caret" viewBox="0 0 12 12" width="12" height="12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <div class="usermenu-panel">
+          <div class="usermenu-head">
+            {{ avatar(access.user, 40) }}
+            <div class="usermenu-who">
+              <b>{{ access.user.name or access.user.email }}</b>{% if access.is_admin %} <span class="pill pill-admin">관리자</span>{% endif %}
+              <div class="muted small">{{ access.user.email }}</div>
+            </div>
+          </div>
+          <a class="usermenu-item" href="/me" {% if request.url.path == '/me' %}aria-current="page"{% endif %}><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg>마이페이지</a>
+          <a class="usermenu-item" href="/resumes" {% if request.url.path.startswith('/resumes') %}aria-current="page"{% endif %}><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg>이력서</a>
+          <form method="post" action="/auth/logout">
+            <button type="submit" class="usermenu-item"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-3M10 17l5-5-5-5M15 12H4"/></svg>로그아웃</button>
+          </form>
+        </div>
+      </details>
+      {% elif access.google_ready %}
+      <div class="userbox"><a class="user-btn" href="/auth/login?next={{ (request.url.path ~ ('?' ~ request.url.query if request.url.query else '')) | urlencode }}">로그인</a></div>
+      {% endif %}
+    </div>
+  </header>
+  <main class="wrap{% block main_class %}{% endblock %}">
+    {% block content %}{% endblock %}
+  </main>
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <span class="footer-brand"><img class="brand-logo" src="/static/favicon.svg?v=1" alt="" width="18" height="18">Recruit Collector · 개인 비상업용</span>
+      <nav class="footer-links" aria-label="정책">
+        <a href="/privacy" class="footer-privacy" {% if request.url.path == '/privacy' %}aria-current="page"{% endif %}>개인정보처리방침</a>
+        <a href="/terms" {% if request.url.path == '/terms' %}aria-current="page"{% endif %}>서비스 이용약관</a>
+      </nav>
+      <a class="footer-gh" href="https://github.com/juwonlee-dev" target="_blank" rel="noopener noreferrer" aria-label="깃허브 프로필 juwonlee-dev"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span>juwonlee-dev</span></a>
+    </div>
+  </footer>
+
+  {# 기업 리뷰 모달: 리뷰 데이터는 가져오지 않고, 내 브라우저에서 잡플래닛 리뷰를 여는 링크만 보여준다 (static/review.js) #}
+  <dialog class="modal" id="review-modal" aria-labelledby="review-modal-title">
+    <div class="modal-head">
+      <h2 id="review-modal-title"><span class="review-company"></span> 기업 리뷰</h2>
+      <button type="button" class="modal-close" data-close aria-label="닫기">×</button>
+    </div>
+    <p class="modal-body">리뷰는 잡플래닛에서 직접 확인합니다. 잡플래닛에 로그인되어 있으면 내 계정으로 리뷰를 볼 수 있습니다.</p>
+    <p class="modal-query muted">검색어: <span class="review-query"></span></p>
+    <div class="modal-actions">
+      <a class="btn-origin review-link" autofocus href="https://www.jobplanet.co.kr" target="_blank" rel="noopener noreferrer">잡플래닛에서 리뷰 보기 ↗</a>
+      <button type="button" class="modal-cancel" data-close>닫기</button>
+    </div>
+  </dialog>
+  <script src="/static/nav.js?v=4" defer></script>
+  <script src="/static/usermenu.js?v=1" defer></script>
+  <script src="/static/review.js?v=2" defer></script>
+
+  {# 연봉 모달: 올댓컴퍼니의 월별 인원·입사자·퇴사자·월평균급여를 조회할 때마다 가져와 그린다 (static/salary.js).
+     연봉·인원 메뉴를 쓸 수 있으면(로그인 사용이 꺼져 있거나, 켜져 있고 로그인한 상태) '비교하기'로 연봉·인원 메뉴의 비교함(이 브라우저에 저장)에 회사를 담는다 #}
+  {% set can_compare = access.can_view_salary %}
+  {% if not access.can_view_salary %}
+  {# 로그인 사용 중 비로그인: 실제 모달과 같은 구성(회사 정보·기간·요약·차트, 비교하기 버튼은 없음)을 더미 자료로 그려 흐리게 하고
+     (static/salary.js), 그 위에 로그인 안내를 띄운다. 올댓컴퍼니 조회는 하지 않으며, 동작하는 것은 닫기(×)와 로그인 링크뿐 #}
+  <dialog class="modal modal-wide" id="salary-modal" aria-labelledby="salary-modal-title" data-locked>
+    <div class="modal-head">
+      <h2 id="salary-modal-title"><span class="salary-company"></span> 연봉·인원</h2>
+      <div class="modal-head-actions">
+        <button type="button" class="modal-close" data-close aria-label="닫기">×</button>
+      </div>
+    </div>
+    <div class="salary-locked">
+      <div class="salary-body salary-locked-body" aria-hidden="true" inert></div>
+      <div class="salary-locked-card" role="note">
+        <svg class="salary-locked-icon" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+        <p class="salary-locked-title">로그인 후 이용할 수 있습니다</p>
+        <p class="salary-locked-text">로그인하면 이 회사의 월별 인원·입사자·퇴사자와 월평균급여를 차트로 볼 수 있고, 다른 회사와 비교할 수도 있습니다.</p>
+        {% if access.google_ready %}<a class="btn-origin salary-login-link" autofocus href="/auth/login?next={{ (request.url.path ~ ('?' ~ request.url.query if request.url.query else '')) | urlencode }}">로그인하고 보기</a>{% endif %}
+      </div>
+    </div>
+  </dialog>
+  {% else %}
+  <dialog class="modal modal-wide" id="salary-modal" aria-labelledby="salary-modal-title" {% if can_compare %}data-compare-max="{{ max_compare }}"{% endif %}>
+    <div class="modal-head">
+      <h2 id="salary-modal-title"><span class="salary-company"></span> 연봉·인원</h2>
+      <div class="modal-head-actions">
+        {% if can_compare %}<button type="button" class="salary-compare-btn" hidden>+ 비교하기</button>{% endif %}
+        <button type="button" class="modal-close" data-close aria-label="닫기">×</button>
+      </div>
+    </div>
+    <div class="salary-body" aria-live="polite" tabindex="-1" autofocus></div>
+  </dialog>
+  {% endif %}
+  {% if can_compare %}
+  {# 비교함에 2곳 이상이면: 비교 분석 페이지로 갈지 묻는다 #}
+  <dialog class="modal" id="compare-go-modal" aria-labelledby="compare-go-title">
+    <div class="modal-head">
+      <h2 id="compare-go-title">비교함에 담았습니다</h2>
+      <button type="button" class="modal-close" data-close aria-label="닫기">×</button>
+    </div>
+    <p class="modal-body compare-go-text"></p>
+    <ul class="compare-modal-list"></ul>
+    <div class="modal-actions">
+      <button type="button" class="modal-cancel" data-close>그대로 있기</button>
+      <a class="btn-origin compare-go-link" href="/salary/compare" autofocus>비교 분석 보기 →</a>
+    </div>
+  </dialog>
+  {# 비교함이 가득 찼으면: 담긴 회사 중 하나를 골라 교체 #}
+  <dialog class="modal" id="compare-full-modal" aria-labelledby="compare-full-title">
+    <div class="modal-head">
+      <h2 id="compare-full-title">비교함이 가득 찼습니다</h2>
+      <button type="button" class="modal-close" data-close aria-label="닫기">×</button>
+    </div>
+    <p class="modal-body compare-full-text"></p>
+    <fieldset class="compare-modal-list compare-replace-list">
+      <legend class="sr-only">교체할 회사</legend>
+    </fieldset>
+    <div class="modal-actions">
+      <button type="button" class="modal-cancel" data-close>취소</button>
+      <button type="button" class="btn-origin compare-replace-ok" disabled>확인</button>
+    </div>
+  </dialog>
+  {% endif %}
+  <script src="/static/salary.js?v=16" defer></script>
+  {% if access.can_favorite %}<script src="/static/favorite.js?v=5" defer></script>{% endif %}
+  {% block scripts %}{% endblock %}
+</body>
+</html>

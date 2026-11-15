@@ -1,0 +1,331 @@
+{% extends "base.html" %}
+{% block content %}
+{# 상단 상태 영역: 새로고침 없이 /api/status 로 주기적으로 갱신된다 (static/status.js) #}
+<section id="live" class="live" aria-live="polite">
+  <div class="stats">
+    <div class="stat"><span class="stat-label">활성 공고</span><span class="stat-value" data-k="active">-</span><span class="stat-sub" data-k="active_by_site"></span></div>
+    <div class="stat"><span class="stat-label">24시간 신규</span><span class="stat-value accent" data-k="new_24h">-</span></div>
+    <div class="stat"><span class="stat-label">24시간 변경</span><span class="stat-value" data-k="updated_24h">-</span></div>
+    <div class="stat"><span class="stat-label">24시간 삭제</span><span class="stat-value" data-k="deleted_24h">-</span></div>
+    <div class="stat"><span class="stat-label">삭제 누적</span><span class="stat-value muted" data-k="deleted">-</span></div>
+  </div>
+
+  <div class="crawl">
+    <div class="crawl-head">
+      <h2>수집 상태 <span class="crawl-msg" data-k="message" role="status"></span></h2>
+      <span class="crawl-meta">
+        <span class="live-dot" data-k="live_dot"></span>
+        <span data-k="checked_at"></span>
+        <span data-k="next_run_at"></span>
+      </span>
+    </div>
+    {# 수집기(worker 컨테이너)가 꺼져 있으면 안내 (status.js) #}
+    <p class="crawl-alert" data-k="worker_alert" role="status" hidden></p>
+    <div class="crawl-list" data-k="searches"></div>
+  </div>
+</section>
+<script id="initial-status" type="application/json">{{ status_data | tojson }}</script>
+{# 자동 수집이 켜져 있을 때 '지금 수집'을 누르면 확인한다 (static/status.js). 닫기는 review.js의 공통 처리 #}
+<dialog class="modal" id="crawl-confirm" aria-labelledby="crawl-confirm-title">
+  <div class="modal-head">
+    <h2 id="crawl-confirm-title"><span class="crawl-confirm-site"></span> 지금 수집할까요?</h2>
+    <button type="button" class="modal-close" data-close aria-label="닫기">×</button>
+  </div>
+  <p class="modal-body">자동 수집이 켜져 있습니다<span class="crawl-confirm-next"></span>. 지금 수집하면 이 사이트를 바로 수집하고, 수집이 끝나기 전에 다음 자동 수집 시각이 되면 이 사이트는 그 회차를 건너뜁니다.</p>
+  <div class="modal-actions">
+    <button type="button" class="modal-cancel" data-close autofocus>취소</button>
+    <button type="button" class="btn-origin crawl-confirm-go">지금 수집</button>
+  </div>
+</dialog>
+
+{# 검색: 상세 조건(라벨 있는 격자) 아래 검색어 + 조회 한 줄. 모바일에서는 상세 조건을 접고 고른 조건을 요약해 보여준다 #}
+{% set status_labels = {'ACTIVE': '활성', 'DELETED': '삭제됨', 'ALL': '전체 상태'} %}
+{# 여러 개 고른 조건의 요약: 2개까지는 이름을 모두, 그보다 많으면 '첫 이름 외 N곳' (multi_select.js와 같은 규칙) #}
+{% macro picked_text(names, empty, unit) %}{% if not names %}{{ empty }}{% elif names | length <= 2 %}{{ names | join(', ') }}{% else %}{{ names[0] }} 외 {{ names | length - 1 }}{{ unit }}{% endif %}{% endmacro %}
+{% set region_names = filters.region | map('region_label') | list %}
+{% set career_names = [] %}{% for k in filters.career %}{% set _ = career_names.append(career_options[k]) %}{% endfor %}
+{% set employment_names = [] %}{% for k in filters.employment %}{% set _ = employment_names.append(employment_options[k]) %}{% endfor %}
+{% set active = [] %}
+{% if filters.site %}{% set _ = active.append(site_labels.get(filters.site, filters.site)) %}{% endif %}
+{% if filters.status != default_status %}{% set _ = active.append(status_labels.get(filters.status, filters.status)) %}{% endif %}
+{% if career_names %}{% set _ = active.append(picked_text(career_names, '', '개')) %}{% endif %}
+{% if employment_names %}{% set _ = active.append(picked_text(employment_names, '', '개')) %}{% endif %}
+{% if filters.hh %}{% set _ = active.append(headhunting_options[filters.hh]) %}{% endif %}
+{% if region_names %}{% set _ = active.append(picked_text(region_names, '', '곳')) %}{% endif %}
+{# 탭: 즐겨찾기를 쓸 수 있을 때만 (로그인 사용 중 로그인). 탭을 바꾸면 검색 조건은 처음부터 (web/favorites.py) #}
+{% if fav %}
+<nav class="view-tabs" aria-label="공고 보기" data-tab-nav="list">
+  <a href="/" {% if not filters.view %}aria-current="page"{% endif %}>전체 공고</a>
+  <a href="/?view=fav" {% if filters.view == 'fav' %}aria-current="page"{% endif %}><span class="tab-star" aria-hidden="true"></span>즐겨찾기 <span class="tab-n" data-fav-total>{{ fav.summary.total }}</span></a>
+  <a href="/?view=company" {% if filters.view == 'company' %}aria-current="page"{% endif %}>관심 회사 새 공고{% if fav.new_count %} <span class="tab-n is-new" data-new-count>{{ fav.new_count }}</span>{% endif %}</a>
+</nav>
+{% endif %}
+<form class="filters" id="filters" method="get" action="/">
+  {% if filters.view %}<input type="hidden" name="view" value="{{ filters.view }}">{% endif %}
+  <details class="f-more" open data-active="{{ active | length }}">
+    <summary>
+      <span class="f-more-title">상세 조건</span>
+      {% if active %}<span class="f-count">{{ active | length }}</span><span class="f-summary">{{ active | join(' · ') }}</span>
+      {% else %}<span class="f-summary">플랫폼·상태·경력·고용형태·헤드헌팅·지역</span>{% endif %}
+    </summary>
+    <div class="f-grid">
+      <label class="f-field"><span>플랫폼</span>
+        <select name="site">
+          <option value="">전체 플랫폼</option>
+          {% for key, label in platform_labels.items() %}<option value="{{ key }}" {% if filters.site == key %}selected{% endif %}>{{ label }}</option>{% endfor %}
+        </select>
+      </label>
+      <label class="f-field"><span>상태</span>
+        <select name="status">
+          {% for key, label in status_labels.items() %}<option value="{{ key }}" {% if filters.status == key %}selected{% endif %}>{{ label }}</option>{% endfor %}
+        </select>
+      </label>
+      {# 경력: 여러 구간을 체크 (합집합). 체크박스는 폼 안에 있어 그대로 전송되고, 요약·닫기는 multi_select.js #}
+      <div class="f-field"><span id="f-career-label">경력</span>
+        <details class="ms" data-empty="전체 경력" data-unit="개">
+          <summary class="ms-btn" aria-describedby="f-career-label"><span class="ms-text">{{ picked_text(career_names, '전체 경력', '개') }}</span></summary>
+          <div class="ms-panel" role="group" aria-labelledby="f-career-label">
+            {% for key, label in career_options.items() %}
+            <label class="ms-opt"><input type="checkbox" name="career" value="{{ key }}" data-label="{{ label }}" {% if key in filters.career %}checked{% endif %}>{{ label }}</label>
+            {% endfor %}
+          </div>
+        </details>
+      </div>
+      {# 고용형태: 사람인·잡코리아·원티드의 선택지를 합친 목록. 경력처럼 여러 개를 체크 (합집합) #}
+      <div class="f-field"><span id="f-employment-label">고용형태</span>
+        <details class="ms ms-end" data-empty="전체 고용형태" data-unit="개">
+          <summary class="ms-btn" aria-describedby="f-employment-label"><span class="ms-text">{{ picked_text(employment_names, '전체 고용형태', '개') }}</span></summary>
+          <div class="ms-panel" role="group" aria-labelledby="f-employment-label">
+            {% for key, label in employment_options.items() %}
+            <label class="ms-opt"><input type="checkbox" name="employment" value="{{ key }}" data-label="{{ label }}" {% if key in filters.employment %}checked{% endif %}>{{ label }}</label>
+            {% endfor %}
+          </div>
+        </details>
+      </div>
+      {# 헤드헌팅: 사람인(헤드헌팅 크롤러)·잡코리아·리멤버가 구분해 주는 서치펌 공고. 원티드는 모두 일반 공고 #}
+      <label class="f-field"><span>헤드헌팅</span>
+        <select name="hh">
+          <option value="">헤드헌팅 포함</option>
+          {% for key, label in headhunting_options.items() %}<option value="{{ key }}" {% if filters.hh == key %}selected{% endif %}>{{ label }}</option>{% endfor %}
+        </select>
+      </label>
+      {# 지역: 설정 > 검색 필터의 지역 등록과 같은 시도·시군구 (공통 지역코드). 왼쪽 시도를 고르면 오른쪽에 그 시도의
+         '전체'와 시군구 체크박스. 여러 시도에 걸쳐 고를 수 있고(합집합), 시도 전체를 고르면 그 시도의 시군구는 고를 수 없다 #}
+      {% set first_sido = (filters.region[0].split(' ')[0]) if filters.region else (region_codes | first if region_codes else '') %}
+      <div class="f-field f-region"><span id="f-region-label">지역</span>
+        <details class="ms ms-region" data-empty="전체 지역" data-unit="곳">
+          <summary class="ms-btn" aria-describedby="f-region-label"><span class="ms-text">{{ picked_text(region_names, '전체 지역', '곳') }}</span></summary>
+          <div class="ms-panel" role="group" aria-labelledby="f-region-label">
+            <div class="ms-body">
+              <div class="ms-sidos">
+                {% for sido in region_codes %}
+                <button type="button" class="ms-sido" data-sido="{{ sido }}" aria-pressed="{{ 'true' if sido == first_sido else 'false' }}">{{ sido }}<span class="ms-n"></span></button>
+                {% endfor %}
+              </div>
+              {% for sido, cities in region_codes.items() %}
+              {% set whole = sido in filters.region %}
+              <div class="ms-pane" data-sido="{{ sido }}" role="group" aria-label="{{ sido }}" {% if sido != first_sido %}hidden{% endif %}>
+                <label class="ms-opt ms-whole"><input type="checkbox" name="region" value="{{ sido }}" data-label="{{ sido }} 전체" data-whole {% if whole %}checked{% endif %}>{{ sido }} 전체</label>
+                <div class="ms-cities">
+                  {% for c in cities %}{% set code = sido ~ ' ' ~ c %}
+                  <label class="ms-opt"><input type="checkbox" name="region" value="{{ code }}" data-label="{{ code }}" {% if code in filters.region %}checked{% endif %} {% if whole %}disabled{% endif %}>{{ c }}</label>
+                  {% endfor %}
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+            <div class="ms-foot">
+              <div class="ms-chips" aria-live="polite"></div>
+              <button type="button" class="ms-clear">선택 해제</button>
+            </div>
+          </div>
+        </details>
+      </div>
+    </div>
+  </details>
+
+  <div class="f-search">
+    <label class="f-q-wrap">
+      <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="m13.5 13.5 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <input class="f-q" type="search" name="q" value="{{ filters.q }}" placeholder="제목·회사 검색" aria-label="제목·회사 검색">
+    </label>
+    <button type="submit" class="f-submit">조회</button>
+  </div>
+</form>
+<script>
+  // 조회하거나 공고 보기 탭을 옮기면 페이지가 새로 열려 맨 위로 올라가므로, 직전 스크롤 위치를 기억했다가 되돌린다.
+  // 탭: 탭이 화면에 보이고 있었으면 그 위치 그대로, 목록 아래로 내려가 탭이 가려져 있었으면 탭이 화면 위(메뉴 막대 아래)에 오게
+  (() => {
+    const KEY = "rc-filter-scroll";
+    try {
+      const y = sessionStorage.getItem(KEY);
+      if (y !== null) {
+        sessionStorage.removeItem(KEY);
+        // 목록까지 그려진 뒤에 옮겨야 페이지 높이가 모자라 덜 내려가는 일이 없다
+        document.addEventListener("DOMContentLoaded", () => window.scrollTo(0, Number(y)));
+      }
+      document.querySelector("form.filters").addEventListener("submit", () => {
+        sessionStorage.setItem(KEY, String(window.scrollY));
+      });
+      const tabs = document.querySelector(".view-tabs");
+      tabs?.addEventListener("click", (e) => {
+        const a = e.target.closest("a[href]");
+        if (!a || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;  // 새 탭으로 열기는 제외
+        const header = document.querySelector(".topbar")?.offsetHeight || 0;
+        const tabsTop = tabs.getBoundingClientRect().top + window.scrollY - header - 12;
+        const y = Math.round(Math.min(window.scrollY, Math.max(0, tabsTop)));
+        sessionStorage.setItem(KEY, String(y));
+        // 위치가 바뀌면 불러오는 동안 지금 화면에서 부드럽게 옮겨 두고, 새 화면은 같은 위치에서 이어서 보여준다
+        if (Math.abs(window.scrollY - y) > 2) {
+          const smooth = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+          window.scrollTo({ top: y, behavior: smooth ? "smooth" : "auto" });
+        }
+      });
+    } catch {}
+  })();
+</script>
+<script>
+  // 상세 조건: 모바일(760px 이하)에서는 고른 조건이 없을 때 접어 두고, PC로 넓어지면 항상 펼친다.
+  // 정렬은 결과 목록 위에 있고(폼 밖, form 속성으로 연결) 바꾸면 조회 버튼을 누른 것과 똑같이 조회한다.
+  // 정렬 선택지는 이 스크립트보다 뒤에 그려지므로 문서에서 위임으로 받는다.
+  (() => {
+    const more = document.querySelector(".f-more");
+    const mobile = window.matchMedia("(max-width: 760px)");
+    if (more && mobile.matches && more.dataset.active === "0") more.open = false;
+    mobile.addEventListener("change", (e) => { if (more && !e.matches) more.open = true; });
+    // 모바일에서 눌러 펼치면 상세 조건이 화면 위(메뉴 막대 아래)에 오도록 부드럽게 옮긴다 (처음 열린 상태로 그려질 때는 그대로)
+    let clicked = false;
+    more?.querySelector(":scope > summary").addEventListener("click", () => { clicked = true; });
+    more?.addEventListener("toggle", () => {
+      const byUser = clicked;
+      clicked = false;
+      if (!byUser || !more.open || !mobile.matches) return;
+      const smooth = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      more.scrollIntoView({ behavior: smooth ? "smooth" : "auto", block: "start" });
+    });
+    document.addEventListener("change", (e) => {
+      if (!e.target.matches("[data-autosubmit]")) return;
+      const form = e.target.form;
+      form?.requestSubmit(form.querySelector(".f-submit"));  // 조회 버튼으로 제출 (submit 이벤트·스크롤 유지 동일)
+    });
+  })();
+</script>
+
+{% if filters.view == 'fav' %}
+{% set sm = fav.summary %}
+<p class="fav-summary">
+  <span class="{% if sm.soon %}is-soon{% endif %}" data-sum="soon">마감 임박(7일 이내) <b>{{ sm.soon }}</b></span>
+  <span class="{% if sm.changed %}is-changed{% endif %}" data-sum="changed">최근 7일 변경 <b>{{ sm.changed }}</b></span>
+  <span data-sum="past">지난 공고 <b>{{ sm.past }}</b></span>
+</p>
+{% elif filters.view == 'company' %}
+<div class="fav-companies">
+  <span class="fav-companies-label">관심 회사</span>
+  {# ×를 누르면 관심 회사에서 빼고, 같은 이름의 관심 회사가 더 없으면 그 회사의 공고를 아래 목록에서 바로 뺀다 (favorite.js) #}
+  {% for c in fav.companies %}<span class="fav-company" data-key="{{ c.name_key or '' }}"><a href="/salary/c/{{ c.company_id }}" title="{{ c.address or '' }}">{{ c.name }}</a><button type="button" class="fav-company-del" data-company-id="{{ c.company_id }}" data-name="{{ c.name }}" aria-label="관심 회사에서 {{ c.name }} 빼기" title="관심 회사에서 빼기">×</button></span>{% endfor %}
+  <span class="muted fav-companies-empty" {% if fav.companies %}hidden{% endif %}>아직 없습니다.</span>
+  <a class="fav-companies-add" href="/salary">연봉·인원에서 회사 즐겨찾기 →</a>
+</div>
+{% endif %}
+<div class="result-bar">
+  <p class="result-count"><span data-total="{{ total }}">{{ "{:,}".format(total) }}</span>건 <span class="muted">· {{ queried_at }} 조회 기준</span></p>
+  {# 정렬·페이지당 표시 수: 폼 밖이지만 form 속성으로 함께 전송되고, 바꾸면 바로 조회한다 (1페이지부터) #}
+  <div class="result-tools">
+    <label class="sort-field"><span class="sr-only">정렬</span>
+      <select name="sort" form="filters" data-autosubmit>
+        {% for key, label in sort_labels.items() %}<option value="{{ key }}" {% if filters.sort == key %}selected{% endif %}>{{ label }}</option>{% endfor %}
+      </select>
+    </label>
+    <label class="sort-field"><span class="sr-only">페이지당 표시 수</span>
+      <select name="size" form="filters" data-autosubmit>
+        {% for n in page_sizes %}<option value="{{ n }}" {% if filters.size == n %}selected{% endif %}>{{ n }}개씩</option>{% endfor %}
+      </select>
+    </label>
+  </div>
+</div>
+
+{% if rows %}
+{# 즐겨찾기 탭에서 별을 해제하면 그 공고를 목록에서 빼고 숫자를 줄인다 (favorite.js). data-sum: 위 요약 중 이 공고가 속한 것 #}
+<ul class="list" data-view="{{ filters.view }}">
+  {% set ns = namespace(past=false) %}
+  {% for p in rows %}
+  {% if filters.view == 'fav' and p.id in fav.past_ids and not ns.past %}{% set ns.past = true %}
+  <li class="list-divider" role="presentation"><span>지난 공고</span></li>
+  {% endif %}
+  {% set sums = [] %}
+  {% if filters.view == 'fav' %}
+    {% if p.status == 'ACTIVE' and p.deadline_at and 0 <= (p.deadline_at - today).days <= 7 %}{% set _ = sums.append('soon') %}{% endif %}
+    {% if p.id in changed %}{% set _ = sums.append('changed') %}{% endif %}
+    {% if p.id in fav.past_ids %}{% set _ = sums.append('past') %}{% endif %}
+  {% endif %}
+  <li class="item {% if p.status == 'DELETED' %}is-deleted{% endif %}" {% if sums %}data-sum="{{ sums | join(' ') }}"{% endif %} {% if filters.view == 'company' %}data-company-key="{{ p.company_key or '' }}"{% endif %}>
+    <div class="item-main">
+      <div class="item-top">
+        <span class="site site-{{ p.site }}">{{ site_labels.get(p.site, p.site) }}</span>
+        {# 회사명: 연봉·인원 메뉴를 쓸 수 있으면 그 회사명으로 연봉·인원 검색 (/salary?q= 는 바로 검색한다) #}
+        {% if p.company and access.can_view_salary %}<a class="company company-link" href="/salary?q={{ p.company | urlencode }}" title="연봉·인원에서 '{{ p.company }}' 검색">{{ p.company | highlight(filters.q) }}</a>
+        {% else %}<span class="company">{{ p.company | highlight(filters.q) }}</span>{% endif %}
+        {% if p.company %}<button type="button" class="review-btn" data-company="{{ p.company }}" aria-haspopup="dialog">리뷰</button><button type="button" class="salary-btn" data-posting="{{ p.id }}" data-company="{{ p.company }}" aria-haspopup="dialog">연봉</button>{% endif %}
+        {% if p.headhunting %}<span class="pill pill-hh" title="헤드헌팅(서치펌) 공고">헤드헌팅</span>{% endif %}
+        {% if p.status == 'DELETED' %}<span class="pill pill-deleted">삭제됨</span>{% endif %}
+      </div>
+      {# 즐겨찾기 별: 로그인 사용 중 로그인한 사용자만 (static/favorite.js) #}
+      {% if access.can_favorite %}
+      {% set is_fav = p.id in favorites %}
+      <div class="title-row">
+        <button type="button" class="fav-btn{% if is_fav %} is-on{% endif %}" data-fav-kind="postings" data-fav-id="{{ p.id }}" data-fav-name="{{ p.title }}"
+          aria-pressed="{{ 'true' if is_fav else 'false' }}" aria-label="공고 즐겨찾기" title="{{ '즐겨찾기 해제' if is_fav else '즐겨찾기' }}"></button>
+        <a class="title" href="/postings/{{ p.id }}">{{ p.title | highlight(filters.q) }}</a>
+        {# 즐겨찾기 공고: 마감 D-day·변경됨. 관심 회사 탭: 새로 수집된 공고에 NEW #}
+        {% set dd = dday_badge(p, today) if is_fav else none %}
+        {% if (fav and p.id in fav.new_ids) or dd or p.id in changed %}
+        <span class="title-badges">
+          {% if fav and p.id in fav.new_ids %}<span class="badge badge-new" data-new-id="{{ p.id }}">NEW</span>{% endif %}
+          {% if dd %}<span class="badge badge-dday is-{{ dd[1] }}">{{ dd[0] }}</span>{% endif %}
+          {% if p.id in changed %}<a class="badge badge-changed" href="/postings/{{ p.id }}#history" title="최근 7일: {{ changed[p.id] }}">변경됨</a>{% endif %}
+        </span>
+        {% endif %}
+      </div>
+      {% else %}
+      <a class="title" href="/postings/{{ p.id }}">{{ p.title | highlight(filters.q) }}</a>
+      {% endif %}
+      <div class="meta">
+        {% for v in [p.location, p.career, p.education, p.employment_type] if v %}<span>{{ v }}</span>{% endfor %}
+      </div>
+    </div>
+    <div class="item-side">
+      {% set dl = deadline_label(p) %}
+      {% if dl %}<span class="deadline {% if p.deadline_at and (filters.sort == 'deadline') %}is-focus{% endif %}">{{ dl }}</span>{% endif %}
+      <dl class="times">
+        {% if p.posted_at %}<div {% if filters.sort == 'posted' %}class="is-focus"{% endif %}><dt>등록</dt><dd>{{ posted_label(p, short=True) }}</dd></div>{% endif %}
+        <div {% if filters.sort == 'collected' %}class="is-focus"{% endif %}><dt>수집</dt><dd>{{ p.last_seen_at | kst('%m-%d %H:%M') }}</dd></div>
+        {% if filters.sort == 'updated' %}<div class="is-focus"><dt>변경</dt><dd>{{ p.updated_at | kst('%m-%d %H:%M') }}</dd></div>{% endif %}
+      </dl>
+      <a class="origin" href="{{ p.detail_url }}" target="_blank" rel="noopener noreferrer">원문 ↗</a>
+    </div>
+  </li>
+  {% endfor %}
+</ul>
+
+{% if pages > 1 %}
+<nav class="pager" aria-label="페이지">
+  {% if page > 1 %}<a href="{{ page_url(page - 1) }}">← 이전</a>{% else %}<span class="disabled">← 이전</span>{% endif %}
+  <span class="pager-pos">{{ page }} / {{ pages }}</span>
+  {% if page < pages %}<a href="{{ page_url(page + 1) }}">다음 →</a>{% else %}<span class="disabled">다음 →</span>{% endif %}
+</nav>
+{% endif %}
+{% else %}
+{% if filters.view == 'fav' and not fav.summary.total %}
+<div class="empty">즐겨찾기한 공고가 없습니다. 공고 제목 왼쪽의 ☆을 누르면 여기에 모입니다.</div>
+{% elif filters.view == 'company' and not fav.companies %}
+<div class="empty">즐겨찾기한 회사가 없습니다. <a href="/salary">연봉·인원</a>에서 회사를 검색해 ☆을 누르면, 그 회사의 공고가 여기에 모입니다.</div>
+{% elif filters.view == 'company' %}
+<div class="empty">조건에 맞는 관심 회사의 진행 중 공고가 없습니다.</div>
+{% else %}
+<div class="empty">조건에 맞는 공고가 없습니다.</div>
+{% endif %}
+{% endif %}
+
+<script src="/static/multi_select.js?v=1" defer></script>
+<script src="/static/status.js?v=10" defer></script>
+{% endblock %}

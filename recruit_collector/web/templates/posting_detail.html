@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block title %}{{ p.title }}{% endblock %}
+{% block content %}
+<a class="back" href="javascript:history.back()">← 목록</a>
+
+<article class="detail">
+  <div class="item-top">
+    <span class="site site-{{ p.site }}">{{ site_labels.get(p.site, p.site) }}</span>
+    <span class="company">{{ p.company }}</span>
+    {% if p.company %}<button type="button" class="review-btn" data-company="{{ p.company }}" aria-haspopup="dialog">리뷰</button><button type="button" class="salary-btn" data-posting="{{ p.id }}" data-company="{{ p.company }}" aria-haspopup="dialog">연봉</button>{% endif %}
+    {% if p.status == 'DELETED' %}<span class="pill pill-deleted">삭제됨 · {{ p.deleted_at | kst }}</span>{% else %}<span class="pill pill-active">활성</span>{% endif %}
+  </div>
+  {# 즐겨찾기 별: 공고 목록과 같은 조건 (로그인 사용 중 로그인한 사용자만, static/favorite.js) #}
+  {% if access.can_favorite %}
+  <div class="title-row">
+    <button type="button" class="fav-btn{% if favorite %} is-on{% endif %}" data-fav-kind="postings" data-fav-id="{{ p.id }}" data-fav-name="{{ p.title }}"
+      aria-pressed="{{ 'true' if favorite else 'false' }}" aria-label="공고 즐겨찾기" title="{{ '즐겨찾기 해제' if favorite else '즐겨찾기' }}"></button>
+    <h1>{{ p.title }}</h1>
+  </div>
+  {% else %}
+  <h1>{{ p.title }}</h1>
+  {% endif %}
+  <a class="btn-origin" href="{{ p.detail_url }}" target="_blank" rel="noopener noreferrer">원문 공고 보기 ↗</a>
+
+  <dl class="fields">
+    <div><dt>지역</dt><dd>{{ p.location or '-' }}</dd></div>
+    <div><dt>경력</dt><dd>{{ p.career or '-' }}</dd></div>
+    <div><dt>학력</dt><dd>{{ p.education or '-' }}</dd></div>
+    <div><dt>고용형태</dt><dd>{{ p.employment_type or '-' }}</dd></div>
+    <div><dt>마감</dt><dd>{{ deadline_label(p) or '-' }}</dd></div>
+    <div><dt>공고 ID</dt><dd class="mono">{{ p.external_id }}</dd></div>
+    <div><dt>등록 (사이트)</dt><dd>{{ posted_label(p) or '-' }}</dd></div>
+    <div><dt>처음 수집</dt><dd>{{ p.first_seen_at | kst }}</dd></div>
+    <div><dt>최근 수집</dt><dd>{{ p.last_seen_at | kst }}</dd></div>
+    <div><dt>최근 변경</dt><dd>{{ p.updated_at | kst }}</dd></div>
+    <div><dt>마감 원문</dt><dd>{{ p.deadline or '-' }}</dd></div>
+    <div><dt>상태</dt><dd>{{ '활성' if p.status == 'ACTIVE' else '삭제됨' }}</dd></div>
+  </dl>
+
+  <h2>발견된 검색 조건</h2>
+  {% if searches %}
+  <div class="chips">
+    {% for s in searches %}<a class="chip" href="/runs?search={{ s.search_name | urlencode }}">{{ s.search_name }}{% if s.missed_runs %} <span class="muted">· {{ s.missed_runs }}회 누락</span>{% endif %}</a>{% endfor %}
+  </div>
+  {% else %}<p class="muted">현재 추적 중인 검색 조건이 없습니다.</p>{% endif %}
+
+  <h2 id="history">이력</h2>
+  <ol class="timeline">
+    {% for e in events %}
+    <li>
+      <div class="ev-head">
+        <span class="ev ev-{{ e.event_type | lower }}">{{ {'CREATED': '신규', 'UPDATED': '변경', 'DELETED': '삭제', 'REACTIVATED': '재등장'}.get(e.event_type, e.event_type) }}</span>
+        <time>{{ e.created_at | kst }}</time>
+      </div>
+      {% if e.changes %}
+      <table class="diff">
+        {% for field, (old, new) in e.changes.items() %}
+        <tr><th>{{ field }}</th><td class="old">{{ old if old is not none else '∅' }}</td><td class="arrow">→</td><td class="new">{{ new if new is not none else '∅' }}</td></tr>
+        {% endfor %}
+      </table>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ol>
+
+  <details class="raw">
+    <summary>원본 데이터 (raw)</summary>
+    <pre>{{ raw_json }}</pre>
+  </details>
+</article>
+{% endblock %}
