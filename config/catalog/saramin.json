@@ -1,0 +1,2094 @@
+{
+ "site": "saramin_hh",
+ "field": "job_keywords",
+ "fetched_at": "2026-11-14T16:40:22+09:00",
+ "options": [
+  {
+   "value": "2247",
+   "name": "개발PM",
+   "group": "직무·직업",
+   "terms": [
+    "개발pm"
+   ]
+  },
+  {
+   "value": "80",
+   "name": "게임개발",
+   "group": "직무·직업",
+   "terms": [
+    "게임"
+   ]
+  },
+  {
+   "value": "81",
+   "name": "기술지원",
+   "group": "직무·직업",
+   "terms": [
+    "기술지원"
+   ]
+  },
+  {
+   "value": "2248",
+   "name": "데이터 사이언티스트",
+   "group": "직무·직업",
+   "terms": [
+    "데이터사이언티스트"
+   ]
+  },
+  {
+   "value": "82",
+   "name": "데이터분석가",
+   "group": "직무·직업",
+   "terms": [
+    "데이터분석가"
+   ]
+  },
+  {
+   "value": "83",
+   "name": "데이터엔지니어",
+   "group": "직무·직업",
+   "terms": [
+    "데이터"
+   ]
+  },
+  {
+   "value": "84",
+   "name": "백엔드/서버개발",
+   "group": "직무·직업",
+   "terms": [
+    "백엔드",
+    "서버"
+   ]
+  },
+  {
+   "value": "2239",
+   "name": "보안관제",
+   "group": "직무·직업",
+   "terms": [
+    "보안관제"
+   ]
+  },
+  {
+   "value": "85",
+   "name": "보안컨설팅",
+   "group": "직무·직업",
+   "terms": [
+    "보안컨설팅"
+   ]
+  },
+  {
+   "value": "86",
+   "name": "앱개발",
+   "group": "직무·직업",
+   "terms": [
+    "앱"
+   ]
+  },
+  {
+   "value": "87",
+   "name": "웹개발",
+   "group": "직무·직업",
+   "terms": [
+    "웹"
+   ]
+  },
+  {
+   "value": "88",
+   "name": "웹마스터",
+   "group": "직무·직업",
+   "terms": [
+    "웹마스터"
+   ]
+  },
+  {
+   "value": "89",
+   "name": "유지보수",
+   "group": "직무·직업",
+   "terms": [
+    "유지보수"
+   ]
+  },
+  {
+   "value": "90",
+   "name": "정보보안",
+   "group": "직무·직업",
+   "terms": [
+    "정보보안"
+   ]
+  },
+  {
+   "value": "91",
+   "name": "퍼블리셔",
+   "group": "직무·직업",
+   "terms": [
+    "퍼블리셔"
+   ]
+  },
+  {
+   "value": "92",
+   "name": "프론트엔드",
+   "group": "직무·직업",
+   "terms": [
+    "프론트엔드"
+   ]
+  },
+  {
+   "value": "2246",
+   "name": "BI 엔지니어",
+   "group": "직무·직업",
+   "terms": [
+    "bi"
+   ]
+  },
+  {
+   "value": "93",
+   "name": "CISO",
+   "group": "직무·직업",
+   "terms": [
+    "ciso"
+   ]
+  },
+  {
+   "value": "94",
+   "name": "CPO",
+   "group": "직무·직업",
+   "terms": [
+    "cpo"
+   ]
+  },
+  {
+   "value": "95",
+   "name": "DBA",
+   "group": "직무·직업",
+   "terms": [
+    "dba"
+   ]
+  },
+  {
+   "value": "96",
+   "name": "FAE",
+   "group": "직무·직업",
+   "terms": [
+    "fae"
+   ]
+  },
+  {
+   "value": "97",
+   "name": "GM(게임운영)",
+   "group": "직무·직업",
+   "terms": [
+    "gm게임운영"
+   ]
+  },
+  {
+   "value": "102",
+   "name": "ICT컨설팅",
+   "group": "직무·직업",
+   "terms": [
+    "ict컨설팅"
+   ]
+  },
+  {
+   "value": "98",
+   "name": "IT컨설팅",
+   "group": "직무·직업",
+   "terms": [
+    "it컨설팅"
+   ]
+  },
+  {
+   "value": "99",
+   "name": "QA/테스터",
+   "group": "직무·직업",
+   "terms": [
+    "qa",
+    "테스터"
+   ]
+  },
+  {
+   "value": "100",
+   "name": "SE(시스템엔지니어)",
+   "group": "직무·직업",
+   "terms": [
+    "se시스템"
+   ]
+  },
+  {
+   "value": "101",
+   "name": "SI개발",
+   "group": "직무·직업",
+   "terms": [
+    "si"
+   ]
+  },
+  {
+   "value": "2229",
+   "name": "SQA",
+   "group": "직무·직업",
+   "terms": [
+    "sqa"
+   ]
+  },
+  {
+   "value": "103",
+   "name": "검색엔진",
+   "group": "전문분야",
+   "terms": [
+    "검색엔진"
+   ]
+  },
+  {
+   "value": "104",
+   "name": "네트워크",
+   "group": "전문분야",
+   "terms": [
+    "네트워크"
+   ]
+  },
+  {
+   "value": "105",
+   "name": "데이터라벨링",
+   "group": "전문분야",
+   "terms": [
+    "데이터라벨링"
+   ]
+  },
+  {
+   "value": "106",
+   "name": "데이터마이닝",
+   "group": "전문분야",
+   "terms": [
+    "데이터마이닝"
+   ]
+  },
+  {
+   "value": "107",
+   "name": "데이터시각화",
+   "group": "전문분야",
+   "terms": [
+    "데이터시각화"
+   ]
+  },
+  {
+   "value": "108",
+   "name": "딥러닝",
+   "group": "전문분야",
+   "terms": [
+    "딥러닝"
+   ]
+  },
+  {
+   "value": "2256",
+   "name": "루비온레일즈",
+   "group": "전문분야",
+   "terms": [
+    "루비온레일즈"
+   ]
+  },
+  {
+   "value": "109",
+   "name": "머신러닝",
+   "group": "전문분야",
+   "terms": [
+    "머신러닝"
+   ]
+  },
+  {
+   "value": "2231",
+   "name": "메타버스",
+   "group": "전문분야",
+   "terms": [
+    "메타버스"
+   ]
+  },
+  {
+   "value": "110",
+   "name": "모델링",
+   "group": "전문분야",
+   "terms": [
+    "모델링"
+   ]
+  },
+  {
+   "value": "111",
+   "name": "모의해킹",
+   "group": "전문분야",
+   "terms": [
+    "모의해킹"
+   ]
+  },
+  {
+   "value": "112",
+   "name": "미들웨어",
+   "group": "전문분야",
+   "terms": [
+    "미들웨어"
+   ]
+  },
+  {
+   "value": "113",
+   "name": "반응형웹",
+   "group": "전문분야",
+   "terms": [
+    "반응형웹"
+   ]
+  },
+  {
+   "value": "114",
+   "name": "방화벽",
+   "group": "전문분야",
+   "terms": [
+    "방화벽"
+   ]
+  },
+  {
+   "value": "115",
+   "name": "블록체인",
+   "group": "전문분야",
+   "terms": [
+    "블록체인"
+   ]
+  },
+  {
+   "value": "116",
+   "name": "빅데이터",
+   "group": "전문분야",
+   "terms": [
+    "빅데이터"
+   ]
+  },
+  {
+   "value": "117",
+   "name": "빌링",
+   "group": "전문분야",
+   "terms": [
+    "빌링"
+   ]
+  },
+  {
+   "value": "118",
+   "name": "솔루션",
+   "group": "전문분야",
+   "terms": [
+    "솔루션"
+   ]
+  },
+  {
+   "value": "119",
+   "name": "스크립트",
+   "group": "전문분야",
+   "terms": [
+    "스크립트"
+   ]
+  },
+  {
+   "value": "120",
+   "name": "신경망",
+   "group": "전문분야",
+   "terms": [
+    "신경망"
+   ]
+  },
+  {
+   "value": "180",
+   "name": "아키텍쳐",
+   "group": "전문분야",
+   "terms": [
+    "아키텍쳐"
+   ]
+  },
+  {
+   "value": "121",
+   "name": "악성코드",
+   "group": "전문분야",
+   "terms": [
+    "악성코드"
+   ]
+  },
+  {
+   "value": "122",
+   "name": "알고리즘",
+   "group": "전문분야",
+   "terms": [
+    "알고리즘"
+   ]
+  },
+  {
+   "value": "2251",
+   "name": "암호화폐",
+   "group": "전문분야",
+   "terms": [
+    "암호화폐"
+   ]
+  },
+  {
+   "value": "123",
+   "name": "영상처리",
+   "group": "전문분야",
+   "terms": [
+    "영상처리"
+   ]
+  },
+  {
+   "value": "124",
+   "name": "웹표준·웹접근성",
+   "group": "전문분야",
+   "terms": [
+    "웹접근성",
+    "웹표준"
+   ]
+  },
+  {
+   "value": "125",
+   "name": "음성인식",
+   "group": "전문분야",
+   "terms": [
+    "음성인식"
+   ]
+  },
+  {
+   "value": "126",
+   "name": "이미지프로세싱",
+   "group": "전문분야",
+   "terms": [
+    "이미지프로세싱"
+   ]
+  },
+  {
+   "value": "183",
+   "name": "인터페이스",
+   "group": "전문분야",
+   "terms": [
+    "인터페이스"
+   ]
+  },
+  {
+   "value": "127",
+   "name": "인프라",
+   "group": "전문분야",
+   "terms": [
+    "인프라"
+   ]
+  },
+  {
+   "value": "128",
+   "name": "임베디드",
+   "group": "전문분야",
+   "terms": [
+    "임베디드"
+   ]
+  },
+  {
+   "value": "129",
+   "name": "자율주행",
+   "group": "전문분야",
+   "terms": [
+    "자율주행"
+   ]
+  },
+  {
+   "value": "130",
+   "name": "정보통신",
+   "group": "전문분야",
+   "terms": [
+    "정보통신"
+   ]
+  },
+  {
+   "value": "131",
+   "name": "챗봇",
+   "group": "전문분야",
+   "terms": [
+    "챗봇"
+   ]
+  },
+  {
+   "value": "132",
+   "name": "취약점진단",
+   "group": "전문분야",
+   "terms": [
+    "취약점진단"
+   ]
+  },
+  {
+   "value": "133",
+   "name": "컴퓨터비전",
+   "group": "전문분야",
+   "terms": [
+    "컴퓨터비전"
+   ]
+  },
+  {
+   "value": "134",
+   "name": "크로스브라우징",
+   "group": "전문분야",
+   "terms": [
+    "크로스브라우징"
+   ]
+  },
+  {
+   "value": "2255",
+   "name": "크로스플랫폼",
+   "group": "전문분야",
+   "terms": [
+    "크로스플랫폼"
+   ]
+  },
+  {
+   "value": "135",
+   "name": "크롤링",
+   "group": "전문분야",
+   "terms": [
+    "크롤링"
+   ]
+  },
+  {
+   "value": "136",
+   "name": "클라우드",
+   "group": "전문분야",
+   "terms": [
+    "클라우드"
+   ]
+  },
+  {
+   "value": "2249",
+   "name": "클라이언트",
+   "group": "전문분야",
+   "terms": [
+    "클라이언트"
+   ]
+  },
+  {
+   "value": "137",
+   "name": "텍스트마이닝",
+   "group": "전문분야",
+   "terms": [
+    "텍스트마이닝"
+   ]
+  },
+  {
+   "value": "138",
+   "name": "트러블슈팅",
+   "group": "전문분야",
+   "terms": [
+    "트러블슈팅"
+   ]
+  },
+  {
+   "value": "139",
+   "name": "펌웨어",
+   "group": "전문분야",
+   "terms": [
+    "펌웨어"
+   ]
+  },
+  {
+   "value": "140",
+   "name": "플러그인",
+   "group": "전문분야",
+   "terms": [
+    "플러그인"
+   ]
+  },
+  {
+   "value": "141",
+   "name": "핀테크",
+   "group": "전문분야",
+   "terms": [
+    "핀테크"
+   ]
+  },
+  {
+   "value": "2230",
+   "name": "헬스케어",
+   "group": "전문분야",
+   "terms": [
+    "헬스케어"
+   ]
+  },
+  {
+   "value": "181",
+   "name": "AI(인공지능)",
+   "group": "전문분야",
+   "terms": [
+    "ai인공지능"
+   ]
+  },
+  {
+   "value": "142",
+   "name": "API",
+   "group": "전문분야",
+   "terms": [
+    "api"
+   ]
+  },
+  {
+   "value": "143",
+   "name": "APM",
+   "group": "전문분야",
+   "terms": [
+    "apm"
+   ]
+  },
+  {
+   "value": "144",
+   "name": "AR(증강현실)",
+   "group": "전문분야",
+   "terms": [
+    "ar증강현실"
+   ]
+  },
+  {
+   "value": "2253",
+   "name": "Dapp",
+   "group": "전문분야",
+   "terms": [
+    "dapp"
+   ]
+  },
+  {
+   "value": "145",
+   "name": "DBMS",
+   "group": "전문분야",
+   "terms": [
+    "dbms"
+   ]
+  },
+  {
+   "value": "146",
+   "name": "DevOps",
+   "group": "전문분야",
+   "terms": [
+    "devops"
+   ]
+  },
+  {
+   "value": "2254",
+   "name": "DID",
+   "group": "전문분야",
+   "terms": [
+    "did"
+   ]
+  },
+  {
+   "value": "147",
+   "name": "DLP",
+   "group": "전문분야",
+   "terms": [
+    "dlp"
+   ]
+  },
+  {
+   "value": "148",
+   "name": "DW",
+   "group": "전문분야",
+   "terms": [
+    "dw"
+   ]
+  },
+  {
+   "value": "149",
+   "name": "ERP",
+   "group": "전문분야",
+   "terms": [
+    "erp"
+   ]
+  },
+  {
+   "value": "150",
+   "name": "ETL",
+   "group": "전문분야",
+   "terms": [
+    "etl"
+   ]
+  },
+  {
+   "value": "151",
+   "name": "FPGA",
+   "group": "전문분야",
+   "terms": [
+    "fpga"
+   ]
+  },
+  {
+   "value": "152",
+   "name": "GIS",
+   "group": "전문분야",
+   "terms": [
+    "gis"
+   ]
+  },
+  {
+   "value": "153",
+   "name": "H/W",
+   "group": "전문분야",
+   "terms": [
+    "h",
+    "w"
+   ]
+  },
+  {
+   "value": "2250",
+   "name": "HTTP",
+   "group": "전문분야",
+   "terms": [
+    "http"
+   ]
+  },
+  {
+   "value": "154",
+   "name": "IDC",
+   "group": "전문분야",
+   "terms": [
+    "idc"
+   ]
+  },
+  {
+   "value": "155",
+   "name": "IIS",
+   "group": "전문분야",
+   "terms": [
+    "iis"
+   ]
+  },
+  {
+   "value": "156",
+   "name": "IoT",
+   "group": "전문분야",
+   "terms": [
+    "iot"
+   ]
+  },
+  {
+   "value": "157",
+   "name": "ISMS",
+   "group": "전문분야",
+   "terms": [
+    "isms"
+   ]
+  },
+  {
+   "value": "158",
+   "name": "MCU",
+   "group": "전문분야",
+   "terms": [
+    "mcu"
+   ]
+  },
+  {
+   "value": "2252",
+   "name": "MMORPG",
+   "group": "전문분야",
+   "terms": [
+    "mmorpg"
+   ]
+  },
+  {
+   "value": "159",
+   "name": "Nginx",
+   "group": "전문분야",
+   "terms": [
+    "nginx"
+   ]
+  },
+  {
+   "value": "160",
+   "name": "NLP(자연어처리)",
+   "group": "전문분야",
+   "terms": [
+    "nlp자연어처리"
+   ]
+  },
+  {
+   "value": "161",
+   "name": "NLU(자연어이해)",
+   "group": "전문분야",
+   "terms": [
+    "nlu자연어이해"
+   ]
+  },
+  {
+   "value": "162",
+   "name": "OCR",
+   "group": "전문분야",
+   "terms": [
+    "ocr"
+   ]
+  },
+  {
+   "value": "163",
+   "name": "OLAP",
+   "group": "전문분야",
+   "terms": [
+    "olap"
+   ]
+  },
+  {
+   "value": "164",
+   "name": "RDBMS",
+   "group": "전문분야",
+   "terms": [
+    "rdbms"
+   ]
+  },
+  {
+   "value": "165",
+   "name": "RPA",
+   "group": "전문분야",
+   "terms": [
+    "rpa"
+   ]
+  },
+  {
+   "value": "166",
+   "name": "RTOS",
+   "group": "전문분야",
+   "terms": [
+    "rtos"
+   ]
+  },
+  {
+   "value": "167",
+   "name": "S/W",
+   "group": "전문분야",
+   "terms": [
+    "s",
+    "w"
+   ]
+  },
+  {
+   "value": "168",
+   "name": "SAP",
+   "group": "전문분야",
+   "terms": [
+    "sap"
+   ]
+  },
+  {
+   "value": "169",
+   "name": "SDK",
+   "group": "전문분야",
+   "terms": [
+    "sdk"
+   ]
+  },
+  {
+   "value": "170",
+   "name": "SOA",
+   "group": "전문분야",
+   "terms": [
+    "soa"
+   ]
+  },
+  {
+   "value": "171",
+   "name": "STT",
+   "group": "전문분야",
+   "terms": [
+    "stt"
+   ]
+  },
+  {
+   "value": "172",
+   "name": "TTS",
+   "group": "전문분야",
+   "terms": [
+    "tts"
+   ]
+  },
+  {
+   "value": "173",
+   "name": "UTM",
+   "group": "전문분야",
+   "terms": [
+    "utm"
+   ]
+  },
+  {
+   "value": "174",
+   "name": "VDI",
+   "group": "전문분야",
+   "terms": [
+    "vdi"
+   ]
+  },
+  {
+   "value": "175",
+   "name": "VMware",
+   "group": "전문분야",
+   "terms": [
+    "vmware"
+   ]
+  },
+  {
+   "value": "176",
+   "name": "VoIP",
+   "group": "전문분야",
+   "terms": [
+    "voip"
+   ]
+  },
+  {
+   "value": "177",
+   "name": "VPN",
+   "group": "전문분야",
+   "terms": [
+    "vpn"
+   ]
+  },
+  {
+   "value": "178",
+   "name": "VR(가상현실)",
+   "group": "전문분야",
+   "terms": [
+    "vr가상현실"
+   ]
+  },
+  {
+   "value": "179",
+   "name": "WCF",
+   "group": "전문분야",
+   "terms": [
+    "wcf"
+   ]
+  },
+  {
+   "value": "182",
+   "name": "Windows",
+   "group": "전문분야",
+   "terms": [
+    "windows"
+   ]
+  },
+  {
+   "value": "2260",
+   "name": "3D",
+   "group": "전문분야",
+   "terms": [
+    "3d"
+   ]
+  },
+  {
+   "value": "185",
+   "name": "그누보드",
+   "group": "기술스택",
+   "terms": [
+    "그누보드"
+   ]
+  },
+  {
+   "value": "186",
+   "name": "라즈베리파이",
+   "group": "기술스택",
+   "terms": [
+    "라즈베리파이"
+   ]
+  },
+  {
+   "value": "187",
+   "name": "쉘스크립트",
+   "group": "기술스택",
+   "terms": [
+    "쉘스크립트"
+   ]
+  },
+  {
+   "value": "2234",
+   "name": "스마트컨트랙트",
+   "group": "기술스택",
+   "terms": [
+    "스마트컨트랙트"
+   ]
+  },
+  {
+   "value": "319",
+   "name": "아두이노",
+   "group": "기술스택",
+   "terms": [
+    "아두이노"
+   ]
+  },
+  {
+   "value": "188",
+   "name": "액션스크립트",
+   "group": "기술스택",
+   "terms": [
+    "액션스크립트"
+   ]
+  },
+  {
+   "value": "189",
+   "name": "어셈블리",
+   "group": "기술스택",
+   "terms": [
+    "어셈블리"
+   ]
+  },
+  {
+   "value": "190",
+   "name": "와이어샤크",
+   "group": "기술스택",
+   "terms": [
+    "와이어샤크"
+   ]
+  },
+  {
+   "value": "320",
+   "name": "임베디드리눅스",
+   "group": "기술스택",
+   "terms": [
+    "임베디드리눅스"
+   ]
+  },
+  {
+   "value": "191",
+   "name": "파워빌더",
+   "group": "기술스택",
+   "terms": [
+    "파워빌더"
+   ]
+  },
+  {
+   "value": "2232",
+   "name": "풀스택",
+   "group": "기술스택",
+   "terms": [
+    "풀스택"
+   ]
+  },
+  {
+   "value": "184",
+   "name": ".NET",
+   "group": "기술스택",
+   "terms": [
+    ".net"
+   ]
+  },
+  {
+   "value": "192",
+   "name": "ABAP",
+   "group": "기술스택",
+   "terms": [
+    "abap"
+   ]
+  },
+  {
+   "value": "193",
+   "name": "AIX",
+   "group": "기술스택",
+   "terms": [
+    "aix"
+   ]
+  },
+  {
+   "value": "194",
+   "name": "Ajax",
+   "group": "기술스택",
+   "terms": [
+    "ajax"
+   ]
+  },
+  {
+   "value": "195",
+   "name": "Android",
+   "group": "기술스택",
+   "terms": [
+    "android"
+   ]
+  },
+  {
+   "value": "196",
+   "name": "Angular",
+   "group": "기술스택",
+   "terms": [
+    "angular"
+   ]
+  },
+  {
+   "value": "197",
+   "name": "Apache",
+   "group": "기술스택",
+   "terms": [
+    "apache"
+   ]
+  },
+  {
+   "value": "198",
+   "name": "ArcGIS",
+   "group": "기술스택",
+   "terms": [
+    "arcgis"
+   ]
+  },
+  {
+   "value": "199",
+   "name": "ASP",
+   "group": "기술스택",
+   "terms": [
+    "asp"
+   ]
+  },
+  {
+   "value": "200",
+   "name": "ASP.NET",
+   "group": "기술스택",
+   "terms": [
+    "asp.net"
+   ]
+  },
+  {
+   "value": "201",
+   "name": "AWS",
+   "group": "기술스택",
+   "terms": [
+    "aws"
+   ]
+  },
+  {
+   "value": "202",
+   "name": "Azure",
+   "group": "기술스택",
+   "terms": [
+    "azure"
+   ]
+  },
+  {
+   "value": "203",
+   "name": "Bootstrap",
+   "group": "기술스택",
+   "terms": [
+    "bootstrap"
+   ]
+  },
+  {
+   "value": "204",
+   "name": "C#",
+   "group": "기술스택",
+   "terms": [
+    "c#"
+   ]
+  },
+  {
+   "value": "205",
+   "name": "C++",
+   "group": "기술스택",
+   "terms": [
+    "c++"
+   ]
+  },
+  {
+   "value": "207",
+   "name": "CentOS",
+   "group": "기술스택",
+   "terms": [
+    "centos"
+   ]
+  },
+  {
+   "value": "208",
+   "name": "COBOL",
+   "group": "기술스택",
+   "terms": [
+    "cobol"
+   ]
+  },
+  {
+   "value": "209",
+   "name": "CSS",
+   "group": "기술스택",
+   "terms": [
+    "css"
+   ]
+  },
+  {
+   "value": "210",
+   "name": "CSS3",
+   "group": "기술스택",
+   "terms": [
+    "css3"
+   ]
+  },
+  {
+   "value": "206",
+   "name": "C언어",
+   "group": "기술스택",
+   "terms": [
+    "c언어"
+   ]
+  },
+  {
+   "value": "211",
+   "name": "Delphi",
+   "group": "기술스택",
+   "terms": [
+    "delphi"
+   ]
+  },
+  {
+   "value": "212",
+   "name": "Directx",
+   "group": "기술스택",
+   "terms": [
+    "directx"
+   ]
+  },
+  {
+   "value": "213",
+   "name": "Django",
+   "group": "기술스택",
+   "terms": [
+    "django"
+   ]
+  },
+  {
+   "value": "214",
+   "name": "Docker",
+   "group": "기술스택",
+   "terms": [
+    "docker"
+   ]
+  },
+  {
+   "value": "215",
+   "name": "Eclipse",
+   "group": "기술스택",
+   "terms": [
+    "eclipse"
+   ]
+  },
+  {
+   "value": "216",
+   "name": "ECMAScript",
+   "group": "기술스택",
+   "terms": [
+    "ecmascript"
+   ]
+  },
+  {
+   "value": "217",
+   "name": "ElasticStack",
+   "group": "기술스택",
+   "terms": [
+    "elasticstack"
+   ]
+  },
+  {
+   "value": "218",
+   "name": "Flask",
+   "group": "기술스택",
+   "terms": [
+    "flask"
+   ]
+  },
+  {
+   "value": "219",
+   "name": "FLEX",
+   "group": "기술스택",
+   "terms": [
+    "flex"
+   ]
+  },
+  {
+   "value": "220",
+   "name": "Flutter",
+   "group": "기술스택",
+   "terms": [
+    "flutter"
+   ]
+  },
+  {
+   "value": "221",
+   "name": "GCP",
+   "group": "기술스택",
+   "terms": [
+    "gcp"
+   ]
+  },
+  {
+   "value": "222",
+   "name": "Git",
+   "group": "기술스택",
+   "terms": [
+    "git"
+   ]
+  },
+  {
+   "value": "223",
+   "name": "GoLang",
+   "group": "기술스택",
+   "terms": [
+    "golang"
+   ]
+  },
+  {
+   "value": "224",
+   "name": "GraphQL",
+   "group": "기술스택",
+   "terms": [
+    "graphql"
+   ]
+  },
+  {
+   "value": "225",
+   "name": "Groovy",
+   "group": "기술스택",
+   "terms": [
+    "groovy"
+   ]
+  },
+  {
+   "value": "226",
+   "name": "Gulp",
+   "group": "기술스택",
+   "terms": [
+    "gulp"
+   ]
+  },
+  {
+   "value": "227",
+   "name": "Hadoop",
+   "group": "기술스택",
+   "terms": [
+    "hadoop"
+   ]
+  },
+  {
+   "value": "228",
+   "name": "HBase",
+   "group": "기술스택",
+   "terms": [
+    "hbase"
+   ]
+  },
+  {
+   "value": "229",
+   "name": "HTML",
+   "group": "기술스택",
+   "terms": [
+    "html"
+   ]
+  },
+  {
+   "value": "230",
+   "name": "HTML5",
+   "group": "기술스택",
+   "terms": [
+    "html5"
+   ]
+  },
+  {
+   "value": "231",
+   "name": "IaaS",
+   "group": "기술스택",
+   "terms": [
+    "iaas"
+   ]
+  },
+  {
+   "value": "232",
+   "name": "iBATIS",
+   "group": "기술스택",
+   "terms": [
+    "ibatis"
+   ]
+  },
+  {
+   "value": "233",
+   "name": "Ionic",
+   "group": "기술스택",
+   "terms": [
+    "ionic"
+   ]
+  },
+  {
+   "value": "234",
+   "name": "iOS",
+   "group": "기술스택",
+   "terms": [
+    "ios"
+   ]
+  },
+  {
+   "value": "235",
+   "name": "Java",
+   "group": "기술스택",
+   "terms": [
+    "java"
+   ]
+  },
+  {
+   "value": "236",
+   "name": "Javascript",
+   "group": "기술스택",
+   "terms": [
+    "javascript"
+   ]
+  },
+  {
+   "value": "237",
+   "name": "Jenkins",
+   "group": "기술스택",
+   "terms": [
+    "jenkins"
+   ]
+  },
+  {
+   "value": "238",
+   "name": "JPA",
+   "group": "기술스택",
+   "terms": [
+    "jpa"
+   ]
+  },
+  {
+   "value": "239",
+   "name": "jQuery",
+   "group": "기술스택",
+   "terms": [
+    "jquery"
+   ]
+  },
+  {
+   "value": "240",
+   "name": "JSP",
+   "group": "기술스택",
+   "terms": [
+    "jsp"
+   ]
+  },
+  {
+   "value": "241",
+   "name": "Kafka",
+   "group": "기술스택",
+   "terms": [
+    "kafka"
+   ]
+  },
+  {
+   "value": "242",
+   "name": "Keras",
+   "group": "기술스택",
+   "terms": [
+    "keras"
+   ]
+  },
+  {
+   "value": "243",
+   "name": "Kotlin",
+   "group": "기술스택",
+   "terms": [
+    "kotlin"
+   ]
+  },
+  {
+   "value": "244",
+   "name": "Kubernetes",
+   "group": "기술스택",
+   "terms": [
+    "kubernetes"
+   ]
+  },
+  {
+   "value": "245",
+   "name": "LabVIEW",
+   "group": "기술스택",
+   "terms": [
+    "labview"
+   ]
+  },
+  {
+   "value": "246",
+   "name": "Linux",
+   "group": "기술스택",
+   "terms": [
+    "linux"
+   ]
+  },
+  {
+   "value": "247",
+   "name": "Logstash",
+   "group": "기술스택",
+   "terms": [
+    "logstash"
+   ]
+  },
+  {
+   "value": "248",
+   "name": "Lucene",
+   "group": "기술스택",
+   "terms": [
+    "lucene"
+   ]
+  },
+  {
+   "value": "249",
+   "name": "MacOS",
+   "group": "기술스택",
+   "terms": [
+    "macos"
+   ]
+  },
+  {
+   "value": "250",
+   "name": "MariaDB",
+   "group": "기술스택",
+   "terms": [
+    "mariadb"
+   ]
+  },
+  {
+   "value": "251",
+   "name": "Matlab",
+   "group": "기술스택",
+   "terms": [
+    "matlab"
+   ]
+  },
+  {
+   "value": "252",
+   "name": "Maven",
+   "group": "기술스택",
+   "terms": [
+    "maven"
+   ]
+  },
+  {
+   "value": "253",
+   "name": "MFC",
+   "group": "기술스택",
+   "terms": [
+    "mfc"
+   ]
+  },
+  {
+   "value": "254",
+   "name": "MongoDB",
+   "group": "기술스택",
+   "terms": [
+    "mongodb"
+   ]
+  },
+  {
+   "value": "255",
+   "name": "MSSQL",
+   "group": "기술스택",
+   "terms": [
+    "mssql"
+   ]
+  },
+  {
+   "value": "256",
+   "name": "MyBatis",
+   "group": "기술스택",
+   "terms": [
+    "mybatis"
+   ]
+  },
+  {
+   "value": "257",
+   "name": "MySQL",
+   "group": "기술스택",
+   "terms": [
+    "mysql"
+   ]
+  },
+  {
+   "value": "258",
+   "name": "Node.js",
+   "group": "기술스택",
+   "terms": [
+    "node.js"
+   ]
+  },
+  {
+   "value": "259",
+   "name": "NoSQL",
+   "group": "기술스택",
+   "terms": [
+    "nosql"
+   ]
+  },
+  {
+   "value": "260",
+   "name": "Objective-C",
+   "group": "기술스택",
+   "terms": [
+    "objectivec"
+   ]
+  },
+  {
+   "value": "261",
+   "name": "OpenCV",
+   "group": "기술스택",
+   "terms": [
+    "opencv"
+   ]
+  },
+  {
+   "value": "262",
+   "name": "OpenGL",
+   "group": "기술스택",
+   "terms": [
+    "opengl"
+   ]
+  },
+  {
+   "value": "263",
+   "name": "OracleDB",
+   "group": "기술스택",
+   "terms": [
+    "oracledb"
+   ]
+  },
+  {
+   "value": "264",
+   "name": "OSS",
+   "group": "기술스택",
+   "terms": [
+    "oss"
+   ]
+  },
+  {
+   "value": "265",
+   "name": "PaaS",
+   "group": "기술스택",
+   "terms": [
+    "paas"
+   ]
+  },
+  {
+   "value": "266",
+   "name": "Pandas",
+   "group": "기술스택",
+   "terms": [
+    "pandas"
+   ]
+  },
+  {
+   "value": "267",
+   "name": "Perl",
+   "group": "기술스택",
+   "terms": [
+    "perl"
+   ]
+  },
+  {
+   "value": "268",
+   "name": "PHP",
+   "group": "기술스택",
+   "terms": [
+    "php"
+   ]
+  },
+  {
+   "value": "269",
+   "name": "PL/SQL",
+   "group": "기술스택",
+   "terms": [
+    "pl",
+    "sql"
+   ]
+  },
+  {
+   "value": "270",
+   "name": "PostgreSQL",
+   "group": "기술스택",
+   "terms": [
+    "postgresql"
+   ]
+  },
+  {
+   "value": "271",
+   "name": "Pro-C",
+   "group": "기술스택",
+   "terms": [
+    "proc"
+   ]
+  },
+  {
+   "value": "272",
+   "name": "Python",
+   "group": "기술스택",
+   "terms": [
+    "python"
+   ]
+  },
+  {
+   "value": "273",
+   "name": "Pytorch",
+   "group": "기술스택",
+   "terms": [
+    "pytorch"
+   ]
+  },
+  {
+   "value": "274",
+   "name": "QGIS",
+   "group": "기술스택",
+   "terms": [
+    "qgis"
+   ]
+  },
+  {
+   "value": "275",
+   "name": "Qt",
+   "group": "기술스택",
+   "terms": [
+    "qt"
+   ]
+  },
+  {
+   "value": "276",
+   "name": "R",
+   "group": "기술스택",
+   "terms": [
+    "r"
+   ]
+  },
+  {
+   "value": "277",
+   "name": "React",
+   "group": "기술스택",
+   "terms": [
+    "react"
+   ]
+  },
+  {
+   "value": "278",
+   "name": "React-Native",
+   "group": "기술스택",
+   "terms": [
+    "reactnative"
+   ]
+  },
+  {
+   "value": "279",
+   "name": "ReactJS",
+   "group": "기술스택",
+   "terms": [
+    "reactjs"
+   ]
+  },
+  {
+   "value": "280",
+   "name": "Redis",
+   "group": "기술스택",
+   "terms": [
+    "redis"
+   ]
+  },
+  {
+   "value": "281",
+   "name": "Redux",
+   "group": "기술스택",
+   "terms": [
+    "redux"
+   ]
+  },
+  {
+   "value": "282",
+   "name": "RestAPI",
+   "group": "기술스택",
+   "terms": [
+    "restapi"
+   ]
+  },
+  {
+   "value": "283",
+   "name": "Ruby",
+   "group": "기술스택",
+   "terms": [
+    "ruby"
+   ]
+  },
+  {
+   "value": "284",
+   "name": "SaaS",
+   "group": "기술스택",
+   "terms": [
+    "saas"
+   ]
+  },
+  {
+   "value": "285",
+   "name": "SAS",
+   "group": "기술스택",
+   "terms": [
+    "sas"
+   ]
+  },
+  {
+   "value": "286",
+   "name": "Scala",
+   "group": "기술스택",
+   "terms": [
+    "scala"
+   ]
+  },
+  {
+   "value": "287",
+   "name": "Servlet",
+   "group": "기술스택",
+   "terms": [
+    "servlet"
+   ]
+  },
+  {
+   "value": "288",
+   "name": "Solaris",
+   "group": "기술스택",
+   "terms": [
+    "solaris"
+   ]
+  },
+  {
+   "value": "2233",
+   "name": "Solidity",
+   "group": "기술스택",
+   "terms": [
+    "solidity"
+   ]
+  },
+  {
+   "value": "289",
+   "name": "Spark",
+   "group": "기술스택",
+   "terms": [
+    "spark"
+   ]
+  },
+  {
+   "value": "290",
+   "name": "Splunk",
+   "group": "기술스택",
+   "terms": [
+    "splunk"
+   ]
+  },
+  {
+   "value": "291",
+   "name": "Spring",
+   "group": "기술스택",
+   "terms": [
+    "spring"
+   ]
+  },
+  {
+   "value": "292",
+   "name": "SpringBoot",
+   "group": "기술스택",
+   "terms": [
+    "springboot"
+   ]
+  },
+  {
+   "value": "293",
+   "name": "SQL",
+   "group": "기술스택",
+   "terms": [
+    "sql"
+   ]
+  },
+  {
+   "value": "294",
+   "name": "SQLite",
+   "group": "기술스택",
+   "terms": [
+    "sqlite"
+   ]
+  },
+  {
+   "value": "295",
+   "name": "Storm",
+   "group": "기술스택",
+   "terms": [
+    "storm"
+   ]
+  },
+  {
+   "value": "296",
+   "name": "Struts",
+   "group": "기술스택",
+   "terms": [
+    "struts"
+   ]
+  },
+  {
+   "value": "297",
+   "name": "SVN",
+   "group": "기술스택",
+   "terms": [
+    "svn"
+   ]
+  },
+  {
+   "value": "298",
+   "name": "Swift",
+   "group": "기술스택",
+   "terms": [
+    "swift"
+   ]
+  },
+  {
+   "value": "299",
+   "name": "Sybase",
+   "group": "기술스택",
+   "terms": [
+    "sybase"
+   ]
+  },
+  {
+   "value": "300",
+   "name": "Tensorflow",
+   "group": "기술스택",
+   "terms": [
+    "tensorflow"
+   ]
+  },
+  {
+   "value": "301",
+   "name": "Tomcat",
+   "group": "기술스택",
+   "terms": [
+    "tomcat"
+   ]
+  },
+  {
+   "value": "302",
+   "name": "TypeScript",
+   "group": "기술스택",
+   "terms": [
+    "typescript"
+   ]
+  },
+  {
+   "value": "303",
+   "name": "Ubuntu",
+   "group": "기술스택",
+   "terms": [
+    "ubuntu"
+   ]
+  },
+  {
+   "value": "304",
+   "name": "Unity",
+   "group": "기술스택",
+   "terms": [
+    "unity"
+   ]
+  },
+  {
+   "value": "305",
+   "name": "Unix",
+   "group": "기술스택",
+   "terms": [
+    "unix"
+   ]
+  },
+  {
+   "value": "306",
+   "name": "Unreal",
+   "group": "기술스택",
+   "terms": [
+    "unreal"
+   ]
+  },
+  {
+   "value": "307",
+   "name": "VB.NET",
+   "group": "기술스택",
+   "terms": [
+    "vb.net"
+   ]
+  },
+  {
+   "value": "308",
+   "name": "Verilog",
+   "group": "기술스택",
+   "terms": [
+    "verilog"
+   ]
+  },
+  {
+   "value": "309",
+   "name": "Vert.x",
+   "group": "기술스택",
+   "terms": [
+    "vert.x"
+   ]
+  },
+  {
+   "value": "310",
+   "name": "VisualBasic",
+   "group": "기술스택",
+   "terms": [
+    "visualbasic"
+   ]
+  },
+  {
+   "value": "311",
+   "name": "VisualC·C++",
+   "group": "기술스택",
+   "terms": [
+    "c++",
+    "visualc"
+   ]
+  },
+  {
+   "value": "312",
+   "name": "Vue.js",
+   "group": "기술스택",
+   "terms": [
+    "vue.js"
+   ]
+  },
+  {
+   "value": "313",
+   "name": "WAS",
+   "group": "기술스택",
+   "terms": [
+    "was"
+   ]
+  },
+  {
+   "value": "314",
+   "name": "WebGL",
+   "group": "기술스택",
+   "terms": [
+    "webgl"
+   ]
+  },
+  {
+   "value": "315",
+   "name": "Webpack",
+   "group": "기술스택",
+   "terms": [
+    "webpack"
+   ]
+  },
+  {
+   "value": "316",
+   "name": "WebRTC",
+   "group": "기술스택",
+   "terms": [
+    "webrtc"
+   ]
+  },
+  {
+   "value": "317",
+   "name": "WPF",
+   "group": "기술스택",
+   "terms": [
+    "wpf"
+   ]
+  },
+  {
+   "value": "318",
+   "name": "XML",
+   "group": "기술스택",
+   "terms": [
+    "xml"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,3180 @@
+{
+ "site": "saramin_hh",
+ "fetched_at": "2026-11-14T16:40:25+09:00",
+ "options": [
+  {
+   "value": "101000",
+   "sido": "서울",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "101010",
+   "sido": "서울",
+   "name": "강남구",
+   "field": "districts"
+  },
+  {
+   "value": "101020",
+   "sido": "서울",
+   "name": "강동구",
+   "field": "districts"
+  },
+  {
+   "value": "101030",
+   "sido": "서울",
+   "name": "강북구",
+   "field": "districts"
+  },
+  {
+   "value": "101040",
+   "sido": "서울",
+   "name": "강서구",
+   "field": "districts"
+  },
+  {
+   "value": "101050",
+   "sido": "서울",
+   "name": "관악구",
+   "field": "districts"
+  },
+  {
+   "value": "101060",
+   "sido": "서울",
+   "name": "광진구",
+   "field": "districts"
+  },
+  {
+   "value": "101070",
+   "sido": "서울",
+   "name": "구로구",
+   "field": "districts"
+  },
+  {
+   "value": "101080",
+   "sido": "서울",
+   "name": "금천구",
+   "field": "districts"
+  },
+  {
+   "value": "101090",
+   "sido": "서울",
+   "name": "노원구",
+   "field": "districts"
+  },
+  {
+   "value": "101100",
+   "sido": "서울",
+   "name": "도봉구",
+   "field": "districts"
+  },
+  {
+   "value": "101110",
+   "sido": "서울",
+   "name": "동대문구",
+   "field": "districts"
+  },
+  {
+   "value": "101120",
+   "sido": "서울",
+   "name": "동작구",
+   "field": "districts"
+  },
+  {
+   "value": "101130",
+   "sido": "서울",
+   "name": "마포구",
+   "field": "districts"
+  },
+  {
+   "value": "101140",
+   "sido": "서울",
+   "name": "서대문구",
+   "field": "districts"
+  },
+  {
+   "value": "101150",
+   "sido": "서울",
+   "name": "서초구",
+   "field": "districts"
+  },
+  {
+   "value": "101160",
+   "sido": "서울",
+   "name": "성동구",
+   "field": "districts"
+  },
+  {
+   "value": "101170",
+   "sido": "서울",
+   "name": "성북구",
+   "field": "districts"
+  },
+  {
+   "value": "101180",
+   "sido": "서울",
+   "name": "송파구",
+   "field": "districts"
+  },
+  {
+   "value": "101190",
+   "sido": "서울",
+   "name": "양천구",
+   "field": "districts"
+  },
+  {
+   "value": "101200",
+   "sido": "서울",
+   "name": "영등포구",
+   "field": "districts"
+  },
+  {
+   "value": "101210",
+   "sido": "서울",
+   "name": "용산구",
+   "field": "districts"
+  },
+  {
+   "value": "101220",
+   "sido": "서울",
+   "name": "은평구",
+   "field": "districts"
+  },
+  {
+   "value": "101230",
+   "sido": "서울",
+   "name": "종로구",
+   "field": "districts"
+  },
+  {
+   "value": "101240",
+   "sido": "서울",
+   "name": "중구",
+   "field": "districts"
+  },
+  {
+   "value": "101250",
+   "sido": "서울",
+   "name": "중랑구",
+   "field": "districts"
+  },
+  {
+   "value": "102000",
+   "sido": "경기",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "102010",
+   "sido": "경기",
+   "name": "가평군",
+   "field": "districts"
+  },
+  {
+   "value": "102020",
+   "sido": "경기",
+   "name": "고양시",
+   "field": "districts"
+  },
+  {
+   "value": "102030",
+   "sido": "경기",
+   "name": "고양시 덕양구",
+   "field": "districts"
+  },
+  {
+   "value": "102040",
+   "sido": "경기",
+   "name": "고양시 일산동구",
+   "field": "districts"
+  },
+  {
+   "value": "102050",
+   "sido": "경기",
+   "name": "고양시 일산서구",
+   "field": "districts"
+  },
+  {
+   "value": "102060",
+   "sido": "경기",
+   "name": "과천시",
+   "field": "districts"
+  },
+  {
+   "value": "102070",
+   "sido": "경기",
+   "name": "광명시",
+   "field": "districts"
+  },
+  {
+   "value": "102080",
+   "sido": "경기",
+   "name": "광주시",
+   "field": "districts"
+  },
+  {
+   "value": "102090",
+   "sido": "경기",
+   "name": "구리시",
+   "field": "districts"
+  },
+  {
+   "value": "102100",
+   "sido": "경기",
+   "name": "군포시",
+   "field": "districts"
+  },
+  {
+   "value": "102110",
+   "sido": "경기",
+   "name": "김포시",
+   "field": "districts"
+  },
+  {
+   "value": "102120",
+   "sido": "경기",
+   "name": "남양주시",
+   "field": "districts"
+  },
+  {
+   "value": "102130",
+   "sido": "경기",
+   "name": "동두천시",
+   "field": "districts"
+  },
+  {
+   "value": "102140",
+   "sido": "경기",
+   "name": "부천시",
+   "field": "districts"
+  },
+  {
+   "value": "102150",
+   "sido": "경기",
+   "name": "부천시 소사구",
+   "field": "districts"
+  },
+  {
+   "value": "102160",
+   "sido": "경기",
+   "name": "부천시 오정구",
+   "field": "districts"
+  },
+  {
+   "value": "102170",
+   "sido": "경기",
+   "name": "부천시 원미구",
+   "field": "districts"
+  },
+  {
+   "value": "102180",
+   "sido": "경기",
+   "name": "성남시",
+   "field": "districts"
+  },
+  {
+   "value": "102190",
+   "sido": "경기",
+   "name": "성남시 분당구",
+   "field": "districts"
+  },
+  {
+   "value": "102200",
+   "sido": "경기",
+   "name": "성남시 수정구",
+   "field": "districts"
+  },
+  {
+   "value": "102210",
+   "sido": "경기",
+   "name": "성남시 중원구",
+   "field": "districts"
+  },
+  {
+   "value": "102220",
+   "sido": "경기",
+   "name": "수원시",
+   "field": "districts"
+  },
+  {
+   "value": "102230",
+   "sido": "경기",
+   "name": "수원시 권선구",
+   "field": "districts"
+  },
+  {
+   "value": "102240",
+   "sido": "경기",
+   "name": "수원시 영통구",
+   "field": "districts"
+  },
+  {
+   "value": "102250",
+   "sido": "경기",
+   "name": "수원시 장안구",
+   "field": "districts"
+  },
+  {
+   "value": "102260",
+   "sido": "경기",
+   "name": "수원시 팔달구",
+   "field": "districts"
+  },
+  {
+   "value": "102270",
+   "sido": "경기",
+   "name": "시흥시",
+   "field": "districts"
+  },
+  {
+   "value": "102280",
+   "sido": "경기",
+   "name": "안산시",
+   "field": "districts"
+  },
+  {
+   "value": "102290",
+   "sido": "경기",
+   "name": "안산시 단원구",
+   "field": "districts"
+  },
+  {
+   "value": "102300",
+   "sido": "경기",
+   "name": "안산시 상록구",
+   "field": "districts"
+  },
+  {
+   "value": "102310",
+   "sido": "경기",
+   "name": "안성시",
+   "field": "districts"
+  },
+  {
+   "value": "102320",
+   "sido": "경기",
+   "name": "안양시",
+   "field": "districts"
+  },
+  {
+   "value": "102330",
+   "sido": "경기",
+   "name": "안양시 동안구",
+   "field": "districts"
+  },
+  {
+   "value": "102340",
+   "sido": "경기",
+   "name": "안양시 만안구",
+   "field": "districts"
+  },
+  {
+   "value": "102350",
+   "sido": "경기",
+   "name": "양주시",
+   "field": "districts"
+  },
+  {
+   "value": "102360",
+   "sido": "경기",
+   "name": "양평군",
+   "field": "districts"
+  },
+  {
+   "value": "102370",
+   "sido": "경기",
+   "name": "여주시",
+   "field": "districts"
+  },
+  {
+   "value": "102380",
+   "sido": "경기",
+   "name": "연천군",
+   "field": "districts"
+  },
+  {
+   "value": "102390",
+   "sido": "경기",
+   "name": "오산시",
+   "field": "districts"
+  },
+  {
+   "value": "102400",
+   "sido": "경기",
+   "name": "용인시",
+   "field": "districts"
+  },
+  {
+   "value": "102410",
+   "sido": "경기",
+   "name": "용인시 기흥구",
+   "field": "districts"
+  },
+  {
+   "value": "102420",
+   "sido": "경기",
+   "name": "용인시 수지구",
+   "field": "districts"
+  },
+  {
+   "value": "102430",
+   "sido": "경기",
+   "name": "용인시 처인구",
+   "field": "districts"
+  },
+  {
+   "value": "102440",
+   "sido": "경기",
+   "name": "의왕시",
+   "field": "districts"
+  },
+  {
+   "value": "102450",
+   "sido": "경기",
+   "name": "의정부시",
+   "field": "districts"
+  },
+  {
+   "value": "102460",
+   "sido": "경기",
+   "name": "이천시",
+   "field": "districts"
+  },
+  {
+   "value": "102470",
+   "sido": "경기",
+   "name": "파주시",
+   "field": "districts"
+  },
+  {
+   "value": "102480",
+   "sido": "경기",
+   "name": "평택시",
+   "field": "districts"
+  },
+  {
+   "value": "102490",
+   "sido": "경기",
+   "name": "포천시",
+   "field": "districts"
+  },
+  {
+   "value": "102500",
+   "sido": "경기",
+   "name": "하남시",
+   "field": "districts"
+  },
+  {
+   "value": "102510",
+   "sido": "경기",
+   "name": "화성시",
+   "field": "districts"
+  },
+  {
+   "value": "102520",
+   "sido": "경기",
+   "name": "화성시 동탄구",
+   "field": "districts"
+  },
+  {
+   "value": "102530",
+   "sido": "경기",
+   "name": "화성시 만세구",
+   "field": "districts"
+  },
+  {
+   "value": "102540",
+   "sido": "경기",
+   "name": "화성시 병점구",
+   "field": "districts"
+  },
+  {
+   "value": "102550",
+   "sido": "경기",
+   "name": "화성시 효행구",
+   "field": "districts"
+  },
+  {
+   "value": "104000",
+   "sido": "대구",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "104090",
+   "sido": "대구",
+   "name": "군위군",
+   "field": "districts"
+  },
+  {
+   "value": "104010",
+   "sido": "대구",
+   "name": "남구",
+   "field": "districts"
+  },
+  {
+   "value": "104020",
+   "sido": "대구",
+   "name": "달서구",
+   "field": "districts"
+  },
+  {
+   "value": "104030",
+   "sido": "대구",
+   "name": "달성군",
+   "field": "districts"
+  },
+  {
+   "value": "104040",
+   "sido": "대구",
+   "name": "동구",
+   "field": "districts"
+  },
+  {
+   "value": "104050",
+   "sido": "대구",
+   "name": "북구",
+   "field": "districts"
+  },
+  {
+   "value": "104060",
+   "sido": "대구",
+   "name": "서구",
+   "field": "districts"
+  },
+  {
+   "value": "104070",
+   "sido": "대구",
+   "name": "수성구",
+   "field": "districts"
+  },
+  {
+   "value": "104080",
+   "sido": "대구",
+   "name": "중구",
+   "field": "districts"
+  },
+  {
+   "value": "105000",
+   "sido": "대전",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "105010",
+   "sido": "대전",
+   "name": "대덕구",
+   "field": "districts"
+  },
+  {
+   "value": "105020",
+   "sido": "대전",
+   "name": "동구",
+   "field": "districts"
+  },
+  {
+   "value": "105030",
+   "sido": "대전",
+   "name": "서구",
+   "field": "districts"
+  },
+  {
+   "value": "105040",
+   "sido": "대전",
+   "name": "유성구",
+   "field": "districts"
+  },
+  {
+   "value": "105050",
+   "sido": "대전",
+   "name": "중구",
+   "field": "districts"
+  },
+  {
+   "value": "106000",
+   "sido": "부산",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "106010",
+   "sido": "부산",
+   "name": "강서구",
+   "field": "districts"
+  },
+  {
+   "value": "106020",
+   "sido": "부산",
+   "name": "금정구",
+   "field": "districts"
+  },
+  {
+   "value": "106030",
+   "sido": "부산",
+   "name": "기장군",
+   "field": "districts"
+  },
+  {
+   "value": "106040",
+   "sido": "부산",
+   "name": "남구",
+   "field": "districts"
+  },
+  {
+   "value": "106050",
+   "sido": "부산",
+   "name": "동구",
+   "field": "districts"
+  },
+  {
+   "value": "106060",
+   "sido": "부산",
+   "name": "동래구",
+   "field": "districts"
+  },
+  {
+   "value": "106070",
+   "sido": "부산",
+   "name": "부산진구",
+   "field": "districts"
+  },
+  {
+   "value": "106080",
+   "sido": "부산",
+   "name": "북구",
+   "field": "districts"
+  },
+  {
+   "value": "106090",
+   "sido": "부산",
+   "name": "사상구",
+   "field": "districts"
+  },
+  {
+   "value": "106100",
+   "sido": "부산",
+   "name": "사하구",
+   "field": "districts"
+  },
+  {
+   "value": "106110",
+   "sido": "부산",
+   "name": "서구",
+   "field": "districts"
+  },
+  {
+   "value": "106120",
+   "sido": "부산",
+   "name": "수영구",
+   "field": "districts"
+  },
+  {
+   "value": "106130",
+   "sido": "부산",
+   "name": "연제구",
+   "field": "districts"
+  },
+  {
+   "value": "106140",
+   "sido": "부산",
+   "name": "영도구",
+   "field": "districts"
+  },
+  {
+   "value": "106150",
+   "sido": "부산",
+   "name": "중구",
+   "field": "districts"
+  },
+  {
+   "value": "106160",
+   "sido": "부산",
+   "name": "해운대구",
+   "field": "districts"
+  },
+  {
+   "value": "107000",
+   "sido": "울산",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "107010",
+   "sido": "울산",
+   "name": "남구",
+   "field": "districts"
+  },
+  {
+   "value": "107020",
+   "sido": "울산",
+   "name": "동구",
+   "field": "districts"
+  },
+  {
+   "value": "107030",
+   "sido": "울산",
+   "name": "북구",
+   "field": "districts"
+  },
+  {
+   "value": "107040",
+   "sido": "울산",
+   "name": "울주군",
+   "field": "districts"
+  },
+  {
+   "value": "107050",
+   "sido": "울산",
+   "name": "중구",
+   "field": "districts"
+  },
+  {
+   "value": "108000",
+   "sido": "인천",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "108010",
+   "sido": "인천",
+   "name": "강화군",
+   "field": "districts"
+  },
+  {
+   "value": "108110",
+   "sido": "인천",
+   "name": "검단구",
+   "field": "districts"
+  },
+  {
+   "value": "108020",
+   "sido": "인천",
+   "name": "계양구",
+   "field": "districts"
+  },
+  {
+   "value": "108040",
+   "sido": "인천",
+   "name": "남동구",
+   "field": "districts"
+  },
+  {
+   "value": "108030",
+   "sido": "인천",
+   "name": "미추홀구",
+   "field": "districts"
+  },
+  {
+   "value": "108060",
+   "sido": "인천",
+   "name": "부평구",
+   "field": "districts"
+  },
+  {
+   "value": "108120",
+   "sido": "인천",
+   "name": "서해구",
+   "field": "districts"
+  },
+  {
+   "value": "108080",
+   "sido": "인천",
+   "name": "연수구",
+   "field": "districts"
+  },
+  {
+   "value": "108130",
+   "sido": "인천",
+   "name": "영종구",
+   "field": "districts"
+  },
+  {
+   "value": "108090",
+   "sido": "인천",
+   "name": "옹진군",
+   "field": "districts"
+  },
+  {
+   "value": "108140",
+   "sido": "인천",
+   "name": "제물포구",
+   "field": "districts"
+  },
+  {
+   "value": "109000",
+   "sido": "강원",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "109010",
+   "sido": "강원",
+   "name": "강릉시",
+   "field": "districts"
+  },
+  {
+   "value": "109020",
+   "sido": "강원",
+   "name": "고성군",
+   "field": "districts"
+  },
+  {
+   "value": "109030",
+   "sido": "강원",
+   "name": "동해시",
+   "field": "districts"
+  },
+  {
+   "value": "109040",
+   "sido": "강원",
+   "name": "삼척시",
+   "field": "districts"
+  },
+  {
+   "value": "109050",
+   "sido": "강원",
+   "name": "속초시",
+   "field": "districts"
+  },
+  {
+   "value": "109060",
+   "sido": "강원",
+   "name": "양구군",
+   "field": "districts"
+  },
+  {
+   "value": "109070",
+   "sido": "강원",
+   "name": "양양군",
+   "field": "districts"
+  },
+  {
+   "value": "109080",
+   "sido": "강원",
+   "name": "영월군",
+   "field": "districts"
+  },
+  {
+   "value": "109090",
+   "sido": "강원",
+   "name": "원주시",
+   "field": "districts"
+  },
+  {
+   "value": "109100",
+   "sido": "강원",
+   "name": "인제군",
+   "field": "districts"
+  },
+  {
+   "value": "109110",
+   "sido": "강원",
+   "name": "정선군",
+   "field": "districts"
+  },
+  {
+   "value": "109120",
+   "sido": "강원",
+   "name": "철원군",
+   "field": "districts"
+  },
+  {
+   "value": "109130",
+   "sido": "강원",
+   "name": "춘천시",
+   "field": "districts"
+  },
+  {
+   "value": "109140",
+   "sido": "강원",
+   "name": "태백시",
+   "field": "districts"
+  },
+  {
+   "value": "109150",
+   "sido": "강원",
+   "name": "평창군",
+   "field": "districts"
+  },
+  {
+   "value": "109160",
+   "sido": "강원",
+   "name": "홍천군",
+   "field": "districts"
+  },
+  {
+   "value": "109170",
+   "sido": "강원",
+   "name": "화천군",
+   "field": "districts"
+  },
+  {
+   "value": "109180",
+   "sido": "강원",
+   "name": "횡성군",
+   "field": "districts"
+  },
+  {
+   "value": "110000",
+   "sido": "경남",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "110010",
+   "sido": "경남",
+   "name": "거제시",
+   "field": "districts"
+  },
+  {
+   "value": "110020",
+   "sido": "경남",
+   "name": "거창군",
+   "field": "districts"
+  },
+  {
+   "value": "110030",
+   "sido": "경남",
+   "name": "고성군",
+   "field": "districts"
+  },
+  {
+   "value": "110040",
+   "sido": "경남",
+   "name": "김해시",
+   "field": "districts"
+  },
+  {
+   "value": "110050",
+   "sido": "경남",
+   "name": "남해군",
+   "field": "districts"
+  },
+  {
+   "value": "110070",
+   "sido": "경남",
+   "name": "밀양시",
+   "field": "districts"
+  },
+  {
+   "value": "110080",
+   "sido": "경남",
+   "name": "사천시",
+   "field": "districts"
+  },
+  {
+   "value": "110090",
+   "sido": "경남",
+   "name": "산청군",
+   "field": "districts"
+  },
+  {
+   "value": "110100",
+   "sido": "경남",
+   "name": "양산시",
+   "field": "districts"
+  },
+  {
+   "value": "110110",
+   "sido": "경남",
+   "name": "의령군",
+   "field": "districts"
+  },
+  {
+   "value": "110120",
+   "sido": "경남",
+   "name": "진주시",
+   "field": "districts"
+  },
+  {
+   "value": "110140",
+   "sido": "경남",
+   "name": "창녕군",
+   "field": "districts"
+  },
+  {
+   "value": "110150",
+   "sido": "경남",
+   "name": "창원시",
+   "field": "districts"
+  },
+  {
+   "value": "110055",
+   "sido": "경남",
+   "name": "창원시 마산합포구",
+   "field": "districts"
+  },
+  {
+   "value": "110053",
+   "sido": "경남",
+   "name": "창원시 마산회원구",
+   "field": "districts"
+  },
+  {
+   "value": "110057",
+   "sido": "경남",
+   "name": "창원시 성산구",
+   "field": "districts"
+  },
+  {
+   "value": "110059",
+   "sido": "경남",
+   "name": "창원시 의창구",
+   "field": "districts"
+  },
+  {
+   "value": "110130",
+   "sido": "경남",
+   "name": "창원시 진해구",
+   "field": "districts"
+  },
+  {
+   "value": "110160",
+   "sido": "경남",
+   "name": "통영시",
+   "field": "districts"
+  },
+  {
+   "value": "110170",
+   "sido": "경남",
+   "name": "하동군",
+   "field": "districts"
+  },
+  {
+   "value": "110180",
+   "sido": "경남",
+   "name": "함안군",
+   "field": "districts"
+  },
+  {
+   "value": "110190",
+   "sido": "경남",
+   "name": "함양군",
+   "field": "districts"
+  },
+  {
+   "value": "110200",
+   "sido": "경남",
+   "name": "합천군",
+   "field": "districts"
+  },
+  {
+   "value": "111000",
+   "sido": "경북",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "111010",
+   "sido": "경북",
+   "name": "경산시",
+   "field": "districts"
+  },
+  {
+   "value": "111020",
+   "sido": "경북",
+   "name": "경주시",
+   "field": "districts"
+  },
+  {
+   "value": "111030",
+   "sido": "경북",
+   "name": "고령군",
+   "field": "districts"
+  },
+  {
+   "value": "111040",
+   "sido": "경북",
+   "name": "구미시",
+   "field": "districts"
+  },
+  {
+   "value": "111050",
+   "sido": "경북",
+   "name": "군위군",
+   "field": "districts"
+  },
+  {
+   "value": "111060",
+   "sido": "경북",
+   "name": "김천시",
+   "field": "districts"
+  },
+  {
+   "value": "111070",
+   "sido": "경북",
+   "name": "문경시",
+   "field": "districts"
+  },
+  {
+   "value": "111080",
+   "sido": "경북",
+   "name": "봉화군",
+   "field": "districts"
+  },
+  {
+   "value": "111090",
+   "sido": "경북",
+   "name": "상주시",
+   "field": "districts"
+  },
+  {
+   "value": "111100",
+   "sido": "경북",
+   "name": "성주군",
+   "field": "districts"
+  },
+  {
+   "value": "111110",
+   "sido": "경북",
+   "name": "안동시",
+   "field": "districts"
+  },
+  {
+   "value": "111120",
+   "sido": "경북",
+   "name": "영덕군",
+   "field": "districts"
+  },
+  {
+   "value": "111130",
+   "sido": "경북",
+   "name": "영양군",
+   "field": "districts"
+  },
+  {
+   "value": "111140",
+   "sido": "경북",
+   "name": "영주시",
+   "field": "districts"
+  },
+  {
+   "value": "111150",
+   "sido": "경북",
+   "name": "영천시",
+   "field": "districts"
+  },
+  {
+   "value": "111160",
+   "sido": "경북",
+   "name": "예천군",
+   "field": "districts"
+  },
+  {
+   "value": "111170",
+   "sido": "경북",
+   "name": "울릉군",
+   "field": "districts"
+  },
+  {
+   "value": "111180",
+   "sido": "경북",
+   "name": "울진군",
+   "field": "districts"
+  },
+  {
+   "value": "111190",
+   "sido": "경북",
+   "name": "의성군",
+   "field": "districts"
+  },
+  {
+   "value": "111200",
+   "sido": "경북",
+   "name": "청도군",
+   "field": "districts"
+  },
+  {
+   "value": "111210",
+   "sido": "경북",
+   "name": "청송군",
+   "field": "districts"
+  },
+  {
+   "value": "111220",
+   "sido": "경북",
+   "name": "칠곡군",
+   "field": "districts"
+  },
+  {
+   "value": "111230",
+   "sido": "경북",
+   "name": "포항시",
+   "field": "districts"
+  },
+  {
+   "value": "111240",
+   "sido": "경북",
+   "name": "포항시 남구",
+   "field": "districts"
+  },
+  {
+   "value": "111250",
+   "sido": "경북",
+   "name": "포항시 북구",
+   "field": "districts"
+  },
+  {
+   "value": "112000",
+   "sido": "전남광주",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "112010",
+   "sido": "전남광주",
+   "name": "강진군",
+   "field": "districts"
+  },
+  {
+   "value": "112020",
+   "sido": "전남광주",
+   "name": "고흥군",
+   "field": "districts"
+  },
+  {
+   "value": "112030",
+   "sido": "전남광주",
+   "name": "곡성군",
+   "field": "districts"
+  },
+  {
+   "value": "112230",
+   "sido": "전남광주",
+   "name": "광산구",
+   "field": "districts"
+  },
+  {
+   "value": "112040",
+   "sido": "전남광주",
+   "name": "광양시",
+   "field": "districts"
+  },
+  {
+   "value": "112050",
+   "sido": "전남광주",
+   "name": "구례군",
+   "field": "districts"
+  },
+  {
+   "value": "112060",
+   "sido": "전남광주",
+   "name": "나주시",
+   "field": "districts"
+  },
+  {
+   "value": "112240",
+   "sido": "전남광주",
+   "name": "남구",
+   "field": "districts"
+  },
+  {
+   "value": "112070",
+   "sido": "전남광주",
+   "name": "담양군",
+   "field": "districts"
+  },
+  {
+   "value": "112250",
+   "sido": "전남광주",
+   "name": "동구",
+   "field": "districts"
+  },
+  {
+   "value": "112080",
+   "sido": "전남광주",
+   "name": "목포시",
+   "field": "districts"
+  },
+  {
+   "value": "112090",
+   "sido": "전남광주",
+   "name": "무안군",
+   "field": "districts"
+  },
+  {
+   "value": "112100",
+   "sido": "전남광주",
+   "name": "보성군",
+   "field": "districts"
+  },
+  {
+   "value": "112260",
+   "sido": "전남광주",
+   "name": "북구",
+   "field": "districts"
+  },
+  {
+   "value": "112270",
+   "sido": "전남광주",
+   "name": "서구",
+   "field": "districts"
+  },
+  {
+   "value": "112110",
+   "sido": "전남광주",
+   "name": "순천시",
+   "field": "districts"
+  },
+  {
+   "value": "112120",
+   "sido": "전남광주",
+   "name": "신안군",
+   "field": "districts"
+  },
+  {
+   "value": "112130",
+   "sido": "전남광주",
+   "name": "여수시",
+   "field": "districts"
+  },
+  {
+   "value": "112140",
+   "sido": "전남광주",
+   "name": "영광군",
+   "field": "districts"
+  },
+  {
+   "value": "112150",
+   "sido": "전남광주",
+   "name": "영암군",
+   "field": "districts"
+  },
+  {
+   "value": "112160",
+   "sido": "전남광주",
+   "name": "완도군",
+   "field": "districts"
+  },
+  {
+   "value": "112170",
+   "sido": "전남광주",
+   "name": "장성군",
+   "field": "districts"
+  },
+  {
+   "value": "112180",
+   "sido": "전남광주",
+   "name": "장흥군",
+   "field": "districts"
+  },
+  {
+   "value": "112190",
+   "sido": "전남광주",
+   "name": "진도군",
+   "field": "districts"
+  },
+  {
+   "value": "112200",
+   "sido": "전남광주",
+   "name": "함평군",
+   "field": "districts"
+  },
+  {
+   "value": "112210",
+   "sido": "전남광주",
+   "name": "해남군",
+   "field": "districts"
+  },
+  {
+   "value": "112220",
+   "sido": "전남광주",
+   "name": "화순군",
+   "field": "districts"
+  },
+  {
+   "value": "113000",
+   "sido": "전북",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "113010",
+   "sido": "전북",
+   "name": "고창군",
+   "field": "districts"
+  },
+  {
+   "value": "113020",
+   "sido": "전북",
+   "name": "군산시",
+   "field": "districts"
+  },
+  {
+   "value": "113030",
+   "sido": "전북",
+   "name": "김제시",
+   "field": "districts"
+  },
+  {
+   "value": "113040",
+   "sido": "전북",
+   "name": "남원시",
+   "field": "districts"
+  },
+  {
+   "value": "113050",
+   "sido": "전북",
+   "name": "무주군",
+   "field": "districts"
+  },
+  {
+   "value": "113060",
+   "sido": "전북",
+   "name": "부안군",
+   "field": "districts"
+  },
+  {
+   "value": "113070",
+   "sido": "전북",
+   "name": "순창군",
+   "field": "districts"
+  },
+  {
+   "value": "113080",
+   "sido": "전북",
+   "name": "완주군",
+   "field": "districts"
+  },
+  {
+   "value": "113090",
+   "sido": "전북",
+   "name": "익산시",
+   "field": "districts"
+  },
+  {
+   "value": "113100",
+   "sido": "전북",
+   "name": "임실군",
+   "field": "districts"
+  },
+  {
+   "value": "113110",
+   "sido": "전북",
+   "name": "장수군",
+   "field": "districts"
+  },
+  {
+   "value": "113120",
+   "sido": "전북",
+   "name": "전주시",
+   "field": "districts"
+  },
+  {
+   "value": "113130",
+   "sido": "전북",
+   "name": "전주시 덕진구",
+   "field": "districts"
+  },
+  {
+   "value": "113140",
+   "sido": "전북",
+   "name": "전주시 완산구",
+   "field": "districts"
+  },
+  {
+   "value": "113150",
+   "sido": "전북",
+   "name": "정읍시",
+   "field": "districts"
+  },
+  {
+   "value": "113160",
+   "sido": "전북",
+   "name": "진안군",
+   "field": "districts"
+  },
+  {
+   "value": "114000",
+   "sido": "충북",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "114010",
+   "sido": "충북",
+   "name": "괴산군",
+   "field": "districts"
+  },
+  {
+   "value": "114020",
+   "sido": "충북",
+   "name": "단양군",
+   "field": "districts"
+  },
+  {
+   "value": "114030",
+   "sido": "충북",
+   "name": "보은군",
+   "field": "districts"
+  },
+  {
+   "value": "114040",
+   "sido": "충북",
+   "name": "영동군",
+   "field": "districts"
+  },
+  {
+   "value": "114050",
+   "sido": "충북",
+   "name": "옥천군",
+   "field": "districts"
+  },
+  {
+   "value": "114060",
+   "sido": "충북",
+   "name": "음성군",
+   "field": "districts"
+  },
+  {
+   "value": "114070",
+   "sido": "충북",
+   "name": "제천시",
+   "field": "districts"
+  },
+  {
+   "value": "114080",
+   "sido": "충북",
+   "name": "증평군",
+   "field": "districts"
+  },
+  {
+   "value": "114090",
+   "sido": "충북",
+   "name": "진천군",
+   "field": "districts"
+  },
+  {
+   "value": "114100",
+   "sido": "충북",
+   "name": "청원군",
+   "field": "districts"
+  },
+  {
+   "value": "114110",
+   "sido": "충북",
+   "name": "청주시",
+   "field": "districts"
+  },
+  {
+   "value": "114120",
+   "sido": "충북",
+   "name": "청주시 상당구",
+   "field": "districts"
+  },
+  {
+   "value": "114160",
+   "sido": "충북",
+   "name": "청주시 서원구",
+   "field": "districts"
+  },
+  {
+   "value": "114150",
+   "sido": "충북",
+   "name": "청주시 청원구",
+   "field": "districts"
+  },
+  {
+   "value": "114130",
+   "sido": "충북",
+   "name": "청주시 흥덕구",
+   "field": "districts"
+  },
+  {
+   "value": "114140",
+   "sido": "충북",
+   "name": "충주시",
+   "field": "districts"
+  },
+  {
+   "value": "115000",
+   "sido": "충남",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "115010",
+   "sido": "충남",
+   "name": "계룡시",
+   "field": "districts"
+  },
+  {
+   "value": "115020",
+   "sido": "충남",
+   "name": "공주시",
+   "field": "districts"
+  },
+  {
+   "value": "115030",
+   "sido": "충남",
+   "name": "금산군",
+   "field": "districts"
+  },
+  {
+   "value": "115040",
+   "sido": "충남",
+   "name": "논산시",
+   "field": "districts"
+  },
+  {
+   "value": "115050",
+   "sido": "충남",
+   "name": "당진시",
+   "field": "districts"
+  },
+  {
+   "value": "115060",
+   "sido": "충남",
+   "name": "보령시",
+   "field": "districts"
+  },
+  {
+   "value": "115070",
+   "sido": "충남",
+   "name": "부여군",
+   "field": "districts"
+  },
+  {
+   "value": "115080",
+   "sido": "충남",
+   "name": "서산시",
+   "field": "districts"
+  },
+  {
+   "value": "115090",
+   "sido": "충남",
+   "name": "서천군",
+   "field": "districts"
+  },
+  {
+   "value": "115100",
+   "sido": "충남",
+   "name": "아산시",
+   "field": "districts"
+  },
+  {
+   "value": "115110",
+   "sido": "충남",
+   "name": "연기군",
+   "field": "districts"
+  },
+  {
+   "value": "115120",
+   "sido": "충남",
+   "name": "예산군",
+   "field": "districts"
+  },
+  {
+   "value": "115130",
+   "sido": "충남",
+   "name": "천안시",
+   "field": "districts"
+  },
+  {
+   "value": "115133",
+   "sido": "충남",
+   "name": "천안시 동남구",
+   "field": "districts"
+  },
+  {
+   "value": "115135",
+   "sido": "충남",
+   "name": "천안시 서북구",
+   "field": "districts"
+  },
+  {
+   "value": "115140",
+   "sido": "충남",
+   "name": "청양군",
+   "field": "districts"
+  },
+  {
+   "value": "115150",
+   "sido": "충남",
+   "name": "태안군",
+   "field": "districts"
+  },
+  {
+   "value": "115160",
+   "sido": "충남",
+   "name": "홍성군",
+   "field": "districts"
+  },
+  {
+   "value": "116000",
+   "sido": "제주",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "116030",
+   "sido": "제주",
+   "name": "서귀포시",
+   "field": "districts"
+  },
+  {
+   "value": "116040",
+   "sido": "제주",
+   "name": "제주시",
+   "field": "districts"
+  },
+  {
+   "value": "117000",
+   "sido": "전국",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "118000",
+   "sido": "세종특별자치시",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "210000",
+   "sido": "아시아·중동",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "211700",
+   "sido": "아시아·중동",
+   "name": "그루지아",
+   "field": "districts"
+  },
+  {
+   "value": "211800",
+   "sido": "아시아·중동",
+   "name": "네팔",
+   "field": "districts"
+  },
+  {
+   "value": "210100",
+   "sido": "아시아·중동",
+   "name": "대만",
+   "field": "districts"
+  },
+  {
+   "value": "214400",
+   "sido": "아시아·중동",
+   "name": "동티모르",
+   "field": "districts"
+  },
+  {
+   "value": "212000",
+   "sido": "아시아·중동",
+   "name": "라오스",
+   "field": "districts"
+  },
+  {
+   "value": "212100",
+   "sido": "아시아·중동",
+   "name": "레바논",
+   "field": "districts"
+  },
+  {
+   "value": "210200",
+   "sido": "아시아·중동",
+   "name": "말레이시아",
+   "field": "districts"
+  },
+  {
+   "value": "212300",
+   "sido": "아시아·중동",
+   "name": "몰디브",
+   "field": "districts"
+  },
+  {
+   "value": "210300",
+   "sido": "아시아·중동",
+   "name": "몽골",
+   "field": "districts"
+  },
+  {
+   "value": "210400",
+   "sido": "아시아·중동",
+   "name": "미얀마",
+   "field": "districts"
+  },
+  {
+   "value": "212400",
+   "sido": "아시아·중동",
+   "name": "바레인",
+   "field": "districts"
+  },
+  {
+   "value": "210500",
+   "sido": "아시아·중동",
+   "name": "방글라데시",
+   "field": "districts"
+  },
+  {
+   "value": "212500",
+   "sido": "아시아·중동",
+   "name": "버마",
+   "field": "districts"
+  },
+  {
+   "value": "210600",
+   "sido": "아시아·중동",
+   "name": "베트남",
+   "field": "districts"
+  },
+  {
+   "value": "212600",
+   "sido": "아시아·중동",
+   "name": "부탄",
+   "field": "districts"
+  },
+  {
+   "value": "212700",
+   "sido": "아시아·중동",
+   "name": "북한",
+   "field": "districts"
+  },
+  {
+   "value": "212800",
+   "sido": "아시아·중동",
+   "name": "브루나이",
+   "field": "districts"
+  },
+  {
+   "value": "210700",
+   "sido": "아시아·중동",
+   "name": "사우디아라비아",
+   "field": "districts"
+  },
+  {
+   "value": "210800",
+   "sido": "아시아·중동",
+   "name": "스리랑카",
+   "field": "districts"
+  },
+  {
+   "value": "212900",
+   "sido": "아시아·중동",
+   "name": "시리아",
+   "field": "districts"
+  },
+  {
+   "value": "210900",
+   "sido": "아시아·중동",
+   "name": "싱가포르",
+   "field": "districts"
+  },
+  {
+   "value": "213000",
+   "sido": "아시아·중동",
+   "name": "아랍에미레이트연합국",
+   "field": "districts"
+  },
+  {
+   "value": "214700",
+   "sido": "아시아·중동",
+   "name": "아르메니아",
+   "field": "districts"
+  },
+  {
+   "value": "219900",
+   "sido": "아시아·중동",
+   "name": "아시아·중동기타",
+   "field": "districts"
+  },
+  {
+   "value": "214800",
+   "sido": "아시아·중동",
+   "name": "아제르바이잔",
+   "field": "districts"
+  },
+  {
+   "value": "213100",
+   "sido": "아시아·중동",
+   "name": "아프가니스탄",
+   "field": "districts"
+  },
+  {
+   "value": "213200",
+   "sido": "아시아·중동",
+   "name": "영국령 인도양식민지",
+   "field": "districts"
+  },
+  {
+   "value": "213300",
+   "sido": "아시아·중동",
+   "name": "예멘",
+   "field": "districts"
+  },
+  {
+   "value": "213400",
+   "sido": "아시아·중동",
+   "name": "오만",
+   "field": "districts"
+  },
+  {
+   "value": "213500",
+   "sido": "아시아·중동",
+   "name": "요르단",
+   "field": "districts"
+  },
+  {
+   "value": "213600",
+   "sido": "아시아·중동",
+   "name": "우즈베키스탄",
+   "field": "districts"
+  },
+  {
+   "value": "213700",
+   "sido": "아시아·중동",
+   "name": "이라크",
+   "field": "districts"
+  },
+  {
+   "value": "213800",
+   "sido": "아시아·중동",
+   "name": "이란",
+   "field": "districts"
+  },
+  {
+   "value": "211000",
+   "sido": "아시아·중동",
+   "name": "인도",
+   "field": "districts"
+  },
+  {
+   "value": "211100",
+   "sido": "아시아·중동",
+   "name": "인도네시아",
+   "field": "districts"
+  },
+  {
+   "value": "213900",
+   "sido": "아시아·중동",
+   "name": "카자흐스탄",
+   "field": "districts"
+  },
+  {
+   "value": "214000",
+   "sido": "아시아·중동",
+   "name": "카타르",
+   "field": "districts"
+  },
+  {
+   "value": "211400",
+   "sido": "아시아·중동",
+   "name": "캄보디아",
+   "field": "districts"
+  },
+  {
+   "value": "214100",
+   "sido": "아시아·중동",
+   "name": "쿠웨이트",
+   "field": "districts"
+  },
+  {
+   "value": "214600",
+   "sido": "아시아·중동",
+   "name": "키르기즈스탄",
+   "field": "districts"
+  },
+  {
+   "value": "214200",
+   "sido": "아시아·중동",
+   "name": "타지키스탄",
+   "field": "districts"
+  },
+  {
+   "value": "211500",
+   "sido": "아시아·중동",
+   "name": "태국",
+   "field": "districts"
+  },
+  {
+   "value": "214300",
+   "sido": "아시아·중동",
+   "name": "투르크메니스탄",
+   "field": "districts"
+  },
+  {
+   "value": "214500",
+   "sido": "아시아·중동",
+   "name": "파키스탄",
+   "field": "districts"
+  },
+  {
+   "value": "211600",
+   "sido": "아시아·중동",
+   "name": "필리핀",
+   "field": "districts"
+  },
+  {
+   "value": "220000",
+   "sido": "북·중미",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "220400",
+   "sido": "북·중미",
+   "name": "그린란드",
+   "field": "districts"
+  },
+  {
+   "value": "221200",
+   "sido": "북·중미",
+   "name": "네덜란드령 안틸레스제도",
+   "field": "districts"
+  },
+  {
+   "value": "220500",
+   "sido": "북·중미",
+   "name": "도미니카공화국",
+   "field": "districts"
+  },
+  {
+   "value": "220100",
+   "sido": "북·중미",
+   "name": "멕시코",
+   "field": "districts"
+  },
+  {
+   "value": "220600",
+   "sido": "북·중미",
+   "name": "바베이도스",
+   "field": "districts"
+  },
+  {
+   "value": "220700",
+   "sido": "북·중미",
+   "name": "바하마",
+   "field": "districts"
+  },
+  {
+   "value": "220800",
+   "sido": "북·중미",
+   "name": "버뮤다",
+   "field": "districts"
+  },
+  {
+   "value": "229900",
+   "sido": "북·중미",
+   "name": "북·중미기타",
+   "field": "districts"
+  },
+  {
+   "value": "221000",
+   "sido": "북·중미",
+   "name": "사이판",
+   "field": "districts"
+  },
+  {
+   "value": "221300",
+   "sido": "북·중미",
+   "name": "세인트루시아",
+   "field": "districts"
+  },
+  {
+   "value": "221400",
+   "sido": "북·중미",
+   "name": "세인트빈센트그레나딘즈",
+   "field": "districts"
+  },
+  {
+   "value": "221100",
+   "sido": "북·중미",
+   "name": "세인트키츠네비스",
+   "field": "districts"
+  },
+  {
+   "value": "220900",
+   "sido": "북·중미",
+   "name": "세인트피에르미그온",
+   "field": "districts"
+  },
+  {
+   "value": "220300",
+   "sido": "북·중미",
+   "name": "캐나다",
+   "field": "districts"
+  },
+  {
+   "value": "221500",
+   "sido": "북·중미",
+   "name": "코스타리카",
+   "field": "districts"
+  },
+  {
+   "value": "230000",
+   "sido": "남미",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "231300",
+   "sido": "남미",
+   "name": "가이아나",
+   "field": "districts"
+  },
+  {
+   "value": "231400",
+   "sido": "남미",
+   "name": "과델루프",
+   "field": "districts"
+  },
+  {
+   "value": "230100",
+   "sido": "남미",
+   "name": "과테말라",
+   "field": "districts"
+  },
+  {
+   "value": "233700",
+   "sido": "남미",
+   "name": "그레나다",
+   "field": "districts"
+  },
+  {
+   "value": "231500",
+   "sido": "남미",
+   "name": "기아나(프랑스령)",
+   "field": "districts"
+  },
+  {
+   "value": "239900",
+   "sido": "남미",
+   "name": "남미기타",
+   "field": "districts"
+  },
+  {
+   "value": "231600",
+   "sido": "남미",
+   "name": "니카라과",
+   "field": "districts"
+  },
+  {
+   "value": "231700",
+   "sido": "남미",
+   "name": "도미니카연방",
+   "field": "districts"
+  },
+  {
+   "value": "231800",
+   "sido": "남미",
+   "name": "마르티니크섬",
+   "field": "districts"
+  },
+  {
+   "value": "232000",
+   "sido": "남미",
+   "name": "버진제도",
+   "field": "districts"
+  },
+  {
+   "value": "230200",
+   "sido": "남미",
+   "name": "베네수엘라",
+   "field": "districts"
+  },
+  {
+   "value": "232100",
+   "sido": "남미",
+   "name": "벨리즈",
+   "field": "districts"
+  },
+  {
+   "value": "232200",
+   "sido": "남미",
+   "name": "볼리비아",
+   "field": "districts"
+  },
+  {
+   "value": "230300",
+   "sido": "남미",
+   "name": "브라질",
+   "field": "districts"
+  },
+  {
+   "value": "232500",
+   "sido": "남미",
+   "name": "수리남",
+   "field": "districts"
+  },
+  {
+   "value": "230400",
+   "sido": "남미",
+   "name": "아르헨티나",
+   "field": "districts"
+  },
+  {
+   "value": "232600",
+   "sido": "남미",
+   "name": "아이티",
+   "field": "districts"
+  },
+  {
+   "value": "232700",
+   "sido": "남미",
+   "name": "안길라",
+   "field": "districts"
+  },
+  {
+   "value": "230500",
+   "sido": "남미",
+   "name": "에콰도르",
+   "field": "districts"
+  },
+  {
+   "value": "232800",
+   "sido": "남미",
+   "name": "엔티가바부다",
+   "field": "districts"
+  },
+  {
+   "value": "232900",
+   "sido": "남미",
+   "name": "엘살바도르",
+   "field": "districts"
+  },
+  {
+   "value": "230600",
+   "sido": "남미",
+   "name": "온두라스",
+   "field": "districts"
+  },
+  {
+   "value": "230700",
+   "sido": "남미",
+   "name": "우루과이",
+   "field": "districts"
+  },
+  {
+   "value": "230800",
+   "sido": "남미",
+   "name": "칠레",
+   "field": "districts"
+  },
+  {
+   "value": "233000",
+   "sido": "남미",
+   "name": "케이만제도",
+   "field": "districts"
+  },
+  {
+   "value": "230900",
+   "sido": "남미",
+   "name": "콜롬비아",
+   "field": "districts"
+  },
+  {
+   "value": "231000",
+   "sido": "남미",
+   "name": "쿠바",
+   "field": "districts"
+  },
+  {
+   "value": "233200",
+   "sido": "남미",
+   "name": "터크스앤카이코스제도",
+   "field": "districts"
+  },
+  {
+   "value": "233300",
+   "sido": "남미",
+   "name": "트리니나드토바고",
+   "field": "districts"
+  },
+  {
+   "value": "231100",
+   "sido": "남미",
+   "name": "파나마",
+   "field": "districts"
+  },
+  {
+   "value": "233400",
+   "sido": "남미",
+   "name": "파라과이",
+   "field": "districts"
+  },
+  {
+   "value": "231200",
+   "sido": "남미",
+   "name": "페루",
+   "field": "districts"
+  },
+  {
+   "value": "233500",
+   "sido": "남미",
+   "name": "포클랜드제도",
+   "field": "districts"
+  },
+  {
+   "value": "233600",
+   "sido": "남미",
+   "name": "푸에르토리코",
+   "field": "districts"
+  },
+  {
+   "value": "240000",
+   "sido": "유럽",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "242000",
+   "sido": "유럽",
+   "name": "그라나다",
+   "field": "districts"
+  },
+  {
+   "value": "240100",
+   "sido": "유럽",
+   "name": "그리스",
+   "field": "districts"
+  },
+  {
+   "value": "240200",
+   "sido": "유럽",
+   "name": "네덜란드",
+   "field": "districts"
+  },
+  {
+   "value": "240300",
+   "sido": "유럽",
+   "name": "노르웨이",
+   "field": "districts"
+  },
+  {
+   "value": "240400",
+   "sido": "유럽",
+   "name": "덴마크",
+   "field": "districts"
+  },
+  {
+   "value": "240500",
+   "sido": "유럽",
+   "name": "독일",
+   "field": "districts"
+  },
+  {
+   "value": "242100",
+   "sido": "유럽",
+   "name": "라트비아",
+   "field": "districts"
+  },
+  {
+   "value": "240600",
+   "sido": "유럽",
+   "name": "러시아",
+   "field": "districts"
+  },
+  {
+   "value": "242200",
+   "sido": "유럽",
+   "name": "루마니아",
+   "field": "districts"
+  },
+  {
+   "value": "242300",
+   "sido": "유럽",
+   "name": "룩셈부르크",
+   "field": "districts"
+  },
+  {
+   "value": "242400",
+   "sido": "유럽",
+   "name": "리투아니아",
+   "field": "districts"
+  },
+  {
+   "value": "245500",
+   "sido": "유럽",
+   "name": "리히텐슈타인",
+   "field": "districts"
+  },
+  {
+   "value": "242500",
+   "sido": "유럽",
+   "name": "마케도니아",
+   "field": "districts"
+  },
+  {
+   "value": "242600",
+   "sido": "유럽",
+   "name": "모나코",
+   "field": "districts"
+  },
+  {
+   "value": "245300",
+   "sido": "유럽",
+   "name": "몬테네그로",
+   "field": "districts"
+  },
+  {
+   "value": "245400",
+   "sido": "유럽",
+   "name": "몰도바",
+   "field": "districts"
+  },
+  {
+   "value": "242700",
+   "sido": "유럽",
+   "name": "몰타",
+   "field": "districts"
+  },
+  {
+   "value": "242800",
+   "sido": "유럽",
+   "name": "몽트세라",
+   "field": "districts"
+  },
+  {
+   "value": "245200",
+   "sido": "유럽",
+   "name": "바티칸시국",
+   "field": "districts"
+  },
+  {
+   "value": "240700",
+   "sido": "유럽",
+   "name": "벨기에",
+   "field": "districts"
+  },
+  {
+   "value": "245700",
+   "sido": "유럽",
+   "name": "벨라루스",
+   "field": "districts"
+  },
+  {
+   "value": "242900",
+   "sido": "유럽",
+   "name": "벨로루시",
+   "field": "districts"
+  },
+  {
+   "value": "243000",
+   "sido": "유럽",
+   "name": "보스니아헤르체고비나",
+   "field": "districts"
+  },
+  {
+   "value": "243100",
+   "sido": "유럽",
+   "name": "불가리아",
+   "field": "districts"
+  },
+  {
+   "value": "245100",
+   "sido": "유럽",
+   "name": "산마리노",
+   "field": "districts"
+  },
+  {
+   "value": "245000",
+   "sido": "유럽",
+   "name": "세르비아",
+   "field": "districts"
+  },
+  {
+   "value": "240800",
+   "sido": "유럽",
+   "name": "스웨덴",
+   "field": "districts"
+  },
+  {
+   "value": "240900",
+   "sido": "유럽",
+   "name": "스위스",
+   "field": "districts"
+  },
+  {
+   "value": "241000",
+   "sido": "유럽",
+   "name": "스페인",
+   "field": "districts"
+  },
+  {
+   "value": "243300",
+   "sido": "유럽",
+   "name": "슬로바키아",
+   "field": "districts"
+  },
+  {
+   "value": "243200",
+   "sido": "유럽",
+   "name": "슬로베니아",
+   "field": "districts"
+  },
+  {
+   "value": "244300",
+   "sido": "유럽",
+   "name": "신유고연방",
+   "field": "districts"
+  },
+  {
+   "value": "243400",
+   "sido": "유럽",
+   "name": "아루바",
+   "field": "districts"
+  },
+  {
+   "value": "243600",
+   "sido": "유럽",
+   "name": "아이슬란드",
+   "field": "districts"
+  },
+  {
+   "value": "243700",
+   "sido": "유럽",
+   "name": "아일랜드",
+   "field": "districts"
+  },
+  {
+   "value": "244900",
+   "sido": "유럽",
+   "name": "안도라",
+   "field": "districts"
+  },
+  {
+   "value": "243900",
+   "sido": "유럽",
+   "name": "알바니아",
+   "field": "districts"
+  },
+  {
+   "value": "244000",
+   "sido": "유럽",
+   "name": "에스토니아",
+   "field": "districts"
+  },
+  {
+   "value": "241100",
+   "sido": "유럽",
+   "name": "영국",
+   "field": "districts"
+  },
+  {
+   "value": "244100",
+   "sido": "유럽",
+   "name": "오스트리아",
+   "field": "districts"
+  },
+  {
+   "value": "244200",
+   "sido": "유럽",
+   "name": "우크라이나",
+   "field": "districts"
+  },
+  {
+   "value": "249900",
+   "sido": "유럽",
+   "name": "유럽기타",
+   "field": "districts"
+  },
+  {
+   "value": "244400",
+   "sido": "유럽",
+   "name": "이스라엘",
+   "field": "districts"
+  },
+  {
+   "value": "241200",
+   "sido": "유럽",
+   "name": "이탈리아",
+   "field": "districts"
+  },
+  {
+   "value": "244500",
+   "sido": "유럽",
+   "name": "지브롤터",
+   "field": "districts"
+  },
+  {
+   "value": "241300",
+   "sido": "유럽",
+   "name": "체코",
+   "field": "districts"
+  },
+  {
+   "value": "244600",
+   "sido": "유럽",
+   "name": "크로아티아",
+   "field": "districts"
+  },
+  {
+   "value": "244700",
+   "sido": "유럽",
+   "name": "키프로스",
+   "field": "districts"
+  },
+  {
+   "value": "241400",
+   "sido": "유럽",
+   "name": "튀르키예",
+   "field": "districts"
+  },
+  {
+   "value": "245600",
+   "sido": "유럽",
+   "name": "팔레스타인",
+   "field": "districts"
+  },
+  {
+   "value": "244800",
+   "sido": "유럽",
+   "name": "페로제도",
+   "field": "districts"
+  },
+  {
+   "value": "241500",
+   "sido": "유럽",
+   "name": "포르투갈",
+   "field": "districts"
+  },
+  {
+   "value": "241600",
+   "sido": "유럽",
+   "name": "폴란드",
+   "field": "districts"
+  },
+  {
+   "value": "241700",
+   "sido": "유럽",
+   "name": "프랑스",
+   "field": "districts"
+  },
+  {
+   "value": "241800",
+   "sido": "유럽",
+   "name": "핀란드",
+   "field": "districts"
+  },
+  {
+   "value": "241900",
+   "sido": "유럽",
+   "name": "헝가리",
+   "field": "districts"
+  },
+  {
+   "value": "250000",
+   "sido": "오세아니아",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "250100",
+   "sido": "오세아니아",
+   "name": "괌",
+   "field": "districts"
+  },
+  {
+   "value": "252200",
+   "sido": "오세아니아",
+   "name": "나우루공화국",
+   "field": "districts"
+  },
+  {
+   "value": "250200",
+   "sido": "오세아니아",
+   "name": "뉴질랜드",
+   "field": "districts"
+  },
+  {
+   "value": "250600",
+   "sido": "오세아니아",
+   "name": "뉴칼레도니아섬",
+   "field": "districts"
+  },
+  {
+   "value": "250700",
+   "sido": "오세아니아",
+   "name": "마샬군도",
+   "field": "districts"
+  },
+  {
+   "value": "252000",
+   "sido": "오세아니아",
+   "name": "미크로네시아",
+   "field": "districts"
+  },
+  {
+   "value": "250800",
+   "sido": "오세아니아",
+   "name": "바누아투",
+   "field": "districts"
+  },
+  {
+   "value": "252100",
+   "sido": "오세아니아",
+   "name": "북마리아나군도",
+   "field": "districts"
+  },
+  {
+   "value": "250900",
+   "sido": "오세아니아",
+   "name": "사모아",
+   "field": "districts"
+  },
+  {
+   "value": "251900",
+   "sido": "오세아니아",
+   "name": "솔로몬제도",
+   "field": "districts"
+  },
+  {
+   "value": "259900",
+   "sido": "오세아니아",
+   "name": "오세아니아기타",
+   "field": "districts"
+  },
+  {
+   "value": "251000",
+   "sido": "오세아니아",
+   "name": "쿠크 군도",
+   "field": "districts"
+  },
+  {
+   "value": "251100",
+   "sido": "오세아니아",
+   "name": "키리바시",
+   "field": "districts"
+  },
+  {
+   "value": "251800",
+   "sido": "오세아니아",
+   "name": "토켈라우제도",
+   "field": "districts"
+  },
+  {
+   "value": "251200",
+   "sido": "오세아니아",
+   "name": "통가",
+   "field": "districts"
+  },
+  {
+   "value": "251300",
+   "sido": "오세아니아",
+   "name": "투발루",
+   "field": "districts"
+  },
+  {
+   "value": "250300",
+   "sido": "오세아니아",
+   "name": "파푸아뉴기니",
+   "field": "districts"
+  },
+  {
+   "value": "251600",
+   "sido": "오세아니아",
+   "name": "팔라우",
+   "field": "districts"
+  },
+  {
+   "value": "251500",
+   "sido": "오세아니아",
+   "name": "폴리네시아제도",
+   "field": "districts"
+  },
+  {
+   "value": "250400",
+   "sido": "오세아니아",
+   "name": "피지",
+   "field": "districts"
+  },
+  {
+   "value": "251700",
+   "sido": "오세아니아",
+   "name": "핏케언제도",
+   "field": "districts"
+  },
+  {
+   "value": "250500",
+   "sido": "오세아니아",
+   "name": "호주",
+   "field": "districts"
+  },
+  {
+   "value": "260000",
+   "sido": "아프리카",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "260100",
+   "sido": "아프리카",
+   "name": "가나",
+   "field": "districts"
+  },
+  {
+   "value": "260200",
+   "sido": "아프리카",
+   "name": "가봉",
+   "field": "districts"
+  },
+  {
+   "value": "261500",
+   "sido": "아프리카",
+   "name": "감비아",
+   "field": "districts"
+  },
+  {
+   "value": "261600",
+   "sido": "아프리카",
+   "name": "기니",
+   "field": "districts"
+  },
+  {
+   "value": "261700",
+   "sido": "아프리카",
+   "name": "기니비소우",
+   "field": "districts"
+  },
+  {
+   "value": "261800",
+   "sido": "아프리카",
+   "name": "나미비아",
+   "field": "districts"
+  },
+  {
+   "value": "260300",
+   "sido": "아프리카",
+   "name": "나이지리아",
+   "field": "districts"
+  },
+  {
+   "value": "265900",
+   "sido": "아프리카",
+   "name": "남수단",
+   "field": "districts"
+  },
+  {
+   "value": "260400",
+   "sido": "아프리카",
+   "name": "남아프리카공화국",
+   "field": "districts"
+  },
+  {
+   "value": "261900",
+   "sido": "아프리카",
+   "name": "니제르",
+   "field": "districts"
+  },
+  {
+   "value": "262000",
+   "sido": "아프리카",
+   "name": "라이베리아",
+   "field": "districts"
+  },
+  {
+   "value": "262200",
+   "sido": "아프리카",
+   "name": "레뉴니용",
+   "field": "districts"
+  },
+  {
+   "value": "266000",
+   "sido": "아프리카",
+   "name": "레소토",
+   "field": "districts"
+  },
+  {
+   "value": "262100",
+   "sido": "아프리카",
+   "name": "르완다",
+   "field": "districts"
+  },
+  {
+   "value": "260500",
+   "sido": "아프리카",
+   "name": "리비아",
+   "field": "districts"
+  },
+  {
+   "value": "262300",
+   "sido": "아프리카",
+   "name": "마다가스카르",
+   "field": "districts"
+  },
+  {
+   "value": "262400",
+   "sido": "아프리카",
+   "name": "말라위",
+   "field": "districts"
+  },
+  {
+   "value": "262500",
+   "sido": "아프리카",
+   "name": "말리",
+   "field": "districts"
+  },
+  {
+   "value": "260600",
+   "sido": "아프리카",
+   "name": "모로코",
+   "field": "districts"
+  },
+  {
+   "value": "265500",
+   "sido": "아프리카",
+   "name": "모리셔스",
+   "field": "districts"
+  },
+  {
+   "value": "262600",
+   "sido": "아프리카",
+   "name": "모리타니아",
+   "field": "districts"
+  },
+  {
+   "value": "262700",
+   "sido": "아프리카",
+   "name": "모잠비크",
+   "field": "districts"
+  },
+  {
+   "value": "262800",
+   "sido": "아프리카",
+   "name": "베냉",
+   "field": "districts"
+  },
+  {
+   "value": "262900",
+   "sido": "아프리카",
+   "name": "보츠와나",
+   "field": "districts"
+  },
+  {
+   "value": "263000",
+   "sido": "아프리카",
+   "name": "부룬디",
+   "field": "districts"
+  },
+  {
+   "value": "263100",
+   "sido": "아프리카",
+   "name": "부르키나파소",
+   "field": "districts"
+  },
+  {
+   "value": "265400",
+   "sido": "아프리카",
+   "name": "상투메프린시페",
+   "field": "districts"
+  },
+  {
+   "value": "263200",
+   "sido": "아프리카",
+   "name": "세네갈",
+   "field": "districts"
+  },
+  {
+   "value": "263300",
+   "sido": "아프리카",
+   "name": "세이셀제도",
+   "field": "districts"
+  },
+  {
+   "value": "263400",
+   "sido": "아프리카",
+   "name": "세인트헬레나섬",
+   "field": "districts"
+  },
+  {
+   "value": "263500",
+   "sido": "아프리카",
+   "name": "소말리아",
+   "field": "districts"
+  },
+  {
+   "value": "260700",
+   "sido": "아프리카",
+   "name": "수단",
+   "field": "districts"
+  },
+  {
+   "value": "263600",
+   "sido": "아프리카",
+   "name": "스와질랜드",
+   "field": "districts"
+  },
+  {
+   "value": "263700",
+   "sido": "아프리카",
+   "name": "시에라리온",
+   "field": "districts"
+  },
+  {
+   "value": "269900",
+   "sido": "아프리카",
+   "name": "아프리카기타",
+   "field": "districts"
+  },
+  {
+   "value": "263900",
+   "sido": "아프리카",
+   "name": "알제리",
+   "field": "districts"
+  },
+  {
+   "value": "264000",
+   "sido": "아프리카",
+   "name": "앙골라",
+   "field": "districts"
+  },
+  {
+   "value": "265300",
+   "sido": "아프리카",
+   "name": "에리트레아",
+   "field": "districts"
+  },
+  {
+   "value": "266100",
+   "sido": "아프리카",
+   "name": "에스와티니",
+   "field": "districts"
+  },
+  {
+   "value": "260900",
+   "sido": "아프리카",
+   "name": "에티오피아",
+   "field": "districts"
+  },
+  {
+   "value": "261000",
+   "sido": "아프리카",
+   "name": "우간다",
+   "field": "districts"
+  },
+  {
+   "value": "261100",
+   "sido": "아프리카",
+   "name": "이집트",
+   "field": "districts"
+  },
+  {
+   "value": "264100",
+   "sido": "아프리카",
+   "name": "자마이카",
+   "field": "districts"
+  },
+  {
+   "value": "264200",
+   "sido": "아프리카",
+   "name": "자이르",
+   "field": "districts"
+  },
+  {
+   "value": "264300",
+   "sido": "아프리카",
+   "name": "잠비아",
+   "field": "districts"
+  },
+  {
+   "value": "264400",
+   "sido": "아프리카",
+   "name": "적도기니",
+   "field": "districts"
+  },
+  {
+   "value": "264500",
+   "sido": "아프리카",
+   "name": "중앙아프리카공화국",
+   "field": "districts"
+  },
+  {
+   "value": "264600",
+   "sido": "아프리카",
+   "name": "지부티",
+   "field": "districts"
+  },
+  {
+   "value": "264700",
+   "sido": "아프리카",
+   "name": "짐바브웨",
+   "field": "districts"
+  },
+  {
+   "value": "264800",
+   "sido": "아프리카",
+   "name": "차드",
+   "field": "districts"
+  },
+  {
+   "value": "264900",
+   "sido": "아프리카",
+   "name": "카메룬",
+   "field": "districts"
+  },
+  {
+   "value": "265800",
+   "sido": "아프리카",
+   "name": "카보베르데",
+   "field": "districts"
+  },
+  {
+   "value": "261200",
+   "sido": "아프리카",
+   "name": "케냐",
+   "field": "districts"
+  },
+  {
+   "value": "265000",
+   "sido": "아프리카",
+   "name": "케이프버드",
+   "field": "districts"
+  },
+  {
+   "value": "265700",
+   "sido": "아프리카",
+   "name": "코모로",
+   "field": "districts"
+  },
+  {
+   "value": "263800",
+   "sido": "아프리카",
+   "name": "코트디브아르",
+   "field": "districts"
+  },
+  {
+   "value": "265100",
+   "sido": "아프리카",
+   "name": "콩고",
+   "field": "districts"
+  },
+  {
+   "value": "265600",
+   "sido": "아프리카",
+   "name": "콩고민주공화국",
+   "field": "districts"
+  },
+  {
+   "value": "261300",
+   "sido": "아프리카",
+   "name": "탄자니아",
+   "field": "districts"
+  },
+  {
+   "value": "265200",
+   "sido": "아프리카",
+   "name": "토고",
+   "field": "districts"
+  },
+  {
+   "value": "261400",
+   "sido": "아프리카",
+   "name": "튀니지",
+   "field": "districts"
+  },
+  {
+   "value": "270000",
+   "sido": "남극대륙",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "280000",
+   "sido": "기타해외",
+   "name": "",
+   "field": "locations"
+  }
+ ]
+}
