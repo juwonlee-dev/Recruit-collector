@@ -1,0 +1,3654 @@
+{
+ "site": "jobkorea",
+ "fetched_at": "2026-11-14T16:40:28+09:00",
+ "options": [
+  {
+   "value": "I000",
+   "sido": "서울",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "B000",
+   "sido": "경기",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "K000",
+   "sido": "인천",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "G000",
+   "sido": "대전",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "1000",
+   "sido": "세종",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "O000",
+   "sido": "충남",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "P000",
+   "sido": "충북",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "L000",
+   "sido": "전남광주",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "M000",
+   "sido": "전북",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "F000",
+   "sido": "대구",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "D000",
+   "sido": "경북",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "H000",
+   "sido": "부산",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "J000",
+   "sido": "울산",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "C000",
+   "sido": "경남",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "A000",
+   "sido": "강원",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "N000",
+   "sido": "제주",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "Q000",
+   "sido": "전국",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "R000",
+   "sido": "아시아·중동",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "X000",
+   "sido": "중국·홍콩",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "Z000",
+   "sido": "일본",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "Y000",
+   "sido": "미국",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "S000",
+   "sido": "북아메리카",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "T000",
+   "sido": "남아메리카",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "U000",
+   "sido": "유럽",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "V000",
+   "sido": "오세아니아",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "W000",
+   "sido": "아프리카",
+   "name": "",
+   "field": "locations"
+  },
+  {
+   "value": "I010",
+   "sido": "서울",
+   "name": "강남구",
+   "field": "locations"
+  },
+  {
+   "value": "I020",
+   "sido": "서울",
+   "name": "강동구",
+   "field": "locations"
+  },
+  {
+   "value": "I030",
+   "sido": "서울",
+   "name": "강북구",
+   "field": "locations"
+  },
+  {
+   "value": "I040",
+   "sido": "서울",
+   "name": "강서구",
+   "field": "locations"
+  },
+  {
+   "value": "I050",
+   "sido": "서울",
+   "name": "관악구",
+   "field": "locations"
+  },
+  {
+   "value": "I060",
+   "sido": "서울",
+   "name": "광진구",
+   "field": "locations"
+  },
+  {
+   "value": "I070",
+   "sido": "서울",
+   "name": "구로구",
+   "field": "locations"
+  },
+  {
+   "value": "I080",
+   "sido": "서울",
+   "name": "금천구",
+   "field": "locations"
+  },
+  {
+   "value": "I090",
+   "sido": "서울",
+   "name": "노원구",
+   "field": "locations"
+  },
+  {
+   "value": "I100",
+   "sido": "서울",
+   "name": "도봉구",
+   "field": "locations"
+  },
+  {
+   "value": "I110",
+   "sido": "서울",
+   "name": "동대문구",
+   "field": "locations"
+  },
+  {
+   "value": "I120",
+   "sido": "서울",
+   "name": "동작구",
+   "field": "locations"
+  },
+  {
+   "value": "I130",
+   "sido": "서울",
+   "name": "마포구",
+   "field": "locations"
+  },
+  {
+   "value": "I140",
+   "sido": "서울",
+   "name": "서대문구",
+   "field": "locations"
+  },
+  {
+   "value": "I150",
+   "sido": "서울",
+   "name": "서초구",
+   "field": "locations"
+  },
+  {
+   "value": "I160",
+   "sido": "서울",
+   "name": "성동구",
+   "field": "locations"
+  },
+  {
+   "value": "I170",
+   "sido": "서울",
+   "name": "성북구",
+   "field": "locations"
+  },
+  {
+   "value": "I180",
+   "sido": "서울",
+   "name": "송파구",
+   "field": "locations"
+  },
+  {
+   "value": "I190",
+   "sido": "서울",
+   "name": "양천구",
+   "field": "locations"
+  },
+  {
+   "value": "I200",
+   "sido": "서울",
+   "name": "영등포구",
+   "field": "locations"
+  },
+  {
+   "value": "I210",
+   "sido": "서울",
+   "name": "용산구",
+   "field": "locations"
+  },
+  {
+   "value": "I220",
+   "sido": "서울",
+   "name": "은평구",
+   "field": "locations"
+  },
+  {
+   "value": "I230",
+   "sido": "서울",
+   "name": "종로구",
+   "field": "locations"
+  },
+  {
+   "value": "I240",
+   "sido": "서울",
+   "name": "중구",
+   "field": "locations"
+  },
+  {
+   "value": "I250",
+   "sido": "서울",
+   "name": "중랑구",
+   "field": "locations"
+  },
+  {
+   "value": "B010",
+   "sido": "경기",
+   "name": "가평군",
+   "field": "locations"
+  },
+  {
+   "value": "B020",
+   "sido": "경기",
+   "name": "고양시 덕양구",
+   "field": "locations"
+  },
+  {
+   "value": "B030",
+   "sido": "경기",
+   "name": "고양시 일산동구",
+   "field": "locations"
+  },
+  {
+   "value": "B031",
+   "sido": "경기",
+   "name": "고양시 일산서구",
+   "field": "locations"
+  },
+  {
+   "value": "B040",
+   "sido": "경기",
+   "name": "과천시",
+   "field": "locations"
+  },
+  {
+   "value": "B050",
+   "sido": "경기",
+   "name": "광명시",
+   "field": "locations"
+  },
+  {
+   "value": "B060",
+   "sido": "경기",
+   "name": "광주시",
+   "field": "locations"
+  },
+  {
+   "value": "B070",
+   "sido": "경기",
+   "name": "구리시",
+   "field": "locations"
+  },
+  {
+   "value": "B080",
+   "sido": "경기",
+   "name": "군포시",
+   "field": "locations"
+  },
+  {
+   "value": "B090",
+   "sido": "경기",
+   "name": "김포시",
+   "field": "locations"
+  },
+  {
+   "value": "B100",
+   "sido": "경기",
+   "name": "남양주시",
+   "field": "locations"
+  },
+  {
+   "value": "B110",
+   "sido": "경기",
+   "name": "동두천시",
+   "field": "locations"
+  },
+  {
+   "value": "B125",
+   "sido": "경기",
+   "name": "부천시",
+   "field": "locations"
+  },
+  {
+   "value": "B150",
+   "sido": "경기",
+   "name": "성남시 분당구",
+   "field": "locations"
+  },
+  {
+   "value": "B160",
+   "sido": "경기",
+   "name": "성남시 수정구",
+   "field": "locations"
+  },
+  {
+   "value": "B170",
+   "sido": "경기",
+   "name": "성남시 중원구",
+   "field": "locations"
+  },
+  {
+   "value": "B180",
+   "sido": "경기",
+   "name": "수원시 권선구",
+   "field": "locations"
+  },
+  {
+   "value": "B190",
+   "sido": "경기",
+   "name": "수원시 장안구",
+   "field": "locations"
+  },
+  {
+   "value": "B200",
+   "sido": "경기",
+   "name": "수원시 팔달구",
+   "field": "locations"
+  },
+  {
+   "value": "B201",
+   "sido": "경기",
+   "name": "수원시 영통구",
+   "field": "locations"
+  },
+  {
+   "value": "B210",
+   "sido": "경기",
+   "name": "시흥시",
+   "field": "locations"
+  },
+  {
+   "value": "B220",
+   "sido": "경기",
+   "name": "안산시 단원구",
+   "field": "locations"
+  },
+  {
+   "value": "B221",
+   "sido": "경기",
+   "name": "안산시 상록구",
+   "field": "locations"
+  },
+  {
+   "value": "B230",
+   "sido": "경기",
+   "name": "안성시",
+   "field": "locations"
+  },
+  {
+   "value": "B240",
+   "sido": "경기",
+   "name": "안양시 동안구",
+   "field": "locations"
+  },
+  {
+   "value": "B250",
+   "sido": "경기",
+   "name": "안양시 만안구",
+   "field": "locations"
+  },
+  {
+   "value": "B260",
+   "sido": "경기",
+   "name": "양주시",
+   "field": "locations"
+  },
+  {
+   "value": "B270",
+   "sido": "경기",
+   "name": "양평군",
+   "field": "locations"
+  },
+  {
+   "value": "B280",
+   "sido": "경기",
+   "name": "여주시",
+   "field": "locations"
+  },
+  {
+   "value": "B290",
+   "sido": "경기",
+   "name": "연천군",
+   "field": "locations"
+  },
+  {
+   "value": "B300",
+   "sido": "경기",
+   "name": "오산시",
+   "field": "locations"
+  },
+  {
+   "value": "B310",
+   "sido": "경기",
+   "name": "용인시 기흥구",
+   "field": "locations"
+  },
+  {
+   "value": "B311",
+   "sido": "경기",
+   "name": "용인시 수지구",
+   "field": "locations"
+  },
+  {
+   "value": "B312",
+   "sido": "경기",
+   "name": "용인시 처인구",
+   "field": "locations"
+  },
+  {
+   "value": "B320",
+   "sido": "경기",
+   "name": "의왕시",
+   "field": "locations"
+  },
+  {
+   "value": "B330",
+   "sido": "경기",
+   "name": "의정부시",
+   "field": "locations"
+  },
+  {
+   "value": "B340",
+   "sido": "경기",
+   "name": "이천시",
+   "field": "locations"
+  },
+  {
+   "value": "B350",
+   "sido": "경기",
+   "name": "파주시",
+   "field": "locations"
+  },
+  {
+   "value": "B360",
+   "sido": "경기",
+   "name": "평택시",
+   "field": "locations"
+  },
+  {
+   "value": "B370",
+   "sido": "경기",
+   "name": "포천시",
+   "field": "locations"
+  },
+  {
+   "value": "B380",
+   "sido": "경기",
+   "name": "하남시",
+   "field": "locations"
+  },
+  {
+   "value": "B390",
+   "sido": "경기",
+   "name": "화성시 동탄구",
+   "field": "locations"
+  },
+  {
+   "value": "B391",
+   "sido": "경기",
+   "name": "화성시 만세구",
+   "field": "locations"
+  },
+  {
+   "value": "B392",
+   "sido": "경기",
+   "name": "화성시 병점구",
+   "field": "locations"
+  },
+  {
+   "value": "B393",
+   "sido": "경기",
+   "name": "화성시 효행구",
+   "field": "locations"
+  },
+  {
+   "value": "K010",
+   "sido": "인천",
+   "name": "강화군",
+   "field": "locations"
+  },
+  {
+   "value": "K020",
+   "sido": "인천",
+   "name": "계양구",
+   "field": "locations"
+  },
+  {
+   "value": "K030",
+   "sido": "인천",
+   "name": "미추홀구",
+   "field": "locations"
+  },
+  {
+   "value": "K040",
+   "sido": "인천",
+   "name": "남동구",
+   "field": "locations"
+  },
+  {
+   "value": "K050",
+   "sido": "인천",
+   "name": "제물포구",
+   "field": "locations"
+  },
+  {
+   "value": "K060",
+   "sido": "인천",
+   "name": "부평구",
+   "field": "locations"
+  },
+  {
+   "value": "K070",
+   "sido": "인천",
+   "name": "서해구",
+   "field": "locations"
+  },
+  {
+   "value": "K080",
+   "sido": "인천",
+   "name": "연수구",
+   "field": "locations"
+  },
+  {
+   "value": "K090",
+   "sido": "인천",
+   "name": "옹진군",
+   "field": "locations"
+  },
+  {
+   "value": "K100",
+   "sido": "인천",
+   "name": "영종구",
+   "field": "locations"
+  },
+  {
+   "value": "K110",
+   "sido": "인천",
+   "name": "검단구",
+   "field": "locations"
+  },
+  {
+   "value": "G010",
+   "sido": "대전",
+   "name": "대덕구",
+   "field": "locations"
+  },
+  {
+   "value": "G020",
+   "sido": "대전",
+   "name": "동구",
+   "field": "locations"
+  },
+  {
+   "value": "G030",
+   "sido": "대전",
+   "name": "서구",
+   "field": "locations"
+  },
+  {
+   "value": "G040",
+   "sido": "대전",
+   "name": "유성구",
+   "field": "locations"
+  },
+  {
+   "value": "G050",
+   "sido": "대전",
+   "name": "중구",
+   "field": "locations"
+  },
+  {
+   "value": "O010",
+   "sido": "충남",
+   "name": "공주시",
+   "field": "locations"
+  },
+  {
+   "value": "O020",
+   "sido": "충남",
+   "name": "금산군",
+   "field": "locations"
+  },
+  {
+   "value": "O030",
+   "sido": "충남",
+   "name": "논산시",
+   "field": "locations"
+  },
+  {
+   "value": "O040",
+   "sido": "충남",
+   "name": "당진시",
+   "field": "locations"
+  },
+  {
+   "value": "O050",
+   "sido": "충남",
+   "name": "보령시",
+   "field": "locations"
+  },
+  {
+   "value": "O060",
+   "sido": "충남",
+   "name": "부여군",
+   "field": "locations"
+  },
+  {
+   "value": "O070",
+   "sido": "충남",
+   "name": "서산시",
+   "field": "locations"
+  },
+  {
+   "value": "O080",
+   "sido": "충남",
+   "name": "서천군",
+   "field": "locations"
+  },
+  {
+   "value": "O090",
+   "sido": "충남",
+   "name": "아산시",
+   "field": "locations"
+  },
+  {
+   "value": "O110",
+   "sido": "충남",
+   "name": "예산군",
+   "field": "locations"
+  },
+  {
+   "value": "O120",
+   "sido": "충남",
+   "name": "천안시 동남구",
+   "field": "locations"
+  },
+  {
+   "value": "O121",
+   "sido": "충남",
+   "name": "천안시 서북구",
+   "field": "locations"
+  },
+  {
+   "value": "O130",
+   "sido": "충남",
+   "name": "청양군",
+   "field": "locations"
+  },
+  {
+   "value": "O140",
+   "sido": "충남",
+   "name": "태안군",
+   "field": "locations"
+  },
+  {
+   "value": "O150",
+   "sido": "충남",
+   "name": "홍성군",
+   "field": "locations"
+  },
+  {
+   "value": "O160",
+   "sido": "충남",
+   "name": "계룡시",
+   "field": "locations"
+  },
+  {
+   "value": "O000_",
+   "sido": "충남",
+   "name": "충남전지역",
+   "field": "locations"
+  },
+  {
+   "value": "P010",
+   "sido": "충북",
+   "name": "괴산군",
+   "field": "locations"
+  },
+  {
+   "value": "P020",
+   "sido": "충북",
+   "name": "단양군",
+   "field": "locations"
+  },
+  {
+   "value": "P030",
+   "sido": "충북",
+   "name": "보은군",
+   "field": "locations"
+  },
+  {
+   "value": "P040",
+   "sido": "충북",
+   "name": "영동군",
+   "field": "locations"
+  },
+  {
+   "value": "P050",
+   "sido": "충북",
+   "name": "옥천군",
+   "field": "locations"
+  },
+  {
+   "value": "P060",
+   "sido": "충북",
+   "name": "음성군",
+   "field": "locations"
+  },
+  {
+   "value": "P070",
+   "sido": "충북",
+   "name": "제천시",
+   "field": "locations"
+  },
+  {
+   "value": "P080",
+   "sido": "충북",
+   "name": "진천군",
+   "field": "locations"
+  },
+  {
+   "value": "P090",
+   "sido": "충북",
+   "name": "청주시 청원구",
+   "field": "locations"
+  },
+  {
+   "value": "P100",
+   "sido": "충북",
+   "name": "청주시 상당구",
+   "field": "locations"
+  },
+  {
+   "value": "P101",
+   "sido": "충북",
+   "name": "청주시 서원구",
+   "field": "locations"
+  },
+  {
+   "value": "P110",
+   "sido": "충북",
+   "name": "청주시 흥덕구",
+   "field": "locations"
+  },
+  {
+   "value": "P120",
+   "sido": "충북",
+   "name": "충주시",
+   "field": "locations"
+  },
+  {
+   "value": "P130",
+   "sido": "충북",
+   "name": "증평군",
+   "field": "locations"
+  },
+  {
+   "value": "L010",
+   "sido": "전남광주",
+   "name": "강진군",
+   "field": "locations"
+  },
+  {
+   "value": "L020",
+   "sido": "전남광주",
+   "name": "고흥군",
+   "field": "locations"
+  },
+  {
+   "value": "L030",
+   "sido": "전남광주",
+   "name": "곡성군",
+   "field": "locations"
+  },
+  {
+   "value": "L040",
+   "sido": "전남광주",
+   "name": "광양시",
+   "field": "locations"
+  },
+  {
+   "value": "L050",
+   "sido": "전남광주",
+   "name": "구례군",
+   "field": "locations"
+  },
+  {
+   "value": "L060",
+   "sido": "전남광주",
+   "name": "나주시",
+   "field": "locations"
+  },
+  {
+   "value": "L070",
+   "sido": "전남광주",
+   "name": "담양군",
+   "field": "locations"
+  },
+  {
+   "value": "L080",
+   "sido": "전남광주",
+   "name": "목포시",
+   "field": "locations"
+  },
+  {
+   "value": "L090",
+   "sido": "전남광주",
+   "name": "무안군",
+   "field": "locations"
+  },
+  {
+   "value": "L100",
+   "sido": "전남광주",
+   "name": "보성군",
+   "field": "locations"
+  },
+  {
+   "value": "L110",
+   "sido": "전남광주",
+   "name": "순천시",
+   "field": "locations"
+  },
+  {
+   "value": "L120",
+   "sido": "전남광주",
+   "name": "신안군",
+   "field": "locations"
+  },
+  {
+   "value": "L130",
+   "sido": "전남광주",
+   "name": "여수시",
+   "field": "locations"
+  },
+  {
+   "value": "L140",
+   "sido": "전남광주",
+   "name": "영광군",
+   "field": "locations"
+  },
+  {
+   "value": "L150",
+   "sido": "전남광주",
+   "name": "영암군",
+   "field": "locations"
+  },
+  {
+   "value": "L160",
+   "sido": "전남광주",
+   "name": "완도군",
+   "field": "locations"
+  },
+  {
+   "value": "L170",
+   "sido": "전남광주",
+   "name": "장성군",
+   "field": "locations"
+  },
+  {
+   "value": "L180",
+   "sido": "전남광주",
+   "name": "장흥군",
+   "field": "locations"
+  },
+  {
+   "value": "L190",
+   "sido": "전남광주",
+   "name": "진도군",
+   "field": "locations"
+  },
+  {
+   "value": "L200",
+   "sido": "전남광주",
+   "name": "함평군",
+   "field": "locations"
+  },
+  {
+   "value": "L210",
+   "sido": "전남광주",
+   "name": "해남군",
+   "field": "locations"
+  },
+  {
+   "value": "L220",
+   "sido": "전남광주",
+   "name": "화순군",
+   "field": "locations"
+  },
+  {
+   "value": "L230",
+   "sido": "전남광주",
+   "name": "광산구",
+   "field": "locations"
+  },
+  {
+   "value": "L240",
+   "sido": "전남광주",
+   "name": "남구",
+   "field": "locations"
+  },
+  {
+   "value": "L250",
+   "sido": "전남광주",
+   "name": "동구",
+   "field": "locations"
+  },
+  {
+   "value": "L260",
+   "sido": "전남광주",
+   "name": "북구",
+   "field": "locations"
+  },
+  {
+   "value": "L270",
+   "sido": "전남광주",
+   "name": "서구",
+   "field": "locations"
+  },
+  {
+   "value": "M010",
+   "sido": "전북",
+   "name": "고창군",
+   "field": "locations"
+  },
+  {
+   "value": "M020",
+   "sido": "전북",
+   "name": "군산시",
+   "field": "locations"
+  },
+  {
+   "value": "M030",
+   "sido": "전북",
+   "name": "김제시",
+   "field": "locations"
+  },
+  {
+   "value": "M040",
+   "sido": "전북",
+   "name": "남원시",
+   "field": "locations"
+  },
+  {
+   "value": "M050",
+   "sido": "전북",
+   "name": "무주군",
+   "field": "locations"
+  },
+  {
+   "value": "M060",
+   "sido": "전북",
+   "name": "부안군",
+   "field": "locations"
+  },
+  {
+   "value": "M070",
+   "sido": "전북",
+   "name": "순창군",
+   "field": "locations"
+  },
+  {
+   "value": "M080",
+   "sido": "전북",
+   "name": "완주군",
+   "field": "locations"
+  },
+  {
+   "value": "M090",
+   "sido": "전북",
+   "name": "익산시",
+   "field": "locations"
+  },
+  {
+   "value": "M100",
+   "sido": "전북",
+   "name": "임실군",
+   "field": "locations"
+  },
+  {
+   "value": "M110",
+   "sido": "전북",
+   "name": "장수군",
+   "field": "locations"
+  },
+  {
+   "value": "M120",
+   "sido": "전북",
+   "name": "전주시 덕진구",
+   "field": "locations"
+  },
+  {
+   "value": "M130",
+   "sido": "전북",
+   "name": "전주시 완산구",
+   "field": "locations"
+  },
+  {
+   "value": "M140",
+   "sido": "전북",
+   "name": "정읍시",
+   "field": "locations"
+  },
+  {
+   "value": "M150",
+   "sido": "전북",
+   "name": "진안군",
+   "field": "locations"
+  },
+  {
+   "value": "F090",
+   "sido": "대구",
+   "name": "군위군",
+   "field": "locations"
+  },
+  {
+   "value": "F010",
+   "sido": "대구",
+   "name": "남구",
+   "field": "locations"
+  },
+  {
+   "value": "F020",
+   "sido": "대구",
+   "name": "달서구",
+   "field": "locations"
+  },
+  {
+   "value": "F030",
+   "sido": "대구",
+   "name": "달성군",
+   "field": "locations"
+  },
+  {
+   "value": "F040",
+   "sido": "대구",
+   "name": "동구",
+   "field": "locations"
+  },
+  {
+   "value": "F050",
+   "sido": "대구",
+   "name": "북구",
+   "field": "locations"
+  },
+  {
+   "value": "F060",
+   "sido": "대구",
+   "name": "서구",
+   "field": "locations"
+  },
+  {
+   "value": "F070",
+   "sido": "대구",
+   "name": "수성구",
+   "field": "locations"
+  },
+  {
+   "value": "F080",
+   "sido": "대구",
+   "name": "중구",
+   "field": "locations"
+  },
+  {
+   "value": "D010",
+   "sido": "경북",
+   "name": "경산시",
+   "field": "locations"
+  },
+  {
+   "value": "D020",
+   "sido": "경북",
+   "name": "경주시",
+   "field": "locations"
+  },
+  {
+   "value": "D030",
+   "sido": "경북",
+   "name": "고령군",
+   "field": "locations"
+  },
+  {
+   "value": "D040",
+   "sido": "경북",
+   "name": "구미시",
+   "field": "locations"
+  },
+  {
+   "value": "D060",
+   "sido": "경북",
+   "name": "김천시",
+   "field": "locations"
+  },
+  {
+   "value": "D070",
+   "sido": "경북",
+   "name": "문경시",
+   "field": "locations"
+  },
+  {
+   "value": "D080",
+   "sido": "경북",
+   "name": "봉화군",
+   "field": "locations"
+  },
+  {
+   "value": "D090",
+   "sido": "경북",
+   "name": "상주시",
+   "field": "locations"
+  },
+  {
+   "value": "D100",
+   "sido": "경북",
+   "name": "성주군",
+   "field": "locations"
+  },
+  {
+   "value": "D110",
+   "sido": "경북",
+   "name": "안동시",
+   "field": "locations"
+  },
+  {
+   "value": "D120",
+   "sido": "경북",
+   "name": "영덕군",
+   "field": "locations"
+  },
+  {
+   "value": "D130",
+   "sido": "경북",
+   "name": "영양군",
+   "field": "locations"
+  },
+  {
+   "value": "D140",
+   "sido": "경북",
+   "name": "영주시",
+   "field": "locations"
+  },
+  {
+   "value": "D150",
+   "sido": "경북",
+   "name": "영천시",
+   "field": "locations"
+  },
+  {
+   "value": "D160",
+   "sido": "경북",
+   "name": "예천군",
+   "field": "locations"
+  },
+  {
+   "value": "D170",
+   "sido": "경북",
+   "name": "울릉군",
+   "field": "locations"
+  },
+  {
+   "value": "D180",
+   "sido": "경북",
+   "name": "울진군",
+   "field": "locations"
+  },
+  {
+   "value": "D190",
+   "sido": "경북",
+   "name": "의성군",
+   "field": "locations"
+  },
+  {
+   "value": "D200",
+   "sido": "경북",
+   "name": "청도군",
+   "field": "locations"
+  },
+  {
+   "value": "D210",
+   "sido": "경북",
+   "name": "청송군",
+   "field": "locations"
+  },
+  {
+   "value": "D220",
+   "sido": "경북",
+   "name": "칠곡군",
+   "field": "locations"
+  },
+  {
+   "value": "D230",
+   "sido": "경북",
+   "name": "포항시 남구",
+   "field": "locations"
+  },
+  {
+   "value": "D240",
+   "sido": "경북",
+   "name": "포항시 북구",
+   "field": "locations"
+  },
+  {
+   "value": "H010",
+   "sido": "부산",
+   "name": "강서구",
+   "field": "locations"
+  },
+  {
+   "value": "H020",
+   "sido": "부산",
+   "name": "금정구",
+   "field": "locations"
+  },
+  {
+   "value": "H030",
+   "sido": "부산",
+   "name": "기장군",
+   "field": "locations"
+  },
+  {
+   "value": "H040",
+   "sido": "부산",
+   "name": "남구",
+   "field": "locations"
+  },
+  {
+   "value": "H050",
+   "sido": "부산",
+   "name": "동구",
+   "field": "locations"
+  },
+  {
+   "value": "H060",
+   "sido": "부산",
+   "name": "동래구",
+   "field": "locations"
+  },
+  {
+   "value": "H070",
+   "sido": "부산",
+   "name": "부산진구",
+   "field": "locations"
+  },
+  {
+   "value": "H080",
+   "sido": "부산",
+   "name": "북구",
+   "field": "locations"
+  },
+  {
+   "value": "H090",
+   "sido": "부산",
+   "name": "사상구",
+   "field": "locations"
+  },
+  {
+   "value": "H100",
+   "sido": "부산",
+   "name": "사하구",
+   "field": "locations"
+  },
+  {
+   "value": "H110",
+   "sido": "부산",
+   "name": "서구",
+   "field": "locations"
+  },
+  {
+   "value": "H120",
+   "sido": "부산",
+   "name": "수영구",
+   "field": "locations"
+  },
+  {
+   "value": "H130",
+   "sido": "부산",
+   "name": "연제구",
+   "field": "locations"
+  },
+  {
+   "value": "H140",
+   "sido": "부산",
+   "name": "영도구",
+   "field": "locations"
+  },
+  {
+   "value": "H150",
+   "sido": "부산",
+   "name": "중구",
+   "field": "locations"
+  },
+  {
+   "value": "H160",
+   "sido": "부산",
+   "name": "해운대구",
+   "field": "locations"
+  },
+  {
+   "value": "J010",
+   "sido": "울산",
+   "name": "남구",
+   "field": "locations"
+  },
+  {
+   "value": "J020",
+   "sido": "울산",
+   "name": "동구",
+   "field": "locations"
+  },
+  {
+   "value": "J030",
+   "sido": "울산",
+   "name": "북구",
+   "field": "locations"
+  },
+  {
+   "value": "J040",
+   "sido": "울산",
+   "name": "울주군",
+   "field": "locations"
+  },
+  {
+   "value": "J050",
+   "sido": "울산",
+   "name": "중구",
+   "field": "locations"
+  },
+  {
+   "value": "C010",
+   "sido": "경남",
+   "name": "거제시",
+   "field": "locations"
+  },
+  {
+   "value": "C020",
+   "sido": "경남",
+   "name": "거창군",
+   "field": "locations"
+  },
+  {
+   "value": "C030",
+   "sido": "경남",
+   "name": "고성군",
+   "field": "locations"
+  },
+  {
+   "value": "C040",
+   "sido": "경남",
+   "name": "김해시",
+   "field": "locations"
+  },
+  {
+   "value": "C050",
+   "sido": "경남",
+   "name": "남해군",
+   "field": "locations"
+  },
+  {
+   "value": "C080",
+   "sido": "경남",
+   "name": "밀양시",
+   "field": "locations"
+  },
+  {
+   "value": "C090",
+   "sido": "경남",
+   "name": "사천시",
+   "field": "locations"
+  },
+  {
+   "value": "C100",
+   "sido": "경남",
+   "name": "산청군",
+   "field": "locations"
+  },
+  {
+   "value": "C110",
+   "sido": "경남",
+   "name": "양산시",
+   "field": "locations"
+  },
+  {
+   "value": "C120",
+   "sido": "경남",
+   "name": "의령군",
+   "field": "locations"
+  },
+  {
+   "value": "C130",
+   "sido": "경남",
+   "name": "진주시",
+   "field": "locations"
+  },
+  {
+   "value": "C150",
+   "sido": "경남",
+   "name": "창녕군",
+   "field": "locations"
+  },
+  {
+   "value": "C160",
+   "sido": "경남",
+   "name": "창원시 마산합포구",
+   "field": "locations"
+  },
+  {
+   "value": "C162",
+   "sido": "경남",
+   "name": "창원시 마산회원구",
+   "field": "locations"
+  },
+  {
+   "value": "C164",
+   "sido": "경남",
+   "name": "창원시 성산구",
+   "field": "locations"
+  },
+  {
+   "value": "C166",
+   "sido": "경남",
+   "name": "창원시 의창구",
+   "field": "locations"
+  },
+  {
+   "value": "C168",
+   "sido": "경남",
+   "name": "창원시 진해구",
+   "field": "locations"
+  },
+  {
+   "value": "C170",
+   "sido": "경남",
+   "name": "통영시",
+   "field": "locations"
+  },
+  {
+   "value": "C180",
+   "sido": "경남",
+   "name": "하동군",
+   "field": "locations"
+  },
+  {
+   "value": "C190",
+   "sido": "경남",
+   "name": "함안군",
+   "field": "locations"
+  },
+  {
+   "value": "C200",
+   "sido": "경남",
+   "name": "함양군",
+   "field": "locations"
+  },
+  {
+   "value": "C210",
+   "sido": "경남",
+   "name": "합천군",
+   "field": "locations"
+  },
+  {
+   "value": "A010",
+   "sido": "강원",
+   "name": "강릉시",
+   "field": "locations"
+  },
+  {
+   "value": "A020",
+   "sido": "강원",
+   "name": "고성군",
+   "field": "locations"
+  },
+  {
+   "value": "A030",
+   "sido": "강원",
+   "name": "동해시",
+   "field": "locations"
+  },
+  {
+   "value": "A040",
+   "sido": "강원",
+   "name": "삼척시",
+   "field": "locations"
+  },
+  {
+   "value": "A050",
+   "sido": "강원",
+   "name": "속초시",
+   "field": "locations"
+  },
+  {
+   "value": "A060",
+   "sido": "강원",
+   "name": "양구군",
+   "field": "locations"
+  },
+  {
+   "value": "A070",
+   "sido": "강원",
+   "name": "양양군",
+   "field": "locations"
+  },
+  {
+   "value": "A080",
+   "sido": "강원",
+   "name": "영월군",
+   "field": "locations"
+  },
+  {
+   "value": "A090",
+   "sido": "강원",
+   "name": "원주시",
+   "field": "locations"
+  },
+  {
+   "value": "A100",
+   "sido": "강원",
+   "name": "인제군",
+   "field": "locations"
+  },
+  {
+   "value": "A110",
+   "sido": "강원",
+   "name": "정선군",
+   "field": "locations"
+  },
+  {
+   "value": "A120",
+   "sido": "강원",
+   "name": "철원군",
+   "field": "locations"
+  },
+  {
+   "value": "A130",
+   "sido": "강원",
+   "name": "춘천시",
+   "field": "locations"
+  },
+  {
+   "value": "A140",
+   "sido": "강원",
+   "name": "태백시",
+   "field": "locations"
+  },
+  {
+   "value": "A150",
+   "sido": "강원",
+   "name": "평창군",
+   "field": "locations"
+  },
+  {
+   "value": "A160",
+   "sido": "강원",
+   "name": "홍천군",
+   "field": "locations"
+  },
+  {
+   "value": "A170",
+   "sido": "강원",
+   "name": "화천군",
+   "field": "locations"
+  },
+  {
+   "value": "A180",
+   "sido": "강원",
+   "name": "횡성군",
+   "field": "locations"
+  },
+  {
+   "value": "N030",
+   "sido": "제주",
+   "name": "서귀포시",
+   "field": "locations"
+  },
+  {
+   "value": "N040",
+   "sido": "제주",
+   "name": "제주시",
+   "field": "locations"
+  },
+  {
+   "value": "R010",
+   "sido": "아시아·중동",
+   "name": "대만",
+   "field": "locations"
+  },
+  {
+   "value": "R020",
+   "sido": "아시아·중동",
+   "name": "말레이시아",
+   "field": "locations"
+  },
+  {
+   "value": "R030",
+   "sido": "아시아·중동",
+   "name": "몽골",
+   "field": "locations"
+  },
+  {
+   "value": "R040",
+   "sido": "아시아·중동",
+   "name": "미얀마",
+   "field": "locations"
+  },
+  {
+   "value": "R050",
+   "sido": "아시아·중동",
+   "name": "방글라데시",
+   "field": "locations"
+  },
+  {
+   "value": "R060",
+   "sido": "아시아·중동",
+   "name": "베트남",
+   "field": "locations"
+  },
+  {
+   "value": "R070",
+   "sido": "아시아·중동",
+   "name": "사우디아라비아",
+   "field": "locations"
+  },
+  {
+   "value": "R080",
+   "sido": "아시아·중동",
+   "name": "스리랑카",
+   "field": "locations"
+  },
+  {
+   "value": "R090",
+   "sido": "아시아·중동",
+   "name": "싱가포르",
+   "field": "locations"
+  },
+  {
+   "value": "R100",
+   "sido": "아시아·중동",
+   "name": "인도",
+   "field": "locations"
+  },
+  {
+   "value": "R110",
+   "sido": "아시아·중동",
+   "name": "인도네시아",
+   "field": "locations"
+  },
+  {
+   "value": "R120",
+   "sido": "아시아·중동",
+   "name": "캄보디아",
+   "field": "locations"
+  },
+  {
+   "value": "R130",
+   "sido": "아시아·중동",
+   "name": "태국",
+   "field": "locations"
+  },
+  {
+   "value": "R140",
+   "sido": "아시아·중동",
+   "name": "필리핀",
+   "field": "locations"
+  },
+  {
+   "value": "R160",
+   "sido": "아시아·중동",
+   "name": "네팔",
+   "field": "locations"
+  },
+  {
+   "value": "R170",
+   "sido": "아시아·중동",
+   "name": "동티모르",
+   "field": "locations"
+  },
+  {
+   "value": "R180",
+   "sido": "아시아·중동",
+   "name": "라오스",
+   "field": "locations"
+  },
+  {
+   "value": "R190",
+   "sido": "아시아·중동",
+   "name": "레바논",
+   "field": "locations"
+  },
+  {
+   "value": "R200",
+   "sido": "아시아·중동",
+   "name": "몰디브",
+   "field": "locations"
+  },
+  {
+   "value": "R210",
+   "sido": "아시아·중동",
+   "name": "바레인",
+   "field": "locations"
+  },
+  {
+   "value": "R220",
+   "sido": "아시아·중동",
+   "name": "부탄",
+   "field": "locations"
+  },
+  {
+   "value": "R230",
+   "sido": "아시아·중동",
+   "name": "브루나이",
+   "field": "locations"
+  },
+  {
+   "value": "R240",
+   "sido": "아시아·중동",
+   "name": "시리아",
+   "field": "locations"
+  },
+  {
+   "value": "R250",
+   "sido": "아시아·중동",
+   "name": "아랍에미리트연합국",
+   "field": "locations"
+  },
+  {
+   "value": "R260",
+   "sido": "아시아·중동",
+   "name": "아프가니스탄",
+   "field": "locations"
+  },
+  {
+   "value": "R270",
+   "sido": "아시아·중동",
+   "name": "예멘",
+   "field": "locations"
+  },
+  {
+   "value": "R280",
+   "sido": "아시아·중동",
+   "name": "오만",
+   "field": "locations"
+  },
+  {
+   "value": "R290",
+   "sido": "아시아·중동",
+   "name": "요르단",
+   "field": "locations"
+  },
+  {
+   "value": "R300",
+   "sido": "아시아·중동",
+   "name": "이라크",
+   "field": "locations"
+  },
+  {
+   "value": "R310",
+   "sido": "아시아·중동",
+   "name": "이란",
+   "field": "locations"
+  },
+  {
+   "value": "R320",
+   "sido": "아시아·중동",
+   "name": "이스라엘",
+   "field": "locations"
+  },
+  {
+   "value": "R330",
+   "sido": "아시아·중동",
+   "name": "카타르",
+   "field": "locations"
+  },
+  {
+   "value": "R340",
+   "sido": "아시아·중동",
+   "name": "쿠웨이트",
+   "field": "locations"
+  },
+  {
+   "value": "R350",
+   "sido": "아시아·중동",
+   "name": "파키스탄",
+   "field": "locations"
+  },
+  {
+   "value": "R360",
+   "sido": "아시아·중동",
+   "name": "조지아",
+   "field": "locations"
+  },
+  {
+   "value": "R370",
+   "sido": "아시아·중동",
+   "name": "우즈베키스탄",
+   "field": "locations"
+  },
+  {
+   "value": "R380",
+   "sido": "아시아·중동",
+   "name": "카자흐스탄",
+   "field": "locations"
+  },
+  {
+   "value": "R390",
+   "sido": "아시아·중동",
+   "name": "키르기즈스탄",
+   "field": "locations"
+  },
+  {
+   "value": "R400",
+   "sido": "아시아·중동",
+   "name": "타지키스탄",
+   "field": "locations"
+  },
+  {
+   "value": "R410",
+   "sido": "아시아·중동",
+   "name": "투르크메니스탄",
+   "field": "locations"
+  },
+  {
+   "value": "R150",
+   "sido": "아시아·중동",
+   "name": "기타",
+   "field": "locations"
+  },
+  {
+   "value": "X010",
+   "sido": "중국·홍콩",
+   "name": "북경",
+   "field": "locations"
+  },
+  {
+   "value": "X020",
+   "sido": "중국·홍콩",
+   "name": "천진",
+   "field": "locations"
+  },
+  {
+   "value": "X030",
+   "sido": "중국·홍콩",
+   "name": "상해",
+   "field": "locations"
+  },
+  {
+   "value": "X050",
+   "sido": "중국·홍콩",
+   "name": "홍콩",
+   "field": "locations"
+  },
+  {
+   "value": "X040",
+   "sido": "중국·홍콩",
+   "name": "중경",
+   "field": "locations"
+  },
+  {
+   "value": "X070",
+   "sido": "중국·홍콩",
+   "name": "감숙성",
+   "field": "locations"
+  },
+  {
+   "value": "X080",
+   "sido": "중국·홍콩",
+   "name": "강서성",
+   "field": "locations"
+  },
+  {
+   "value": "X090",
+   "sido": "중국·홍콩",
+   "name": "강소성",
+   "field": "locations"
+  },
+  {
+   "value": "X100",
+   "sido": "중국·홍콩",
+   "name": "광동성",
+   "field": "locations"
+  },
+  {
+   "value": "X110",
+   "sido": "중국·홍콩",
+   "name": "귀주성",
+   "field": "locations"
+  },
+  {
+   "value": "X120",
+   "sido": "중국·홍콩",
+   "name": "길림성",
+   "field": "locations"
+  },
+  {
+   "value": "X130",
+   "sido": "중국·홍콩",
+   "name": "복건성",
+   "field": "locations"
+  },
+  {
+   "value": "X140",
+   "sido": "중국·홍콩",
+   "name": "사천성",
+   "field": "locations"
+  },
+  {
+   "value": "X150",
+   "sido": "중국·홍콩",
+   "name": "산동성",
+   "field": "locations"
+  },
+  {
+   "value": "X160",
+   "sido": "중국·홍콩",
+   "name": "산서성",
+   "field": "locations"
+  },
+  {
+   "value": "X170",
+   "sido": "중국·홍콩",
+   "name": "섬서성",
+   "field": "locations"
+  },
+  {
+   "value": "X180",
+   "sido": "중국·홍콩",
+   "name": "안휘성",
+   "field": "locations"
+  },
+  {
+   "value": "X190",
+   "sido": "중국·홍콩",
+   "name": "요녕성",
+   "field": "locations"
+  },
+  {
+   "value": "X200",
+   "sido": "중국·홍콩",
+   "name": "운남성",
+   "field": "locations"
+  },
+  {
+   "value": "X210",
+   "sido": "중국·홍콩",
+   "name": "절강성",
+   "field": "locations"
+  },
+  {
+   "value": "X220",
+   "sido": "중국·홍콩",
+   "name": "청해성",
+   "field": "locations"
+  },
+  {
+   "value": "X230",
+   "sido": "중국·홍콩",
+   "name": "하남성",
+   "field": "locations"
+  },
+  {
+   "value": "X240",
+   "sido": "중국·홍콩",
+   "name": "하북성",
+   "field": "locations"
+  },
+  {
+   "value": "X250",
+   "sido": "중국·홍콩",
+   "name": "해남성",
+   "field": "locations"
+  },
+  {
+   "value": "X260",
+   "sido": "중국·홍콩",
+   "name": "호남성",
+   "field": "locations"
+  },
+  {
+   "value": "X270",
+   "sido": "중국·홍콩",
+   "name": "호북성",
+   "field": "locations"
+  },
+  {
+   "value": "X280",
+   "sido": "중국·홍콩",
+   "name": "흑룡강성",
+   "field": "locations"
+  },
+  {
+   "value": "X290",
+   "sido": "중국·홍콩",
+   "name": "기타",
+   "field": "locations"
+  },
+  {
+   "value": "Z010",
+   "sido": "일본",
+   "name": "도쿄",
+   "field": "locations"
+  },
+  {
+   "value": "Z020",
+   "sido": "일본",
+   "name": "오사카",
+   "field": "locations"
+  },
+  {
+   "value": "Z030",
+   "sido": "일본",
+   "name": "쿄토",
+   "field": "locations"
+  },
+  {
+   "value": "Z040",
+   "sido": "일본",
+   "name": "카가와",
+   "field": "locations"
+  },
+  {
+   "value": "Z050",
+   "sido": "일본",
+   "name": "카고시마",
+   "field": "locations"
+  },
+  {
+   "value": "Z060",
+   "sido": "일본",
+   "name": "카나가와",
+   "field": "locations"
+  },
+  {
+   "value": "Z070",
+   "sido": "일본",
+   "name": "코치",
+   "field": "locations"
+  },
+  {
+   "value": "Z080",
+   "sido": "일본",
+   "name": "쿠마모토",
+   "field": "locations"
+  },
+  {
+   "value": "Z090",
+   "sido": "일본",
+   "name": "군마",
+   "field": "locations"
+  },
+  {
+   "value": "Z100",
+   "sido": "일본",
+   "name": "기후",
+   "field": "locations"
+  },
+  {
+   "value": "Z110",
+   "sido": "일본",
+   "name": "나가노",
+   "field": "locations"
+  },
+  {
+   "value": "Z120",
+   "sido": "일본",
+   "name": "나가사키",
+   "field": "locations"
+  },
+  {
+   "value": "Z130",
+   "sido": "일본",
+   "name": "나라",
+   "field": "locations"
+  },
+  {
+   "value": "Z140",
+   "sido": "일본",
+   "name": "니가타",
+   "field": "locations"
+  },
+  {
+   "value": "Z150",
+   "sido": "일본",
+   "name": "토쿠시마",
+   "field": "locations"
+  },
+  {
+   "value": "Z160",
+   "sido": "일본",
+   "name": "토야마",
+   "field": "locations"
+  },
+  {
+   "value": "Z170",
+   "sido": "일본",
+   "name": "토치기",
+   "field": "locations"
+  },
+  {
+   "value": "Z180",
+   "sido": "일본",
+   "name": "톳토리",
+   "field": "locations"
+  },
+  {
+   "value": "Z190",
+   "sido": "일본",
+   "name": "미야기",
+   "field": "locations"
+  },
+  {
+   "value": "Z200",
+   "sido": "일본",
+   "name": "미야자키",
+   "field": "locations"
+  },
+  {
+   "value": "Z210",
+   "sido": "일본",
+   "name": "미에",
+   "field": "locations"
+  },
+  {
+   "value": "Z220",
+   "sido": "일본",
+   "name": "사가",
+   "field": "locations"
+  },
+  {
+   "value": "Z230",
+   "sido": "일본",
+   "name": "사이타마",
+   "field": "locations"
+  },
+  {
+   "value": "Z240",
+   "sido": "일본",
+   "name": "시가",
+   "field": "locations"
+  },
+  {
+   "value": "Z250",
+   "sido": "일본",
+   "name": "시마네",
+   "field": "locations"
+  },
+  {
+   "value": "Z260",
+   "sido": "일본",
+   "name": "시즈오카",
+   "field": "locations"
+  },
+  {
+   "value": "Z270",
+   "sido": "일본",
+   "name": "아키타",
+   "field": "locations"
+  },
+  {
+   "value": "Z280",
+   "sido": "일본",
+   "name": "아오모리",
+   "field": "locations"
+  },
+  {
+   "value": "Z290",
+   "sido": "일본",
+   "name": "아이치",
+   "field": "locations"
+  },
+  {
+   "value": "Z300",
+   "sido": "일본",
+   "name": "야마가타",
+   "field": "locations"
+  },
+  {
+   "value": "Z310",
+   "sido": "일본",
+   "name": "야마구치",
+   "field": "locations"
+  },
+  {
+   "value": "Z320",
+   "sido": "일본",
+   "name": "야마나시",
+   "field": "locations"
+  },
+  {
+   "value": "Z330",
+   "sido": "일본",
+   "name": "에히메",
+   "field": "locations"
+  },
+  {
+   "value": "Z340",
+   "sido": "일본",
+   "name": "오카야마",
+   "field": "locations"
+  },
+  {
+   "value": "Z350",
+   "sido": "일본",
+   "name": "오키나와",
+   "field": "locations"
+  },
+  {
+   "value": "Z360",
+   "sido": "일본",
+   "name": "오이타",
+   "field": "locations"
+  },
+  {
+   "value": "Z370",
+   "sido": "일본",
+   "name": "와카야마",
+   "field": "locations"
+  },
+  {
+   "value": "Z380",
+   "sido": "일본",
+   "name": "이바라키",
+   "field": "locations"
+  },
+  {
+   "value": "Z390",
+   "sido": "일본",
+   "name": "이시카와",
+   "field": "locations"
+  },
+  {
+   "value": "Z400",
+   "sido": "일본",
+   "name": "이와테",
+   "field": "locations"
+  },
+  {
+   "value": "Z410",
+   "sido": "일본",
+   "name": "치바",
+   "field": "locations"
+  },
+  {
+   "value": "Z420",
+   "sido": "일본",
+   "name": "홋카이도",
+   "field": "locations"
+  },
+  {
+   "value": "Z430",
+   "sido": "일본",
+   "name": "효고",
+   "field": "locations"
+  },
+  {
+   "value": "Z440",
+   "sido": "일본",
+   "name": "후쿠시마",
+   "field": "locations"
+  },
+  {
+   "value": "Z450",
+   "sido": "일본",
+   "name": "후쿠오카",
+   "field": "locations"
+  },
+  {
+   "value": "Z460",
+   "sido": "일본",
+   "name": "후쿠이",
+   "field": "locations"
+  },
+  {
+   "value": "Z470",
+   "sido": "일본",
+   "name": "히로시마",
+   "field": "locations"
+  },
+  {
+   "value": "Y010",
+   "sido": "미국",
+   "name": "보스턴",
+   "field": "locations"
+  },
+  {
+   "value": "Y020",
+   "sido": "미국",
+   "name": "필라델피아",
+   "field": "locations"
+  },
+  {
+   "value": "Y030",
+   "sido": "미국",
+   "name": "뉴욕",
+   "field": "locations"
+  },
+  {
+   "value": "Y040",
+   "sido": "미국",
+   "name": "시카고",
+   "field": "locations"
+  },
+  {
+   "value": "Y050",
+   "sido": "미국",
+   "name": "로스앤젤레스",
+   "field": "locations"
+  },
+  {
+   "value": "Y060",
+   "sido": "미국",
+   "name": "워싱턴 D.C",
+   "field": "locations"
+  },
+  {
+   "value": "Y070",
+   "sido": "미국",
+   "name": "네바다주",
+   "field": "locations"
+  },
+  {
+   "value": "Y080",
+   "sido": "미국",
+   "name": "네브라스카주",
+   "field": "locations"
+  },
+  {
+   "value": "Y090",
+   "sido": "미국",
+   "name": "노스다코타주",
+   "field": "locations"
+  },
+  {
+   "value": "Y100",
+   "sido": "미국",
+   "name": "노스케롤라이나주",
+   "field": "locations"
+  },
+  {
+   "value": "Y110",
+   "sido": "미국",
+   "name": "뉴멕시코주",
+   "field": "locations"
+  },
+  {
+   "value": "Y120",
+   "sido": "미국",
+   "name": "뉴욕주",
+   "field": "locations"
+  },
+  {
+   "value": "Y130",
+   "sido": "미국",
+   "name": "뉴저지주",
+   "field": "locations"
+  },
+  {
+   "value": "Y140",
+   "sido": "미국",
+   "name": "뉴햄프셔주",
+   "field": "locations"
+  },
+  {
+   "value": "Y150",
+   "sido": "미국",
+   "name": "델라웨어주",
+   "field": "locations"
+  },
+  {
+   "value": "Y160",
+   "sido": "미국",
+   "name": "로드아일랜드주",
+   "field": "locations"
+  },
+  {
+   "value": "Y170",
+   "sido": "미국",
+   "name": "루지애나주",
+   "field": "locations"
+  },
+  {
+   "value": "Y180",
+   "sido": "미국",
+   "name": "메릴랜드주",
+   "field": "locations"
+  },
+  {
+   "value": "Y190",
+   "sido": "미국",
+   "name": "메사추세츠주",
+   "field": "locations"
+  },
+  {
+   "value": "Y200",
+   "sido": "미국",
+   "name": "메인주",
+   "field": "locations"
+  },
+  {
+   "value": "Y210",
+   "sido": "미국",
+   "name": "몬타나주",
+   "field": "locations"
+  },
+  {
+   "value": "Y220",
+   "sido": "미국",
+   "name": "미네소타주",
+   "field": "locations"
+  },
+  {
+   "value": "Y230",
+   "sido": "미국",
+   "name": "미시건주",
+   "field": "locations"
+  },
+  {
+   "value": "Y240",
+   "sido": "미국",
+   "name": "미시시피주",
+   "field": "locations"
+  },
+  {
+   "value": "Y250",
+   "sido": "미국",
+   "name": "미주리주",
+   "field": "locations"
+  },
+  {
+   "value": "Y260",
+   "sido": "미국",
+   "name": "버먼트주",
+   "field": "locations"
+  },
+  {
+   "value": "Y270",
+   "sido": "미국",
+   "name": "버지니아주",
+   "field": "locations"
+  },
+  {
+   "value": "Y280",
+   "sido": "미국",
+   "name": "웨스트버지니아주",
+   "field": "locations"
+  },
+  {
+   "value": "Y290",
+   "sido": "미국",
+   "name": "사우스다코타주",
+   "field": "locations"
+  },
+  {
+   "value": "Y300",
+   "sido": "미국",
+   "name": "사우스캐롤라이나주",
+   "field": "locations"
+  },
+  {
+   "value": "Y310",
+   "sido": "미국",
+   "name": "아이다호주",
+   "field": "locations"
+  },
+  {
+   "value": "Y320",
+   "sido": "미국",
+   "name": "아이오와주",
+   "field": "locations"
+  },
+  {
+   "value": "Y330",
+   "sido": "미국",
+   "name": "알래스카주",
+   "field": "locations"
+  },
+  {
+   "value": "Y340",
+   "sido": "미국",
+   "name": "알칸사주",
+   "field": "locations"
+  },
+  {
+   "value": "Y350",
+   "sido": "미국",
+   "name": "애리조나주",
+   "field": "locations"
+  },
+  {
+   "value": "Y360",
+   "sido": "미국",
+   "name": "앨라배마주",
+   "field": "locations"
+  },
+  {
+   "value": "Y370",
+   "sido": "미국",
+   "name": "오레건주",
+   "field": "locations"
+  },
+  {
+   "value": "Y380",
+   "sido": "미국",
+   "name": "오클라호마주",
+   "field": "locations"
+  },
+  {
+   "value": "Y390",
+   "sido": "미국",
+   "name": "오하이오주",
+   "field": "locations"
+  },
+  {
+   "value": "Y400",
+   "sido": "미국",
+   "name": "와이오밍주",
+   "field": "locations"
+  },
+  {
+   "value": "Y410",
+   "sido": "미국",
+   "name": "워싱턴주",
+   "field": "locations"
+  },
+  {
+   "value": "Y420",
+   "sido": "미국",
+   "name": "위스콘신주",
+   "field": "locations"
+  },
+  {
+   "value": "Y430",
+   "sido": "미국",
+   "name": "유타주",
+   "field": "locations"
+  },
+  {
+   "value": "Y440",
+   "sido": "미국",
+   "name": "인디애나주",
+   "field": "locations"
+  },
+  {
+   "value": "Y450",
+   "sido": "미국",
+   "name": "일리노이주",
+   "field": "locations"
+  },
+  {
+   "value": "Y460",
+   "sido": "미국",
+   "name": "조지아주",
+   "field": "locations"
+  },
+  {
+   "value": "Y470",
+   "sido": "미국",
+   "name": "캔사스주",
+   "field": "locations"
+  },
+  {
+   "value": "Y480",
+   "sido": "미국",
+   "name": "캘리포니아주",
+   "field": "locations"
+  },
+  {
+   "value": "Y490",
+   "sido": "미국",
+   "name": "켄터키주",
+   "field": "locations"
+  },
+  {
+   "value": "Y500",
+   "sido": "미국",
+   "name": "코네티컷주",
+   "field": "locations"
+  },
+  {
+   "value": "Y510",
+   "sido": "미국",
+   "name": "콜로라도주",
+   "field": "locations"
+  },
+  {
+   "value": "Y520",
+   "sido": "미국",
+   "name": "테네시주",
+   "field": "locations"
+  },
+  {
+   "value": "Y530",
+   "sido": "미국",
+   "name": "텍사스주",
+   "field": "locations"
+  },
+  {
+   "value": "Y540",
+   "sido": "미국",
+   "name": "펜실베니아주",
+   "field": "locations"
+  },
+  {
+   "value": "Y550",
+   "sido": "미국",
+   "name": "플로리다주",
+   "field": "locations"
+  },
+  {
+   "value": "Y560",
+   "sido": "미국",
+   "name": "하와이주",
+   "field": "locations"
+  },
+  {
+   "value": "S010",
+   "sido": "북아메리카",
+   "name": "멕시코",
+   "field": "locations"
+  },
+  {
+   "value": "S020",
+   "sido": "북아메리카",
+   "name": "캐나다",
+   "field": "locations"
+  },
+  {
+   "value": "S040",
+   "sido": "북아메리카",
+   "name": "그레나다",
+   "field": "locations"
+  },
+  {
+   "value": "S050",
+   "sido": "북아메리카",
+   "name": "그린란드",
+   "field": "locations"
+  },
+  {
+   "value": "S060",
+   "sido": "북아메리카",
+   "name": "도미니카공화국",
+   "field": "locations"
+  },
+  {
+   "value": "S070",
+   "sido": "북아메리카",
+   "name": "바베이도스",
+   "field": "locations"
+  },
+  {
+   "value": "S080",
+   "sido": "북아메리카",
+   "name": "바하마",
+   "field": "locations"
+  },
+  {
+   "value": "S090",
+   "sido": "북아메리카",
+   "name": "세인트루시아",
+   "field": "locations"
+  },
+  {
+   "value": "S100",
+   "sido": "북아메리카",
+   "name": "세인트빈센트그레나딘",
+   "field": "locations"
+  },
+  {
+   "value": "S110",
+   "sido": "북아메리카",
+   "name": "세인트키츠네비스",
+   "field": "locations"
+  },
+  {
+   "value": "S120",
+   "sido": "북아메리카",
+   "name": "코스타리카",
+   "field": "locations"
+  },
+  {
+   "value": "S130",
+   "sido": "북아메리카",
+   "name": "푸에르토리코",
+   "field": "locations"
+  },
+  {
+   "value": "S030",
+   "sido": "북아메리카",
+   "name": "기타",
+   "field": "locations"
+  },
+  {
+   "value": "T010",
+   "sido": "남아메리카",
+   "name": "과테말라",
+   "field": "locations"
+  },
+  {
+   "value": "T020",
+   "sido": "남아메리카",
+   "name": "베네수엘라",
+   "field": "locations"
+  },
+  {
+   "value": "T030",
+   "sido": "남아메리카",
+   "name": "브라질",
+   "field": "locations"
+  },
+  {
+   "value": "T040",
+   "sido": "남아메리카",
+   "name": "아르헨티나",
+   "field": "locations"
+  },
+  {
+   "value": "T050",
+   "sido": "남아메리카",
+   "name": "에콰도르",
+   "field": "locations"
+  },
+  {
+   "value": "T060",
+   "sido": "남아메리카",
+   "name": "온두라스",
+   "field": "locations"
+  },
+  {
+   "value": "T070",
+   "sido": "남아메리카",
+   "name": "우루과이",
+   "field": "locations"
+  },
+  {
+   "value": "T080",
+   "sido": "남아메리카",
+   "name": "칠레",
+   "field": "locations"
+  },
+  {
+   "value": "T090",
+   "sido": "남아메리카",
+   "name": "콜롬비아",
+   "field": "locations"
+  },
+  {
+   "value": "T100",
+   "sido": "남아메리카",
+   "name": "쿠바",
+   "field": "locations"
+  },
+  {
+   "value": "T110",
+   "sido": "남아메리카",
+   "name": "파나마",
+   "field": "locations"
+  },
+  {
+   "value": "T120",
+   "sido": "남아메리카",
+   "name": "페루",
+   "field": "locations"
+  },
+  {
+   "value": "T140",
+   "sido": "남아메리카",
+   "name": "가이아나",
+   "field": "locations"
+  },
+  {
+   "value": "T150",
+   "sido": "남아메리카",
+   "name": "니카라과",
+   "field": "locations"
+  },
+  {
+   "value": "T160",
+   "sido": "남아메리카",
+   "name": "도미니카연방",
+   "field": "locations"
+  },
+  {
+   "value": "T170",
+   "sido": "남아메리카",
+   "name": "벨리즈",
+   "field": "locations"
+  },
+  {
+   "value": "T180",
+   "sido": "남아메리카",
+   "name": "볼리비아",
+   "field": "locations"
+  },
+  {
+   "value": "T190",
+   "sido": "남아메리카",
+   "name": "수리남",
+   "field": "locations"
+  },
+  {
+   "value": "T200",
+   "sido": "남아메리카",
+   "name": "아이티",
+   "field": "locations"
+  },
+  {
+   "value": "T210",
+   "sido": "남아메리카",
+   "name": "앤티가바부다",
+   "field": "locations"
+  },
+  {
+   "value": "T220",
+   "sido": "남아메리카",
+   "name": "엘살바도르",
+   "field": "locations"
+  },
+  {
+   "value": "T230",
+   "sido": "남아메리카",
+   "name": "자메이카",
+   "field": "locations"
+  },
+  {
+   "value": "T240",
+   "sido": "남아메리카",
+   "name": "트리니다드토바고",
+   "field": "locations"
+  },
+  {
+   "value": "T250",
+   "sido": "남아메리카",
+   "name": "파라과이",
+   "field": "locations"
+  },
+  {
+   "value": "T130",
+   "sido": "남아메리카",
+   "name": "기타",
+   "field": "locations"
+  },
+  {
+   "value": "U010",
+   "sido": "유럽",
+   "name": "그리스",
+   "field": "locations"
+  },
+  {
+   "value": "U020",
+   "sido": "유럽",
+   "name": "네덜란드",
+   "field": "locations"
+  },
+  {
+   "value": "U030",
+   "sido": "유럽",
+   "name": "노르웨이",
+   "field": "locations"
+  },
+  {
+   "value": "U040",
+   "sido": "유럽",
+   "name": "덴마크",
+   "field": "locations"
+  },
+  {
+   "value": "U050",
+   "sido": "유럽",
+   "name": "독일",
+   "field": "locations"
+  },
+  {
+   "value": "U060",
+   "sido": "유럽",
+   "name": "러시아",
+   "field": "locations"
+  },
+  {
+   "value": "U070",
+   "sido": "유럽",
+   "name": "벨기에",
+   "field": "locations"
+  },
+  {
+   "value": "U080",
+   "sido": "유럽",
+   "name": "스웨덴",
+   "field": "locations"
+  },
+  {
+   "value": "U090",
+   "sido": "유럽",
+   "name": "스위스",
+   "field": "locations"
+  },
+  {
+   "value": "U100",
+   "sido": "유럽",
+   "name": "스페인",
+   "field": "locations"
+  },
+  {
+   "value": "U110",
+   "sido": "유럽",
+   "name": "영국",
+   "field": "locations"
+  },
+  {
+   "value": "U120",
+   "sido": "유럽",
+   "name": "이탈리아",
+   "field": "locations"
+  },
+  {
+   "value": "U130",
+   "sido": "유럽",
+   "name": "체코",
+   "field": "locations"
+  },
+  {
+   "value": "U140",
+   "sido": "유럽",
+   "name": "터키",
+   "field": "locations"
+  },
+  {
+   "value": "U150",
+   "sido": "유럽",
+   "name": "포르투갈",
+   "field": "locations"
+  },
+  {
+   "value": "U160",
+   "sido": "유럽",
+   "name": "폴란드",
+   "field": "locations"
+  },
+  {
+   "value": "U170",
+   "sido": "유럽",
+   "name": "프랑스",
+   "field": "locations"
+  },
+  {
+   "value": "U180",
+   "sido": "유럽",
+   "name": "핀란드",
+   "field": "locations"
+  },
+  {
+   "value": "U190",
+   "sido": "유럽",
+   "name": "헝가리",
+   "field": "locations"
+  },
+  {
+   "value": "U220",
+   "sido": "유럽",
+   "name": "라트비아",
+   "field": "locations"
+  },
+  {
+   "value": "U230",
+   "sido": "유럽",
+   "name": "루마니아",
+   "field": "locations"
+  },
+  {
+   "value": "U240",
+   "sido": "유럽",
+   "name": "룩셈부르크",
+   "field": "locations"
+  },
+  {
+   "value": "U250",
+   "sido": "유럽",
+   "name": "리투아니아",
+   "field": "locations"
+  },
+  {
+   "value": "U260",
+   "sido": "유럽",
+   "name": "리히텐슈타인",
+   "field": "locations"
+  },
+  {
+   "value": "U270",
+   "sido": "유럽",
+   "name": "마케도니아",
+   "field": "locations"
+  },
+  {
+   "value": "U280",
+   "sido": "유럽",
+   "name": "모나코",
+   "field": "locations"
+  },
+  {
+   "value": "U290",
+   "sido": "유럽",
+   "name": "몰도바",
+   "field": "locations"
+  },
+  {
+   "value": "U300",
+   "sido": "유럽",
+   "name": "몰타",
+   "field": "locations"
+  },
+  {
+   "value": "U310",
+   "sido": "유럽",
+   "name": "바티칸시국",
+   "field": "locations"
+  },
+  {
+   "value": "U320",
+   "sido": "유럽",
+   "name": "벨라루스",
+   "field": "locations"
+  },
+  {
+   "value": "U330",
+   "sido": "유럽",
+   "name": "보스니아헤르체코비나",
+   "field": "locations"
+  },
+  {
+   "value": "U340",
+   "sido": "유럽",
+   "name": "불가리아",
+   "field": "locations"
+  },
+  {
+   "value": "U350",
+   "sido": "유럽",
+   "name": "사이프러스",
+   "field": "locations"
+  },
+  {
+   "value": "U360",
+   "sido": "유럽",
+   "name": "산마리노",
+   "field": "locations"
+  },
+  {
+   "value": "U370",
+   "sido": "유럽",
+   "name": "세르비아몬테네그로",
+   "field": "locations"
+  },
+  {
+   "value": "U380",
+   "sido": "유럽",
+   "name": "슬로바키아",
+   "field": "locations"
+  },
+  {
+   "value": "U390",
+   "sido": "유럽",
+   "name": "슬로베니아",
+   "field": "locations"
+  },
+  {
+   "value": "U400",
+   "sido": "유럽",
+   "name": "아르메니아",
+   "field": "locations"
+  },
+  {
+   "value": "U410",
+   "sido": "유럽",
+   "name": "아이슬란드",
+   "field": "locations"
+  },
+  {
+   "value": "U420",
+   "sido": "유럽",
+   "name": "아일랜드",
+   "field": "locations"
+  },
+  {
+   "value": "U430",
+   "sido": "유럽",
+   "name": "아제르바이잔",
+   "field": "locations"
+  },
+  {
+   "value": "U440",
+   "sido": "유럽",
+   "name": "안도라",
+   "field": "locations"
+  },
+  {
+   "value": "U450",
+   "sido": "유럽",
+   "name": "알바니아",
+   "field": "locations"
+  },
+  {
+   "value": "U460",
+   "sido": "유럽",
+   "name": "에스토니아",
+   "field": "locations"
+  },
+  {
+   "value": "U470",
+   "sido": "유럽",
+   "name": "오스트리아",
+   "field": "locations"
+  },
+  {
+   "value": "U490",
+   "sido": "유럽",
+   "name": "우크라이나",
+   "field": "locations"
+  },
+  {
+   "value": "U510",
+   "sido": "유럽",
+   "name": "크로아티아",
+   "field": "locations"
+  },
+  {
+   "value": "U200",
+   "sido": "유럽",
+   "name": "기타",
+   "field": "locations"
+  },
+  {
+   "value": "V010",
+   "sido": "오세아니아",
+   "name": "괌",
+   "field": "locations"
+  },
+  {
+   "value": "V020",
+   "sido": "오세아니아",
+   "name": "뉴질랜드",
+   "field": "locations"
+  },
+  {
+   "value": "V030",
+   "sido": "오세아니아",
+   "name": "파푸아뉴기니",
+   "field": "locations"
+  },
+  {
+   "value": "V040",
+   "sido": "오세아니아",
+   "name": "피지",
+   "field": "locations"
+  },
+  {
+   "value": "V050",
+   "sido": "오세아니아",
+   "name": "호주",
+   "field": "locations"
+  },
+  {
+   "value": "V070",
+   "sido": "오세아니아",
+   "name": "나우루공화국",
+   "field": "locations"
+  },
+  {
+   "value": "V080",
+   "sido": "오세아니아",
+   "name": "마셜",
+   "field": "locations"
+  },
+  {
+   "value": "V090",
+   "sido": "오세아니아",
+   "name": "미크로네시아",
+   "field": "locations"
+  },
+  {
+   "value": "V100",
+   "sido": "오세아니아",
+   "name": "바누아투",
+   "field": "locations"
+  },
+  {
+   "value": "V110",
+   "sido": "오세아니아",
+   "name": "사모아",
+   "field": "locations"
+  },
+  {
+   "value": "V120",
+   "sido": "오세아니아",
+   "name": "솔로몬제도",
+   "field": "locations"
+  },
+  {
+   "value": "V130",
+   "sido": "오세아니아",
+   "name": "키리바시",
+   "field": "locations"
+  },
+  {
+   "value": "V140",
+   "sido": "오세아니아",
+   "name": "통가",
+   "field": "locations"
+  },
+  {
+   "value": "V150",
+   "sido": "오세아니아",
+   "name": "투발루",
+   "field": "locations"
+  },
+  {
+   "value": "V160",
+   "sido": "오세아니아",
+   "name": "팔라우",
+   "field": "locations"
+  },
+  {
+   "value": "V060",
+   "sido": "오세아니아",
+   "name": "기타",
+   "field": "locations"
+  },
+  {
+   "value": "W010",
+   "sido": "아프리카",
+   "name": "가나",
+   "field": "locations"
+  },
+  {
+   "value": "W020",
+   "sido": "아프리카",
+   "name": "가봉",
+   "field": "locations"
+  },
+  {
+   "value": "W030",
+   "sido": "아프리카",
+   "name": "나이지리아",
+   "field": "locations"
+  },
+  {
+   "value": "W040",
+   "sido": "아프리카",
+   "name": "남아프리카공화국",
+   "field": "locations"
+  },
+  {
+   "value": "W050",
+   "sido": "아프리카",
+   "name": "리비아",
+   "field": "locations"
+  },
+  {
+   "value": "W060",
+   "sido": "아프리카",
+   "name": "모로코",
+   "field": "locations"
+  },
+  {
+   "value": "W070",
+   "sido": "아프리카",
+   "name": "수단",
+   "field": "locations"
+  },
+  {
+   "value": "W080",
+   "sido": "아프리카",
+   "name": "알제리",
+   "field": "locations"
+  },
+  {
+   "value": "W090",
+   "sido": "아프리카",
+   "name": "에티오피아",
+   "field": "locations"
+  },
+  {
+   "value": "W100",
+   "sido": "아프리카",
+   "name": "우간다",
+   "field": "locations"
+  },
+  {
+   "value": "W110",
+   "sido": "아프리카",
+   "name": "이집트",
+   "field": "locations"
+  },
+  {
+   "value": "W120",
+   "sido": "아프리카",
+   "name": "케냐",
+   "field": "locations"
+  },
+  {
+   "value": "W130",
+   "sido": "아프리카",
+   "name": "탄자니아",
+   "field": "locations"
+  },
+  {
+   "value": "W140",
+   "sido": "아프리카",
+   "name": "튀니지",
+   "field": "locations"
+  },
+  {
+   "value": "W160",
+   "sido": "아프리카",
+   "name": "감비아",
+   "field": "locations"
+  },
+  {
+   "value": "W170",
+   "sido": "아프리카",
+   "name": "기니",
+   "field": "locations"
+  },
+  {
+   "value": "W180",
+   "sido": "아프리카",
+   "name": "기니비사우",
+   "field": "locations"
+  },
+  {
+   "value": "W190",
+   "sido": "아프리카",
+   "name": "나미비아",
+   "field": "locations"
+  },
+  {
+   "value": "W200",
+   "sido": "아프리카",
+   "name": "니제르",
+   "field": "locations"
+  },
+  {
+   "value": "W210",
+   "sido": "아프리카",
+   "name": "라이베리아",
+   "field": "locations"
+  },
+  {
+   "value": "W220",
+   "sido": "아프리카",
+   "name": "레소토",
+   "field": "locations"
+  },
+  {
+   "value": "W230",
+   "sido": "아프리카",
+   "name": "르완다",
+   "field": "locations"
+  },
+  {
+   "value": "W240",
+   "sido": "아프리카",
+   "name": "마다가스카르",
+   "field": "locations"
+  },
+  {
+   "value": "W250",
+   "sido": "아프리카",
+   "name": "말라위",
+   "field": "locations"
+  },
+  {
+   "value": "W260",
+   "sido": "아프리카",
+   "name": "말리",
+   "field": "locations"
+  },
+  {
+   "value": "W270",
+   "sido": "아프리카",
+   "name": "모리셔스",
+   "field": "locations"
+  },
+  {
+   "value": "W280",
+   "sido": "아프리카",
+   "name": "모리타니아",
+   "field": "locations"
+  },
+  {
+   "value": "W290",
+   "sido": "아프리카",
+   "name": "모잠비크",
+   "field": "locations"
+  },
+  {
+   "value": "W300",
+   "sido": "아프리카",
+   "name": "베냉",
+   "field": "locations"
+  },
+  {
+   "value": "W310",
+   "sido": "아프리카",
+   "name": "보츠와나",
+   "field": "locations"
+  },
+  {
+   "value": "W320",
+   "sido": "아프리카",
+   "name": "부룬디",
+   "field": "locations"
+  },
+  {
+   "value": "W330",
+   "sido": "아프리카",
+   "name": "부르키나파소",
+   "field": "locations"
+  },
+  {
+   "value": "W340",
+   "sido": "아프리카",
+   "name": "상투메프린시페",
+   "field": "locations"
+  },
+  {
+   "value": "W350",
+   "sido": "아프리카",
+   "name": "세네갈",
+   "field": "locations"
+  },
+  {
+   "value": "W360",
+   "sido": "아프리카",
+   "name": "세이셸",
+   "field": "locations"
+  },
+  {
+   "value": "W370",
+   "sido": "아프리카",
+   "name": "소말리아",
+   "field": "locations"
+  },
+  {
+   "value": "W380",
+   "sido": "아프리카",
+   "name": "스와질란드",
+   "field": "locations"
+  },
+  {
+   "value": "W390",
+   "sido": "아프리카",
+   "name": "시에라리온",
+   "field": "locations"
+  },
+  {
+   "value": "W400",
+   "sido": "아프리카",
+   "name": "앙골라",
+   "field": "locations"
+  },
+  {
+   "value": "W410",
+   "sido": "아프리카",
+   "name": "에리트레아",
+   "field": "locations"
+  },
+  {
+   "value": "W420",
+   "sido": "아프리카",
+   "name": "잠비아",
+   "field": "locations"
+  },
+  {
+   "value": "W430",
+   "sido": "아프리카",
+   "name": "적도기니",
+   "field": "locations"
+  },
+  {
+   "value": "W440",
+   "sido": "아프리카",
+   "name": "중앙아프리카공화국",
+   "field": "locations"
+  },
+  {
+   "value": "W450",
+   "sido": "아프리카",
+   "name": "지부티",
+   "field": "locations"
+  },
+  {
+   "value": "W460",
+   "sido": "아프리카",
+   "name": "짐바브웨",
+   "field": "locations"
+  },
+  {
+   "value": "W470",
+   "sido": "아프리카",
+   "name": "차드",
+   "field": "locations"
+  },
+  {
+   "value": "W480",
+   "sido": "아프리카",
+   "name": "카메룬",
+   "field": "locations"
+  },
+  {
+   "value": "W490",
+   "sido": "아프리카",
+   "name": "카보베르데",
+   "field": "locations"
+  },
+  {
+   "value": "W500",
+   "sido": "아프리카",
+   "name": "코모로",
+   "field": "locations"
+  },
+  {
+   "value": "W510",
+   "sido": "아프리카",
+   "name": "코트디부아르",
+   "field": "locations"
+  },
+  {
+   "value": "W520",
+   "sido": "아프리카",
+   "name": "콩고",
+   "field": "locations"
+  },
+  {
+   "value": "W530",
+   "sido": "아프리카",
+   "name": "콩고민주공화국",
+   "field": "locations"
+  },
+  {
+   "value": "W540",
+   "sido": "아프리카",
+   "name": "토고",
+   "field": "locations"
+  },
+  {
+   "value": "W150",
+   "sido": "아프리카",
+   "name": "기타",
+   "field": "locations"
+  }
+ ]
+}
