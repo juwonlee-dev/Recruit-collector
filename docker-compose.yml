@@ -1,0 +1,147 @@
+# 배포: docker compose up -d --build   /   중지: docker compose down (데이터·인증서는 볼륨에 남음)
+# 화면만 다시 배포: docker compose up -d --build app (수집은 worker가 계속 진행)
+# 주의: docker compose down -v 는 DB·인증서 볼륨까지 지운다
+#
+# 접속 경로: 공유기 외부 80 → PC 8765 → nginx:80 (Let's Encrypt 확인 파일, https로 이동)
+#           공유기 외부 443 → PC 8766 → nginx:443 (HTTPS) → app:8765
+# 인증서: certbot이 처음에 발급하고 12시간마다 갱신을 확인(만료 30일 전부터 갱신). 바뀌면 nginx가 1분 안에 다시 읽는다
+name: recruit-collector
+
+services:
+  db:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: recruit
+      POSTGRES_USER: recruit
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?.env에 POSTGRES_PASSWORD를 정하세요}
+      TZ: Asia/Seoul
+    volumes:
+      - pgdata:/var/lib/postgresql/data   # DB 데이터: 컨테이너를 지우고 다시 만들어도 남는다
+    ports:
+      - "127.0.0.1:${POSTGRES_PORT:-5432}:5432"   # 이 PC에서만 접속 (이관·백업·DB 도구용)
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U recruit -d recruit"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  app:
+    build: .
+    image: recruit-collector:latest
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql+psycopg://recruit:${POSTGRES_PASSWORD}@db:5432/recruit
+      # 앞단 nginx가 보낸 X-Forwarded-Proto를 믿는다. 컨테이너 안에서는 nginx가 127.0.0.1이 아니라
+      # 도커 내부 주소로 보이므로 필요하다 (https 접속 시 구글 로그인 콜백 주소를 https로 만들기 위함).
+      # app은 포트를 PC에 열지 않아 nginx를 거쳐서만 접속된다
+      FORWARDED_ALLOW_IPS: "*"
+      # 연봉·인원 보조 자료: 올댓컴퍼니에서 못 가져오면 국민연금 오픈 API, 공시 기준 평균연봉은 OpenDART (.env)
+      DATA_GO_KR_SERVICE_KEY: ${DATA_GO_KR_SERVICE_KEY:-}
+      OPENDART_API_KEY: ${OPENDART_API_KEY:-}
+    volumes:
+      - ./config.yaml:/app/config.yaml:ro   # 공통 설정·구글 로그인 비밀값
+      - ./config:/app/config                # 검색 필터·키워드·지역 (설정 화면에서 고침)
+    logging:
+      driver: json-file
+      options: { max-size: "10m", max-file: "5" }
+
+  # 수집기: 자동 수집 스케줄러 + 조회 화면의 '지금 수집' 대기열 처리 (recruit_collector/worker.py). 하나만 띄운다.
+  # 조회 화면(app)과는 DB로만 주고받으므로 app을 다시 배포해도 진행 중인 수집에 영향이 없다.
+  # 재배포·중지: docker compose up -d --build worker / stop worker
+  #   → 진행 중인 수집이 끝날 때까지 최대 9분 30초 기다린 뒤 종료 (그래도 남으면 CANCELED로 정리)
+  # 강제 중지: docker compose kill -s SIGINT worker → 진행 중인 수집을 바로 CANCELED로 정리하고 종료
+  #   (꺼진 채로 남으므로 이어서 docker compose up -d worker 로 다시 띄운다)
+  worker:
+    build: .
+    image: recruit-collector:latest
+    restart: unless-stopped
+    command: ["recruit-collector", "--config", "/app/config.yaml", "worker"]
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql+psycopg://recruit:${POSTGRES_PASSWORD}@db:5432/recruit
+      WORKER_STOP_TIMEOUT: "570"                   # 종료 신호 후 진행 중인 수집을 기다리는 최대 시간(초)
+      WORKER_HEARTBEAT_FILE: /tmp/worker-alive     # healthcheck용
+    stop_grace_period: 10m                         # 도커가 강제로 끝내기 전까지 기다리는 시간 (위 대기 시간보다 길게)
+    volumes:
+      - ./config.yaml:/app/config.yaml:ro
+      - ./config:/app/config                       # 검색 필터 파일을 수집할 때마다 읽는다 (설정 화면에서 고친 내용 반영)
+    healthcheck:
+      test: ["CMD", "python", "-c", "import os,sys,time; sys.exit(time.time() - os.path.getmtime('/tmp/worker-alive') > 60)"]
+      interval: 30s
+      timeout: 5s
+      start_period: 20s
+      retries: 3
+    logging:
+      driver: json-file
+      options: { max-size: "10m", max-file: "5" }
+
+  nginx:
+    build: ./nginx
+    image: recruit-collector-nginx:latest
+    restart: unless-stopped
+    depends_on:
+      - app
+    environment:
+      DOMAIN: ${DOMAIN:?.env에 DOMAIN을 정하세요}
+    volumes:
+      - certs:/etc/letsencrypt:ro
+      - acme:/var/www/certbot:ro
+    ports:
+      - "${HTTP_PORT:-8765}:80"
+      - "${HTTPS_PORT:-8766}:443"
+    logging:
+      driver: json-file
+      options: { max-size: "10m", max-file: "5" }
+
+  # Let's Encrypt 인증서 발급·자동 갱신 (webroot 방식: nginx가 확인 파일을 대신 응답)
+  # 인증서가 없으면 발급을 시도하고(실패하면 1시간 뒤 다시), 있으면 12시간마다 certbot renew
+  certbot:
+    image: certbot/certbot:v5.10.0
+    restart: unless-stopped
+    depends_on:
+      - nginx
+    environment:
+      DOMAIN: ${DOMAIN}
+      LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL:-}
+      ZEROSSL_EAB_KID: ${ZEROSSL_EAB_KID:-}            # 비우면 Let's Encrypt
+      ZEROSSL_EAB_HMAC_KEY: ${ZEROSSL_EAB_HMAC_KEY:-}
+    volumes:
+      - certs:/etc/letsencrypt
+      - acme:/var/www/certbot
+    entrypoint: /bin/sh
+    command:
+      - -c
+      - |
+        trap exit TERM
+        while :; do
+          if [ -f "/etc/letsencrypt/live/$$DOMAIN/fullchain.pem" ]; then
+            certbot renew --webroot -w /var/www/certbot --quiet || echo "[certbot] 갱신 실패: 12시간 뒤 다시 시도"
+            wait_for=12h
+          else
+            if [ -n "$$LETSENCRYPT_EMAIL" ]; then contact="--email $$LETSENCRYPT_EMAIL"; else contact="--register-unsafely-without-email"; fi
+            # ZeroSSL: EAB 키가 있으면 ZeroSSL에서 발급 (갱신도 발급받은 곳에서 하므로 renew는 그대로)
+            if [ -n "$$ZEROSSL_EAB_KID" ]; then
+              contact="$$contact --server https://acme.zerossl.com/v2/DV90 --eab-kid $$ZEROSSL_EAB_KID --eab-hmac-key $$ZEROSSL_EAB_HMAC_KEY"
+            fi
+            if certbot certonly --webroot -w /var/www/certbot -d "$$DOMAIN" --agree-tos --no-eff-email -n $$contact; then
+              echo "[certbot] 인증서 발급 완료: $$DOMAIN"; wait_for=12h
+            else
+              echo "[certbot] 발급 실패: 1시간 뒤 다시 시도 (위 오류 확인. 확인 실패면 공유기 외부 80 → PC 8765 포트포워딩과 도메인 주소를 확인)"; wait_for=1h
+            fi
+          fi
+          sleep $$wait_for & wait $$!
+        done
+    logging:
+      driver: json-file
+      options: { max-size: "5m", max-file: "3" }
+
+volumes:
+  pgdata:
+  certs:   # Let's Encrypt 계정·인증서 (/etc/letsencrypt)
+  acme:    # 발급·갱신 확인 파일 (webroot)
