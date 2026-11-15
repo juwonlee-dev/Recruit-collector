@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}연봉·인원{% endblock %}
+{% block content %}
+{# 회사 검색 → 회사명·주소 목록 → 회사 페이지. 검색·자료는 올댓컴퍼니에서 조회할 때마다 가져온다 (static/salary_page.js) #}
+<section class="salary-search">
+  <div class="salary-hero">
+    <h1 class="page-title">연봉·인원</h1>
+    <p class="muted small">회사명으로 검색해 월별 인원·입사자·퇴사자·월평균급여 추이를 봅니다. (올댓컴퍼니 · 국민연금 자료 기반 추정치)</p>
+  </div>
+  <form class="salary-search-form" role="search">
+    <input type="search" name="q" placeholder="회사명을 입력하세요" aria-label="회사명" maxlength="50" autocomplete="off">
+    <button type="submit">검색</button>
+  </form>
+  <div class="recent" hidden></div>
+  <div class="salary-results" aria-live="polite"></div>
+</section>
+{# 비교함: 검색 결과의 '+ 비교'로 2~{{ max_compare }}곳을 담는다. 다른 검색어로 찾은 회사끼리도 담을 수 있게 브라우저에 기억한다 #}
+<div class="compare-tray" data-max="{{ max_compare }}" hidden>
+  <div class="compare-tray-inner">
+    <span class="compare-tray-label">비교함</span>
+    <div class="compare-items"></div>
+    <a class="compare-go" href="#" aria-disabled="true">비교하기 →</a>
+  </div>
+</div>
+{% endblock %}
+{% block scripts %}<script src="/static/salary_page.js?v=6" defer></script>{% endblock %}

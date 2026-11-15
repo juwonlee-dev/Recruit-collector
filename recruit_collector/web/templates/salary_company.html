@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}연봉·인원{% endblock %}
+{% block content %}
+{# 연봉 버튼 모달과 같은 화면을 페이지로 (static/salary.js의 SalaryView, static/salary_page.js) #}
+<div class="salary-page">
+  <a class="back salary-back" href="/salary">← 검색</a>
+  <div class="page-head">
+    <h1 class="page-title">연봉·인원</h1>
+    <div class="page-head-actions">
+      <button type="button" class="share-btn" title="이 회사 페이지의 링크를 복사합니다">공유하기</button>
+      <button type="button" class="compare-start" hidden>다른 회사와 비교</button>
+    </div>
+  </div>
+  <div class="salary-body" data-salary-cid="{{ cid }}" aria-live="polite"></div>
+</div>
+{% endblock %}
+{% block scripts %}<script src="/static/salary_page.js?v=6" defer></script>{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}회사 비교 · 연봉·인원{% endblock %}
+{% block content %}
+{# 회사 2~4곳의 월별 인원·입사율·퇴사율·월평균급여 비교 (static/salary_compare.js). 자료는 올댓컴퍼니에서 볼 때마다 가져온다 #}
+<div class="salary-page">
+  <a class="back" href="/salary">← 검색</a>
+  <div class="page-head">
+    <h1 class="page-title">회사 비교</h1>
+    <button type="button" class="share-btn" title="이 비교 페이지의 링크를 복사합니다">공유하기</button>
+  </div>
+  <div class="salary-body compare-body" data-ids="{{ ids | join(',') }}" data-max="{{ max_compare }}" aria-live="polite"></div>
+</div>
+{% endblock %}
+{% block scripts %}<script src="/static/salary_compare.js?v=10" defer></script>{% endblock %}
