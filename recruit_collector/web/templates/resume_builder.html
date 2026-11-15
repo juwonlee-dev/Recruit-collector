@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}{% if template %}템플릿 편집 · {{ template.name }}{% else %}위젯 편집 · {{ widget.name }}{% endif %}{% endblock %}
+{% block main_class %} is-wide{% endblock %}
+{% block content %}
+{# 템플릿 편집기(위젯 배치)와 위젯 편집기. 화면은 static/resume_builder.js가 state(JSON)로 그린다 #}
+{# 위쪽 고정 막대: 이름·설명·공개·미리보기·저장 (static/sticky_bar.js가 사이트 머리 바로 아래에 붙인다) #}
+<div class="ed-bar" data-sticky-bar>
+<div class="rb-top">
+  <span class="rb-top-left">
+    <a class="rb-back" href="/resumes?tab={{ 'templates' if template else 'widgets' }}">← {{ '템플릿' if template else '위젯' }} 목록</a>
+    {# 단계별 안내 다시 보기 (static/resume_tour.js, 처음 열 때는 자동으로 뜬다) #}
+    <button type="button" class="rb-tour-btn" id="rb-tour" aria-label="사용법 둘러보기"><span aria-hidden="true">?</span> 사용법</button>
+  </span>
+  <span class="rb-status muted small" id="rb-status" role="status" aria-live="polite"></span>
+</div>
+<div class="rb-meta">
+  <label class="rb-meta-name"><span class="small muted ed-label">{{ '템플릿' if template else '위젯' }} 이름</span><input id="rb-name" maxlength="100" required></label>
+  <label class="rb-meta-desc"><span class="small muted ed-label">설명</span><input id="rb-desc" maxlength="300" placeholder="어떤 용도인지 짧게"></label>
+  <label class="rb-meta-vis"><span class="small muted ed-label">공개</span>
+    <select id="rb-visibility">{% for k, label in resume_visibility.items() %}<option value="{{ k }}">{{ label }}</option>{% endfor %}</select></label>
+  <div class="rb-meta-actions">
+    <a class="device-btn rb-preview" href="{{ '/resumes/templates/%d/preview' % template.id if template else '#' }}" target="_blank" rel="noopener" id="rb-preview"
+       title="저장하지 않은 지금 모양을 새 창에서 문서로 봅니다">{{ "미리보기" if template else "문서 미리보기" }}</a>
+    <button type="button" class="btn-origin" id="rb-save" title="저장 (Ctrl+S)">저장</button>
+  </div>
+</div>
+</div>
+<p class="rb-public-note small muted" id="rb-public-note" hidden>공개하면 로그인한 다른 사용자가 이 {{ '템플릿' if template else '위젯' }}을 보고 복사해 쓸 수 있습니다. 개인정보는 넣지 마세요. 만든 사람은 표시되지 않습니다.</p>
+
+<div id="rb-app" class="{{ 'rb-template' if template else 'rb-widget' }}">
+  <noscript><p class="notice is-error">편집기는 자바스크립트가 필요합니다.</p></noscript>
+</div>
+<script id="rb-state" type="application/json">{{ state | tojson }}</script>
+{# 글꼴 고르기의 보기 글용 (고른 글꼴만 내려받는다) #}
+<style>{% for f in resume_fonts.values() %}{% for w, file in f.faces %}
+  @font-face { font-family: "{{ f.family }}"; font-weight: {{ w }}; font-display: swap; src: url("/static/fonts/{{ file }}.woff2") format("woff2"); }{% endfor %}{% endfor %}
+</style>
+<script src="/static/sticky_bar.js?v=1" defer></script>
+<script src="/static/datepicker.js?v=2" defer></script>
+<script src="/static/colorpicker.js?v=1" defer></script>
+<script src="/static/resume_builder.js?v=7" defer></script>
+<script src="/static/resume_tour.js?v=2" defer></script>
+{% endblock %}
