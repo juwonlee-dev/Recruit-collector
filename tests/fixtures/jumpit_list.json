@@ -1,0 +1,115 @@
+{
+ "message": "포지션 리스트가 조회되었습니다.",
+ "status": 200,
+ "code": "P004",
+ "result": {
+  "totalCount": 143,
+  "page": 1,
+  "keyword": "",
+  "keywordType": "etc",
+  "positions": [
+   {
+    "id": 55566554,
+    "jobCategory": "SW/솔루션,iOS 개발자,devops/시스템 엔지니어,서버/백엔드 개발자",
+    "logo": "https://cdn.jumpit.co.kr/lg/images/hmlee_4/20225522085549121_379_379.webp",
+    "imagePath": "https://cdn.jumpit.co.kr/lg/images/90046/20224122084148639_4032_3024.webp",
+    "title": "ADC 사이트 대응 개발 인력 채용",
+    "companyName": "파이오링크",
+    "techStacks": [
+     "C",
+     "Linux",
+     "Python",
+     "TCP/IP",
+     "Switch",
+     "OpenStack",
+     "pgRouting",
+     "libvirt"
+    ],
+    "viewCount": 0,
+    "newcomer": false,
+    "minCareer": 2,
+    "maxCareer": 3,
+    "locations": [
+     "서울 금천구"
+    ],
+    "alwaysOpen": false,
+    "closedAt": "2026-12-13T23:59:59",
+    "serialNumber": "2000000001",
+    "encodedSerialNumber": "MjAwMDAwMDAwMQ==",
+    "celebration": 50,
+    "scraped": false,
+    "applied": false,
+    "scrapCount": 0
+   },
+   {
+    "id": 55566568,
+    "jobCategory": "devops/시스템 엔지니어,서버/백엔드 개발자",
+    "logo": "https://cdn.jumpit.co.kr/lg/images/hmlee_4/20225522085549121_379_379.webp",
+    "imagePath": "https://cdn.jumpit.co.kr/lg/images/90046/20224122084148639_4032_3024.webp",
+    "title": "프라이빗 클라우드(HCI) 가상화 전문연구요원",
+    "companyName": "파이오링크",
+    "techStacks": [
+     "Git",
+     "Go",
+     "Kubernetes",
+     "Linux",
+     "Python",
+     "AWS",
+     "AZURE",
+     "OpenStack"
+    ],
+    "viewCount": 0,
+    "newcomer": true,
+    "minCareer": 0,
+    "maxCareer": 0,
+    "locations": [
+     "서울 금천구"
+    ],
+    "alwaysOpen": false,
+    "closedAt": "2026-12-13T23:59:59",
+    "serialNumber": "2000000001",
+    "encodedSerialNumber": "MjAwMDAwMDAwMQ==",
+    "celebration": 50,
+    "scraped": false,
+    "applied": false,
+    "scrapCount": 0
+   },
+   {
+    "id": 55563430,
+    "jobCategory": "인공지능/머신러닝,서버/백엔드 개발자,프론트엔드 개발자",
+    "logo": "https://cdn.jumpit.co.kr/lg/images/hmlee_4/20215224105214330_148_148.webp",
+    "imagePath": "https://cdn.jumpit.co.kr/lg/images/hmlee_4/20215224105221654_2880_2160.webp",
+    "title": "[AX팀] AI 서비스 개발자",
+    "companyName": "아티언스",
+    "techStacks": [
+     "Docker",
+     "Git",
+     "GitHub",
+     "JavaScript",
+     "Node.js",
+     "Python",
+     "REST API",
+     "AWS",
+     "GCP",
+     "AZURE"
+    ],
+    "viewCount": 0,
+    "newcomer": false,
+    "minCareer": 3,
+    "maxCareer": 5,
+    "locations": [
+     "서울 마포구"
+    ],
+    "alwaysOpen": true,
+    "closedAt": null,
+    "serialNumber": "2000000002",
+    "encodedSerialNumber": "MjAwMDAwMDAwMg==",
+    "celebration": 50,
+    "scraped": false,
+    "applied": false,
+    "scrapCount": 0
+   }
+  ],
+  "emptyPosition": false
+ }
+}

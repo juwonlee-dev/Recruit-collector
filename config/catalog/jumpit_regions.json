@@ -1,0 +1,1518 @@
+{
+ "site": "jumpit",
+ "fetched_at": "2026-11-14T16:40:37+09:00",
+ "options": [
+  {
+   "value": 101000,
+   "sido": "서울",
+   "name": "",
+   "field": "location_tags"
+  },
+  {
+   "value": 101010,
+   "sido": "서울",
+   "name": "강남구",
+   "field": "location_tags"
+  },
+  {
+   "value": 101020,
+   "sido": "서울",
+   "name": "강동구",
+   "field": "location_tags"
+  },
+  {
+   "value": 101030,
+   "sido": "서울",
+   "name": "강북구",
+   "field": "location_tags"
+  },
+  {
+   "value": 101040,
+   "sido": "서울",
+   "name": "강서구",
+   "field": "location_tags"
+  },
+  {
+   "value": 101050,
+   "sido": "서울",
+   "name": "관악구",
+   "field": "location_tags"
+  },
+  {
+   "value": 101060,
+   "sido": "서울",
+   "name": "광진구",
+   "field": "location_tags"
+  },
+  {
+   "value": 101070,
+   "sido": "서울",
+   "name": "구로구",
+   "field": "location_tags"
+  },
+  {
+   "value": 101080,
+   "sido": "서울",
+   "name": "금천구",
+   "field": "location_tags"
+  },
+  {
+   "value": 101090,
+   "sido": "서울",
+   "name": "노원구",
+   "field": "location_tags"
+  },
+  {
+   "value": 101100,
+   "sido": "서울",
+   "name": "도봉구",
+   "field": "location_tags"
+  },
+  {
+   "value": 101110,
+   "sido": "서울",
+   "name": "동대문구",
+   "field": "location_tags"
+  },
+  {
+   "value": 101120,
+   "sido": "서울",
+   "name": "동작구",
+   "field": "location_tags"
+  },
+  {
+   "value": 101130,
+   "sido": "서울",
+   "name": "마포구",
+   "field": "location_tags"
+  },
+  {
+   "value": 101140,
+   "sido": "서울",
+   "name": "서대문구",
+   "field": "location_tags"
+  },
+  {
+   "value": 101150,
+   "sido": "서울",
+   "name": "서초구",
+   "field": "location_tags"
+  },
+  {
+   "value": 101160,
+   "sido": "서울",
+   "name": "성동구",
+   "field": "location_tags"
+  },
+  {
+   "value": 101170,
+   "sido": "서울",
+   "name": "성북구",
+   "field": "location_tags"
+  },
+  {
+   "value": 101180,
+   "sido": "서울",
+   "name": "송파구",
+   "field": "location_tags"
+  },
+  {
+   "value": 101190,
+   "sido": "서울",
+   "name": "양천구",
+   "field": "location_tags"
+  },
+  {
+   "value": 101200,
+   "sido": "서울",
+   "name": "영등포구",
+   "field": "location_tags"
+  },
+  {
+   "value": 101210,
+   "sido": "서울",
+   "name": "용산구",
+   "field": "location_tags"
+  },
+  {
+   "value": 101220,
+   "sido": "서울",
+   "name": "은평구",
+   "field": "location_tags"
+  },
+  {
+   "value": 101230,
+   "sido": "서울",
+   "name": "종로구",
+   "field": "location_tags"
+  },
+  {
+   "value": 101240,
+   "sido": "서울",
+   "name": "중구",
+   "field": "location_tags"
+  },
+  {
+   "value": 101250,
+   "sido": "서울",
+   "name": "중랑구",
+   "field": "location_tags"
+  },
+  {
+   "value": 102000,
+   "sido": "경기",
+   "name": "",
+   "field": "location_tags"
+  },
+  {
+   "value": 102010,
+   "sido": "경기",
+   "name": "가평군",
+   "field": "location_tags"
+  },
+  {
+   "value": 102020,
+   "sido": "경기",
+   "name": "고양시",
+   "field": "location_tags"
+  },
+  {
+   "value": 102060,
+   "sido": "경기",
+   "name": "과천시",
+   "field": "location_tags"
+  },
+  {
+   "value": 102070,
+   "sido": "경기",
+   "name": "광명시",
+   "field": "location_tags"
+  },
+  {
+   "value": 102080,
+   "sido": "경기",
+   "name": "광주시",
+   "field": "location_tags"
+  },
+  {
+   "value": 102090,
+   "sido": "경기",
+   "name": "구리시",
+   "field": "location_tags"
+  },
+  {
+   "value": 102100,
+   "sido": "경기",
+   "name": "군포시",
+   "field": "location_tags"
+  },
+  {
+   "value": 102110,
+   "sido": "경기",
+   "name": "김포시",
+   "field": "location_tags"
+  },
+  {
+   "value": 102120,
+   "sido": "경기",
+   "name": "남양주시",
+   "field": "location_tags"
+  },
+  {
+   "value": 102130,
+   "sido": "경기",
+   "name": "동두천시",
+   "field": "location_tags"
+  },
+  {
+   "value": 102140,
+   "sido": "경기",
+   "name": "부천시",
+   "field": "location_tags"
+  },
+  {
+   "value": 102180,
+   "sido": "경기",
+   "name": "성남시",
+   "field": "location_tags"
+  },
+  {
+   "value": 102220,
+   "sido": "경기",
+   "name": "수원시",
+   "field": "location_tags"
+  },
+  {
+   "value": 102270,
+   "sido": "경기",
+   "name": "시흥시",
+   "field": "location_tags"
+  },
+  {
+   "value": 102280,
+   "sido": "경기",
+   "name": "안산시",
+   "field": "location_tags"
+  },
+  {
+   "value": 102310,
+   "sido": "경기",
+   "name": "안성시",
+   "field": "location_tags"
+  },
+  {
+   "value": 102320,
+   "sido": "경기",
+   "name": "안양시",
+   "field": "location_tags"
+  },
+  {
+   "value": 102350,
+   "sido": "경기",
+   "name": "양주시",
+   "field": "location_tags"
+  },
+  {
+   "value": 102360,
+   "sido": "경기",
+   "name": "양평군",
+   "field": "location_tags"
+  },
+  {
+   "value": 102370,
+   "sido": "경기",
+   "name": "여주시",
+   "field": "location_tags"
+  },
+  {
+   "value": 102380,
+   "sido": "경기",
+   "name": "연천군",
+   "field": "location_tags"
+  },
+  {
+   "value": 102390,
+   "sido": "경기",
+   "name": "오산시",
+   "field": "location_tags"
+  },
+  {
+   "value": 102400,
+   "sido": "경기",
+   "name": "용인시",
+   "field": "location_tags"
+  },
+  {
+   "value": 102440,
+   "sido": "경기",
+   "name": "의왕시",
+   "field": "location_tags"
+  },
+  {
+   "value": 102450,
+   "sido": "경기",
+   "name": "의정부시",
+   "field": "location_tags"
+  },
+  {
+   "value": 102460,
+   "sido": "경기",
+   "name": "이천시",
+   "field": "location_tags"
+  },
+  {
+   "value": 102470,
+   "sido": "경기",
+   "name": "파주시",
+   "field": "location_tags"
+  },
+  {
+   "value": 102480,
+   "sido": "경기",
+   "name": "평택시",
+   "field": "location_tags"
+  },
+  {
+   "value": 102490,
+   "sido": "경기",
+   "name": "포천시",
+   "field": "location_tags"
+  },
+  {
+   "value": 102500,
+   "sido": "경기",
+   "name": "하남시",
+   "field": "location_tags"
+  },
+  {
+   "value": 102510,
+   "sido": "경기",
+   "name": "화성시",
+   "field": "location_tags"
+  },
+  {
+   "value": 102520,
+   "sido": "경기",
+   "name": "화성시 동탄구",
+   "field": "location_tags"
+  },
+  {
+   "value": 102530,
+   "sido": "경기",
+   "name": "화성시 만세구",
+   "field": "location_tags"
+  },
+  {
+   "value": 102540,
+   "sido": "경기",
+   "name": "화성시 병점구",
+   "field": "location_tags"
+  },
+  {
+   "value": 102550,
+   "sido": "경기",
+   "name": "화성시 효행구",
+   "field": "location_tags"
+  },
+  {
+   "value": 108000,
+   "sido": "인천",
+   "name": "",
+   "field": "location_tags"
+  },
+  {
+   "value": 108010,
+   "sido": "인천",
+   "name": "강화군",
+   "field": "location_tags"
+  },
+  {
+   "value": 108110,
+   "sido": "인천",
+   "name": "검단구",
+   "field": "location_tags"
+  },
+  {
+   "value": 108020,
+   "sido": "인천",
+   "name": "계양구",
+   "field": "location_tags"
+  },
+  {
+   "value": 108040,
+   "sido": "인천",
+   "name": "남동구",
+   "field": "location_tags"
+  },
+  {
+   "value": 108030,
+   "sido": "인천",
+   "name": "미추홀구",
+   "field": "location_tags"
+  },
+  {
+   "value": 108060,
+   "sido": "인천",
+   "name": "부평구",
+   "field": "location_tags"
+  },
+  {
+   "value": 108120,
+   "sido": "인천",
+   "name": "서해구",
+   "field": "location_tags"
+  },
+  {
+   "value": 108080,
+   "sido": "인천",
+   "name": "연수구",
+   "field": "location_tags"
+  },
+  {
+   "value": 108130,
+   "sido": "인천",
+   "name": "영종구",
+   "field": "location_tags"
+  },
+  {
+   "value": 108090,
+   "sido": "인천",
+   "name": "옹진군",
+   "field": "location_tags"
+  },
+  {
+   "value": 108140,
+   "sido": "인천",
+   "name": "제물포구",
+   "field": "location_tags"
+  },
+  {
+   "value": 106000,
+   "sido": "부산",
+   "name": "",
+   "field": "location_tags"
+  },
+  {
+   "value": 106010,
+   "sido": "부산",
+   "name": "강서구",
+   "field": "location_tags"
+  },
+  {
+   "value": 106020,
+   "sido": "부산",
+   "name": "금정구",
+   "field": "location_tags"
+  },
+  {
+   "value": 106030,
+   "sido": "부산",
+   "name": "기장군",
+   "field": "location_tags"
+  },
+  {
+   "value": 106040,
+   "sido": "부산",
+   "name": "남구",
+   "field": "location_tags"
+  },
+  {
+   "value": 106050,
+   "sido": "부산",
+   "name": "동구",
+   "field": "location_tags"
+  },
+  {
+   "value": 106060,
+   "sido": "부산",
+   "name": "동래구",
+   "field": "location_tags"
+  },
+  {
+   "value": 106070,
+   "sido": "부산",
+   "name": "부산진구",
+   "field": "location_tags"
+  },
+  {
+   "value": 106080,
+   "sido": "부산",
+   "name": "북구",
+   "field": "location_tags"
+  },
+  {
+   "value": 106090,
+   "sido": "부산",
+   "name": "사상구",
+   "field": "location_tags"
+  },
+  {
+   "value": 106100,
+   "sido": "부산",
+   "name": "사하구",
+   "field": "location_tags"
+  },
+  {
+   "value": 106110,
+   "sido": "부산",
+   "name": "서구",
+   "field": "location_tags"
+  },
+  {
+   "value": 106120,
+   "sido": "부산",
+   "name": "수영구",
+   "field": "location_tags"
+  },
+  {
+   "value": 106130,
+   "sido": "부산",
+   "name": "연제구",
+   "field": "location_tags"
+  },
+  {
+   "value": 106140,
+   "sido": "부산",
+   "name": "영도구",
+   "field": "location_tags"
+  },
+  {
+   "value": 106150,
+   "sido": "부산",
+   "name": "중구",
+   "field": "location_tags"
+  },
+  {
+   "value": 106160,
+   "sido": "부산",
+   "name": "해운대구",
+   "field": "location_tags"
+  },
+  {
+   "value": 104000,
+   "sido": "대구",
+   "name": "",
+   "field": "location_tags"
+  },
+  {
+   "value": 104090,
+   "sido": "대구",
+   "name": "군위군",
+   "field": "location_tags"
+  },
+  {
+   "value": 104010,
+   "sido": "대구",
+   "name": "남구",
+   "field": "location_tags"
+  },
+  {
+   "value": 104020,
+   "sido": "대구",
+   "name": "달서구",
+   "field": "location_tags"
+  },
+  {
+   "value": 104030,
+   "sido": "대구",
+   "name": "달성군",
+   "field": "location_tags"
+  },
+  {
+   "value": 104040,
+   "sido": "대구",
+   "name": "동구",
+   "field": "location_tags"
+  },
+  {
+   "value": 104050,
+   "sido": "대구",
+   "name": "북구",
+   "field": "location_tags"
+  },
+  {
+   "value": 104060,
+   "sido": "대구",
+   "name": "서구",
+   "field": "location_tags"
+  },
+  {
+   "value": 104070,
+   "sido": "대구",
+   "name": "수성구",
+   "field": "location_tags"
+  },
+  {
+   "value": 104080,
+   "sido": "대구",
+   "name": "중구",
+   "field": "location_tags"
+  },
+  {
+   "value": 105000,
+   "sido": "대전",
+   "name": "",
+   "field": "location_tags"
+  },
+  {
+   "value": 105010,
+   "sido": "대전",
+   "name": "대덕구",
+   "field": "location_tags"
+  },
+  {
+   "value": 105020,
+   "sido": "대전",
+   "name": "동구",
+   "field": "location_tags"
+  },
+  {
+   "value": 105030,
+   "sido": "대전",
+   "name": "서구",
+   "field": "location_tags"
+  },
+  {
+   "value": 105040,
+   "sido": "대전",
+   "name": "유성구",
+   "field": "location_tags"
+  },
+  {
+   "value": 105050,
+   "sido": "대전",
+   "name": "중구",
+   "field": "location_tags"
+  },
+  {
+   "value": 107000,
+   "sido": "울산",
+   "name": "",
+   "field": "location_tags"
+  },
+  {
+   "value": 107010,
+   "sido": "울산",
+   "name": "남구",
+   "field": "location_tags"
+  },
+  {
+   "value": 107020,
+   "sido": "울산",
+   "name": "동구",
+   "field": "location_tags"
+  },
+  {
+   "value": 107030,
+   "sido": "울산",
+   "name": "북구",
+   "field": "location_tags"
+  },
+  {
+   "value": 107040,
+   "sido": "울산",
+   "name": "울주군",
+   "field": "location_tags"
+  },
+  {
+   "value": 107050,
+   "sido": "울산",
+   "name": "중구",
+   "field": "location_tags"
+  },
+  {
+   "value": 118000,
+   "sido": "세종",
+   "name": "",
+   "field": "location_tags"
+  },
+  {
+   "value": 109000,
+   "sido": "강원",
+   "name": "",
+   "field": "location_tags"
+  },
+  {
+   "value": 109010,
+   "sido": "강원",
+   "name": "강릉시",
+   "field": "location_tags"
+  },
+  {
+   "value": 109020,
+   "sido": "강원",
+   "name": "고성군",
+   "field": "location_tags"
+  },
+  {
+   "value": 109030,
+   "sido": "강원",
+   "name": "동해시",
+   "field": "location_tags"
+  },
+  {
+   "value": 109040,
+   "sido": "강원",
+   "name": "삼척시",
+   "field": "location_tags"
+  },
+  {
+   "value": 109050,
+   "sido": "강원",
+   "name": "속초시",
+   "field": "location_tags"
+  },
+  {
+   "value": 109060,
+   "sido": "강원",
+   "name": "양구군",
+   "field": "location_tags"
+  },
+  {
+   "value": 109070,
+   "sido": "강원",
+   "name": "양양군",
+   "field": "location_tags"
+  },
+  {
+   "value": 109080,
+   "sido": "강원",
+   "name": "영월군",
+   "field": "location_tags"
+  },
+  {
+   "value": 109090,
+   "sido": "강원",
+   "name": "원주시",
+   "field": "location_tags"
+  },
+  {
+   "value": 109100,
+   "sido": "강원",
+   "name": "인제군",
+   "field": "location_tags"
+  },
+  {
+   "value": 109110,
+   "sido": "강원",
+   "name": "정선군",
+   "field": "location_tags"
+  },
+  {
+   "value": 109120,
+   "sido": "강원",
+   "name": "철원군",
+   "field": "location_tags"
+  },
+  {
+   "value": 109130,
+   "sido": "강원",
+   "name": "춘천시",
+   "field": "location_tags"
+  },
+  {
+   "value": 109140,
+   "sido": "강원",
+   "name": "태백시",
+   "field": "location_tags"
+  },
+  {
+   "value": 109150,
+   "sido": "강원",
+   "name": "평창군",
+   "field": "location_tags"
+  },
+  {
+   "value": 109160,
+   "sido": "강원",
+   "name": "홍천군",
+   "field": "location_tags"
+  },
+  {
+   "value": 109170,
+   "sido": "강원",
+   "name": "화천군",
+   "field": "location_tags"
+  },
+  {
+   "value": 109180,
+   "sido": "강원",
+   "name": "횡성군",
+   "field": "location_tags"
+  },
+  {
+   "value": 114000,
+   "sido": "충북",
+   "name": "",
+   "field": "location_tags"
+  },
+  {
+   "value": 114010,
+   "sido": "충북",
+   "name": "괴산군",
+   "field": "location_tags"
+  },
+  {
+   "value": 114020,
+   "sido": "충북",
+   "name": "단양군",
+   "field": "location_tags"
+  },
+  {
+   "value": 114030,
+   "sido": "충북",
+   "name": "보은군",
+   "field": "location_tags"
+  },
+  {
+   "value": 114040,
+   "sido": "충북",
+   "name": "영동군",
+   "field": "location_tags"
+  },
+  {
+   "value": 114050,
+   "sido": "충북",
+   "name": "옥천군",
+   "field": "location_tags"
+  },
+  {
+   "value": 114060,
+   "sido": "충북",
+   "name": "음성군",
+   "field": "location_tags"
+  },
+  {
+   "value": 114070,
+   "sido": "충북",
+   "name": "제천시",
+   "field": "location_tags"
+  },
+  {
+   "value": 114080,
+   "sido": "충북",
+   "name": "증평군",
+   "field": "location_tags"
+  },
+  {
+   "value": 114090,
+   "sido": "충북",
+   "name": "진천군",
+   "field": "location_tags"
+  },
+  {
+   "value": 114100,
+   "sido": "충북",
+   "name": "청원군",
+   "field": "location_tags"
+  },
+  {
+   "value": 114110,
+   "sido": "충북",
+   "name": "청주시",
+   "field": "location_tags"
+  },
+  {
+   "value": 114140,
+   "sido": "충북",
+   "name": "충주시",
+   "field": "location_tags"
+  },
+  {
+   "value": 115000,
+   "sido": "충남",
+   "name": "",
+   "field": "location_tags"
+  },
+  {
+   "value": 115010,
+   "sido": "충남",
+   "name": "계룡시",
+   "field": "location_tags"
+  },
+  {
+   "value": 115020,
+   "sido": "충남",
+   "name": "공주시",
+   "field": "location_tags"
+  },
+  {
+   "value": 115030,
+   "sido": "충남",
+   "name": "금산군",
+   "field": "location_tags"
+  },
+  {
+   "value": 115040,
+   "sido": "충남",
+   "name": "논산시",
+   "field": "location_tags"
+  },
+  {
+   "value": 115050,
+   "sido": "충남",
+   "name": "당진시",
+   "field": "location_tags"
+  },
+  {
+   "value": 115060,
+   "sido": "충남",
+   "name": "보령시",
+   "field": "location_tags"
+  },
+  {
+   "value": 115070,
+   "sido": "충남",
+   "name": "부여군",
+   "field": "location_tags"
+  },
+  {
+   "value": 115080,
+   "sido": "충남",
+   "name": "서산시",
+   "field": "location_tags"
+  },
+  {
+   "value": 115090,
+   "sido": "충남",
+   "name": "서천군",
+   "field": "location_tags"
+  },
+  {
+   "value": 115100,
+   "sido": "충남",
+   "name": "아산시",
+   "field": "location_tags"
+  },
+  {
+   "value": 115110,
+   "sido": "충남",
+   "name": "연기군",
+   "field": "location_tags"
+  },
+  {
+   "value": 115120,
+   "sido": "충남",
+   "name": "예산군",
+   "field": "location_tags"
+  },
+  {
+   "value": 115130,
+   "sido": "충남",
+   "name": "천안시",
+   "field": "location_tags"
+  },
+  {
+   "value": 115140,
+   "sido": "충남",
+   "name": "청양군",
+   "field": "location_tags"
+  },
+  {
+   "value": 115150,
+   "sido": "충남",
+   "name": "태안군",
+   "field": "location_tags"
+  },
+  {
+   "value": 115160,
+   "sido": "충남",
+   "name": "홍성군",
+   "field": "location_tags"
+  },
+  {
+   "value": 113000,
+   "sido": "전북",
+   "name": "",
+   "field": "location_tags"
+  },
+  {
+   "value": 113010,
+   "sido": "전북",
+   "name": "고창군",
+   "field": "location_tags"
+  },
+  {
+   "value": 113020,
+   "sido": "전북",
+   "name": "군산시",
+   "field": "location_tags"
+  },
+  {
+   "value": 113030,
+   "sido": "전북",
+   "name": "김제시",
+   "field": "location_tags"
+  },
+  {
+   "value": 113040,
+   "sido": "전북",
+   "name": "남원시",
+   "field": "location_tags"
+  },
+  {
+   "value": 113050,
+   "sido": "전북",
+   "name": "무주군",
+   "field": "location_tags"
+  },
+  {
+   "value": 113060,
+   "sido": "전북",
+   "name": "부안군",
+   "field": "location_tags"
+  },
+  {
+   "value": 113070,
+   "sido": "전북",
+   "name": "순창군",
+   "field": "location_tags"
+  },
+  {
+   "value": 113080,
+   "sido": "전북",
+   "name": "완주군",
+   "field": "location_tags"
+  },
+  {
+   "value": 113090,
+   "sido": "전북",
+   "name": "익산시",
+   "field": "location_tags"
+  },
+  {
+   "value": 113100,
+   "sido": "전북",
+   "name": "임실군",
+   "field": "location_tags"
+  },
+  {
+   "value": 113110,
+   "sido": "전북",
+   "name": "장수군",
+   "field": "location_tags"
+  },
+  {
+   "value": 113120,
+   "sido": "전북",
+   "name": "전주시",
+   "field": "location_tags"
+  },
+  {
+   "value": 113150,
+   "sido": "전북",
+   "name": "정읍시",
+   "field": "location_tags"
+  },
+  {
+   "value": 113160,
+   "sido": "전북",
+   "name": "진안군",
+   "field": "location_tags"
+  },
+  {
+   "value": 112000,
+   "sido": "전남광주",
+   "name": "",
+   "field": "location_tags"
+  },
+  {
+   "value": 112010,
+   "sido": "전남광주",
+   "name": "강진군",
+   "field": "location_tags"
+  },
+  {
+   "value": 112020,
+   "sido": "전남광주",
+   "name": "고흥군",
+   "field": "location_tags"
+  },
+  {
+   "value": 112030,
+   "sido": "전남광주",
+   "name": "곡성군",
+   "field": "location_tags"
+  },
+  {
+   "value": 112230,
+   "sido": "전남광주",
+   "name": "광산구",
+   "field": "location_tags"
+  },
+  {
+   "value": 112040,
+   "sido": "전남광주",
+   "name": "광양시",
+   "field": "location_tags"
+  },
+  {
+   "value": 112050,
+   "sido": "전남광주",
+   "name": "구례군",
+   "field": "location_tags"
+  },
+  {
+   "value": 112060,
+   "sido": "전남광주",
+   "name": "나주시",
+   "field": "location_tags"
+  },
+  {
+   "value": 112240,
+   "sido": "전남광주",
+   "name": "남구",
+   "field": "location_tags"
+  },
+  {
+   "value": 112070,
+   "sido": "전남광주",
+   "name": "담양군",
+   "field": "location_tags"
+  },
+  {
+   "value": 112250,
+   "sido": "전남광주",
+   "name": "동구",
+   "field": "location_tags"
+  },
+  {
+   "value": 112080,
+   "sido": "전남광주",
+   "name": "목포시",
+   "field": "location_tags"
+  },
+  {
+   "value": 112090,
+   "sido": "전남광주",
+   "name": "무안군",
+   "field": "location_tags"
+  },
+  {
+   "value": 112100,
+   "sido": "전남광주",
+   "name": "보성군",
+   "field": "location_tags"
+  },
+  {
+   "value": 112260,
+   "sido": "전남광주",
+   "name": "북구",
+   "field": "location_tags"
+  },
+  {
+   "value": 112270,
+   "sido": "전남광주",
+   "name": "서구",
+   "field": "location_tags"
+  },
+  {
+   "value": 112110,
+   "sido": "전남광주",
+   "name": "순천시",
+   "field": "location_tags"
+  },
+  {
+   "value": 112120,
+   "sido": "전남광주",
+   "name": "신안군",
+   "field": "location_tags"
+  },
+  {
+   "value": 112130,
+   "sido": "전남광주",
+   "name": "여수시",
+   "field": "location_tags"
+  },
+  {
+   "value": 112140,
+   "sido": "전남광주",
+   "name": "영광군",
+   "field": "location_tags"
+  },
+  {
+   "value": 112150,
+   "sido": "전남광주",
+   "name": "영암군",
+   "field": "location_tags"
+  },
+  {
+   "value": 112160,
+   "sido": "전남광주",
+   "name": "완도군",
+   "field": "location_tags"
+  },
+  {
+   "value": 112170,
+   "sido": "전남광주",
+   "name": "장성군",
+   "field": "location_tags"
+  },
+  {
+   "value": 112180,
+   "sido": "전남광주",
+   "name": "장흥군",
+   "field": "location_tags"
+  },
+  {
+   "value": 112190,
+   "sido": "전남광주",
+   "name": "진도군",
+   "field": "location_tags"
+  },
+  {
+   "value": 112200,
+   "sido": "전남광주",
+   "name": "함평군",
+   "field": "location_tags"
+  },
+  {
+   "value": 112210,
+   "sido": "전남광주",
+   "name": "해남군",
+   "field": "location_tags"
+  },
+  {
+   "value": 112220,
+   "sido": "전남광주",
+   "name": "화순군",
+   "field": "location_tags"
+  },
+  {
+   "value": 111000,
+   "sido": "경북",
+   "name": "",
+   "field": "location_tags"
+  },
+  {
+   "value": 111010,
+   "sido": "경북",
+   "name": "경산시",
+   "field": "location_tags"
+  },
+  {
+   "value": 111020,
+   "sido": "경북",
+   "name": "경주시",
+   "field": "location_tags"
+  },
+  {
+   "value": 111030,
+   "sido": "경북",
+   "name": "고령군",
+   "field": "location_tags"
+  },
+  {
+   "value": 111040,
+   "sido": "경북",
+   "name": "구미시",
+   "field": "location_tags"
+  },
+  {
+   "value": 111050,
+   "sido": "경북",
+   "name": "군위군",
+   "field": "location_tags"
+  },
+  {
+   "value": 111060,
+   "sido": "경북",
+   "name": "김천시",
+   "field": "location_tags"
+  },
+  {
+   "value": 111070,
+   "sido": "경북",
+   "name": "문경시",
+   "field": "location_tags"
+  },
+  {
+   "value": 111080,
+   "sido": "경북",
+   "name": "봉화군",
+   "field": "location_tags"
+  },
+  {
+   "value": 111090,
+   "sido": "경북",
+   "name": "상주시",
+   "field": "location_tags"
+  },
+  {
+   "value": 111100,
+   "sido": "경북",
+   "name": "성주군",
+   "field": "location_tags"
+  },
+  {
+   "value": 111110,
+   "sido": "경북",
+   "name": "안동시",
+   "field": "location_tags"
+  },
+  {
+   "value": 111120,
+   "sido": "경북",
+   "name": "영덕군",
+   "field": "location_tags"
+  },
+  {
+   "value": 111130,
+   "sido": "경북",
+   "name": "영양군",
+   "field": "location_tags"
+  },
+  {
+   "value": 111140,
+   "sido": "경북",
+   "name": "영주시",
+   "field": "location_tags"
+  },
+  {
+   "value": 111150,
+   "sido": "경북",
+   "name": "영천시",
+   "field": "location_tags"
+  },
+  {
+   "value": 111160,
+   "sido": "경북",
+   "name": "예천군",
+   "field": "location_tags"
+  },
+  {
+   "value": 111170,
+   "sido": "경북",
+   "name": "울릉군",
+   "field": "location_tags"
+  },
+  {
+   "value": 111180,
+   "sido": "경북",
+   "name": "울진군",
+   "field": "location_tags"
+  },
+  {
+   "value": 111190,
+   "sido": "경북",
+   "name": "의성군",
+   "field": "location_tags"
+  },
+  {
+   "value": 111200,
+   "sido": "경북",
+   "name": "청도군",
+   "field": "location_tags"
+  },
+  {
+   "value": 111210,
+   "sido": "경북",
+   "name": "청송군",
+   "field": "location_tags"
+  },
+  {
+   "value": 111220,
+   "sido": "경북",
+   "name": "칠곡군",
+   "field": "location_tags"
+  },
+  {
+   "value": 111230,
+   "sido": "경북",
+   "name": "포항시",
+   "field": "location_tags"
+  },
+  {
+   "value": 110000,
+   "sido": "경남",
+   "name": "",
+   "field": "location_tags"
+  },
+  {
+   "value": 110010,
+   "sido": "경남",
+   "name": "거제시",
+   "field": "location_tags"
+  },
+  {
+   "value": 110020,
+   "sido": "경남",
+   "name": "거창군",
+   "field": "location_tags"
+  },
+  {
+   "value": 110030,
+   "sido": "경남",
+   "name": "고성군",
+   "field": "location_tags"
+  },
+  {
+   "value": 110040,
+   "sido": "경남",
+   "name": "김해시",
+   "field": "location_tags"
+  },
+  {
+   "value": 110050,
+   "sido": "경남",
+   "name": "남해군",
+   "field": "location_tags"
+  },
+  {
+   "value": 110070,
+   "sido": "경남",
+   "name": "밀양시",
+   "field": "location_tags"
+  },
+  {
+   "value": 110080,
+   "sido": "경남",
+   "name": "사천시",
+   "field": "location_tags"
+  },
+  {
+   "value": 110090,
+   "sido": "경남",
+   "name": "산청군",
+   "field": "location_tags"
+  },
+  {
+   "value": 110100,
+   "sido": "경남",
+   "name": "양산시",
+   "field": "location_tags"
+  },
+  {
+   "value": 110110,
+   "sido": "경남",
+   "name": "의령군",
+   "field": "location_tags"
+  },
+  {
+   "value": 110120,
+   "sido": "경남",
+   "name": "진주시",
+   "field": "location_tags"
+  },
+  {
+   "value": 110140,
+   "sido": "경남",
+   "name": "창녕군",
+   "field": "location_tags"
+  },
+  {
+   "value": 110150,
+   "sido": "경남",
+   "name": "창원시",
+   "field": "location_tags"
+  },
+  {
+   "value": 110160,
+   "sido": "경남",
+   "name": "통영시",
+   "field": "location_tags"
+  },
+  {
+   "value": 110170,
+   "sido": "경남",
+   "name": "하동군",
+   "field": "location_tags"
+  },
+  {
+   "value": 110180,
+   "sido": "경남",
+   "name": "함안군",
+   "field": "location_tags"
+  },
+  {
+   "value": 110190,
+   "sido": "경남",
+   "name": "함양군",
+   "field": "location_tags"
+  },
+  {
+   "value": 110200,
+   "sido": "경남",
+   "name": "합천군",
+   "field": "location_tags"
+  },
+  {
+   "value": 116000,
+   "sido": "제주",
+   "name": "",
+   "field": "location_tags"
+  },
+  {
+   "value": 116030,
+   "sido": "제주",
+   "name": "서귀포시",
+   "field": "location_tags"
+  },
+  {
+   "value": 116040,
+   "sido": "제주",
+   "name": "제주시",
+   "field": "location_tags"
+  }
+ ]
+}
