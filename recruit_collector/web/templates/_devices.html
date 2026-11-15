@@ -1,0 +1,30 @@
+{# 로그인 기기 목록 (설정 > 사용자 관리, 마이페이지가 함께 쓴다).
+   logout_prefix: 기기별 로그아웃 주소 앞부분 (예: /settings/devices → /settings/devices/<id>/logout) #}
+{% macro device_icon(kind) -%}
+<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+{%- if kind == 'pc' %}<rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/>
+{%- elif kind == 'mobile' %}<rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/>
+{%- elif kind == 'tablet' %}<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M11 18h2"/>
+{%- else %}<circle cx="12" cy="12" r="9"/><path d="M9.6 9.3a2.5 2.5 0 0 1 4.8.9c0 1.7-2.4 2.2-2.4 3.6"/><path d="M12 17h.01"/>
+{%- endif %}</svg>
+{%- endmacro %}
+
+{% macro device_list(devices, current_fam, device_info, logout_prefix) -%}
+<ul class="devices">
+  {% for d in devices %}
+  {% set dev = device_info(d.user_agent) %}
+  <li class="device">
+    <span class="device-icon is-{{ dev.kind }}" role="img" aria-label="{{ dev.kind_label }}" title="{{ dev.kind_label }}">{{ device_icon(dev.kind) }}</span>
+    <div class="device-info">
+      <b>{{ dev.name }}</b>{% if d.id == current_fam %} <span class="pill">이 기기</span>{% endif %}
+      {% if dev.detail %}<div class="small">{{ dev.detail }}</div>{% endif %}
+      <div class="muted small" title="{{ d.user_agent or '' }}"><span class="nowrap">로그인 {{ d.started_at | kst }}</span> · <span class="nowrap">IP {{ d.ip or '-' }}</span></div>
+      {% if d.rotated_at %}<div class="muted small">최근 사용 {{ d.rotated_at | kst }}</div>{% endif %}
+    </div>
+    <form method="post" action="{{ logout_prefix }}/{{ d.id }}/logout">
+      <button type="submit" class="device-btn" title="이 기기만 로그아웃합니다">로그아웃</button>
+    </form>
+  </li>
+  {% endfor %}
+</ul>
+{%- endmacro %}

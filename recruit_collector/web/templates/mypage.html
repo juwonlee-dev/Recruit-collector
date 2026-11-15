@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% from "_devices.html" import device_list %}
+{% from "_avatar.html" import avatar %}
+{% block title %}마이페이지{% endblock %}
+{% block content %}
+{# 마이페이지: 내 계정 정보와 내가 로그인한 기기 (상단의 사용자 이름을 누르면 온다) #}
+<h1 class="page-title">마이페이지</h1>
+
+{% if message %}<p class="notice {% if is_error %}is-error{% endif %}" role="status">{{ message }}</p>{% endif %}
+
+{# 프로필: 이 페이지가 '내 계정'임을 한눈에 알 수 있게 사진·이름을 크게 #}
+<section class="profile-card" aria-label="내 계정">
+  {{ avatar(user, 64) }}
+  <div class="profile-main">
+    <div class="profile-name"><b>{{ user.name or user.email }}</b> <span class="pill {% if is_admin %}pill-admin{% endif %}">{{ role_label }}</span></div>
+    <div class="profile-email">{{ user.email }}</div>
+    <div class="muted small"><span class="nowrap">가입 {{ user.created_at | kst('%Y-%m-%d') }}</span> · <span class="nowrap">최근 로그인 {{ user.last_login_at | kst }}</span></div>
+  </div>
+</section>
+
+<section class="crawl settings-block">
+  <div class="crawl-head">
+    <h2>로그인 기기</h2>
+    <span class="crawl-meta">{{ devices | length }}곳 · 로그인한 때부터 최대 60일 유지</span>
+  </div>
+  <div class="device-group">
+    {% if devices | length > 1 %}
+    <div class="device-group-head">
+      <div class="device-info muted small">모르는 기기가 있으면 로그아웃하세요.</div>
+      <form method="post" action="/me/devices/logout-others">
+        <button type="submit" class="device-btn is-all" title="지금 쓰는 이 기기를 뺀 모든 기기에서 로그아웃합니다">다른 기기 모두 로그아웃</button>
+      </form>
+    </div>
+    {% endif %}
+    {{ device_list(devices, current_fam, device_info, '/me/devices') }}
+  </div>
+</section>
+
+<p class="me-foot muted small wrap-text">회원 탈퇴(정보 삭제)는 <a href="/privacy#rights">개인정보처리방침</a>에 따라 메일로 요청할 수 있습니다. 프로필 사진과 이름은 구글 계정 정보이며, 다음에 로그인할 때 구글 계정에 맞춰 바뀝니다.</p>
+{% endblock %}

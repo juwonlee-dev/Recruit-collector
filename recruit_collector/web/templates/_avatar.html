@@ -1,0 +1,6 @@
+{# 프로필 사진 (구글 계정 사진). 사진이 없거나 못 불러오면 이름(없으면 이메일) 첫 글자를 원 안에 보여 준다 #}
+{% macro avatar(user, size=28) -%}
+<span class="avatar" style="--size: {{ size }}px" aria-hidden="true">{{ ((user.name or user.email or '?') | trim)[:1] | upper }}
+  {%- if user.picture %}<img src="{{ user.picture }}" alt="" width="{{ size }}" height="{{ size }}" referrerpolicy="no-referrer" loading="lazy" onerror="this.remove()">{% endif -%}
+</span>
+{%- endmacro %}

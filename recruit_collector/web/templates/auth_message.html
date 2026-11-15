@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+{# 로그인 실패·권한 없음 등 안내 #}
+<section class="auth-message">
+  <h1 class="page-title">{{ title }}</h1>
+  <p class="muted">{{ message }}</p>
+  <p><a class="back" href="/">← 공고로</a>{% if access.google_ready and not access.user %} · <a class="back" href="/auth/login">다시 로그인</a>{% endif %}</p>
+</section>
+{% endblock %}
