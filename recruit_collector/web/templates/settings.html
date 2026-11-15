@@ -1,0 +1,310 @@
+{% extends "base.html" %}
+{% from "_devices.html" import device_list %}
+{% block title %}설정{% endblock %}
+{% block content %}
+<h1 class="page-title">설정</h1>
+<nav class="tabs" aria-label="설정 메뉴" data-tab-nav="block">
+  <a href="/settings" {% if tab == 'filters' %}aria-current="page"{% endif %}>검색 필터</a>
+  <a href="/settings?tab=scheduler" {% if tab == 'scheduler' %}aria-current="page"{% endif %}>스케줄러</a>
+  <a href="/settings?tab=users" {% if tab == 'users' %}aria-current="page"{% endif %}>사용자 관리</a>
+</nav>
+
+{% if message %}<p class="notice {% if is_error %}is-error{% endif %}" role="status">{{ message }}</p>{% endif %}
+
+{% if tab == 'scheduler' %}
+{# 자동 수집: 설정은 DB에 저장하고, 실제 실행은 수집기(worker 컨테이너, recruit_collector/worker.py)가 2초 안에 따라 맞춘다 #}
+<section class="crawl settings-block">
+  <div class="crawl-head">
+    <h2>자동 수집</h2>
+    <span class="pill {% if schedule_on %}run-success{% endif %}">{{ '실행 중' if schedule_on else '중지됨' }}</span>
+  </div>
+  <dl class="sched-facts">
+    <div><dt>수집기</dt><dd>{% if worker_alive %}<span class="pill run-success">실행 중</span> <span class="muted">마지막 신호 {{ worker_seen_at }}</span>{% else %}<span class="pill run-failed">꺼짐</span> <span class="muted">{% if worker_seen_at %}마지막 신호 {{ worker_seen_at }} · {% endif %}수집기가 켜지면 자동 수집과 대기 중인 '지금 수집'이 진행됩니다</span>{% endif %}</dd></div>
+    <div><dt>주기</dt><dd>{{ cron_label }} <code>{{ cron }}</code></dd></div>
+    <div><dt>다음 수집</dt><dd>{% if schedule_on and next_run_at %}{{ next_run_at }}{% elif schedule_on %}<span class="error">주기가 올바르지 않아 실행되지 않습니다</span>{% else %}<span class="muted">중지됨</span>{% endif %}</dd></div>
+    <div><dt>마지막 자동 수집</dt><dd>{% if last_run %}{{ last_run.started_at | kst }} 시작 · {{ site_labels.get(last_run.site, last_run.site) }} 등{% else %}<span class="muted">기록 없음</span>{% endif %}</dd></div>
+    <div><dt>대상</dt><dd>{{ sites | join(', ') or '검색 필터가 있는 사이트 없음' }} <span class="muted">(사이트별 동시 수집)</span></dd></div>
+  </dl>
+  <form method="post" action="/settings/scheduler/toggle" class="sched-toggle">
+    <input type="hidden" name="enabled" value="{{ '0' if schedule_on else '1' }}">
+    {% if schedule_on %}
+    <button type="submit" class="sched-stop">자동 수집 중지</button>
+    <span class="crawl-line muted">중지해도 진행 중인 수집은 끝까지 진행됩니다.</span>
+    {% else %}
+    <button type="submit" class="gen-btn" {% if cron_error %}disabled{% endif %}>자동 수집 시작</button>
+    <span class="crawl-line muted">시작하면 정해진 시각마다 사이트별 수집이 시작됩니다. 이미 수집 중인 사이트는 그 회차를 건너뜁니다.</span>
+    {% endif %}
+  </form>
+</section>
+
+<section class="crawl settings-block">
+  <div class="crawl-head">
+    <h2>수집 주기</h2>
+    <span class="crawl-meta">{{ timezone }} 기준 · 간격 30분 이상</span>
+  </div>
+  <form method="post" action="/settings/scheduler/cron" class="sched-form">
+    <div class="sched-options" role="radiogroup" aria-label="수집 주기">
+      {% for value, label in presets %}
+      <label class="sched-option"><input type="radio" name="preset" value="{{ value }}" {% if value == cron %}checked{% endif %}> {{ label }}</label>
+      {% endfor %}
+      <label class="sched-option"><input type="radio" name="preset" value="custom" {% if not is_preset %}checked{% endif %}> 직접 입력 (cron)</label>
+    </div>
+    <div class="sched-custom">
+      <input type="text" name="cron" value="{{ cron }}" placeholder="분 시 일 월 요일  예) 0 8-20/2 * * 1-5" aria-label="cron 식" autocomplete="off" spellcheck="false">
+      <button type="submit">주기 저장</button>
+    </div>
+    <p class="crawl-line muted wrap-text">cron은 '분 시 일 월 요일' 순서입니다. 예) <code>0 8-20/2 * * 1-5</code> = 평일 8시~20시 2시간마다. 1회 수집은 보통 5~10분 걸리므로 너무 짧은 주기는 피하세요.</p>
+  </form>
+  {% if cron_error %}<p class="notice is-error">{{ cron_error }}</p>{% endif %}
+  {% if upcoming %}
+  <div class="crawl-line muted">이 주기로 다음 실행 시각: {{ upcoming | join(' · ') }}</div>
+  {% endif %}
+</section>
+<script>
+  // 직접 입력 칸에 쓰기 시작하면 '직접 입력'을 고른 것으로
+  document.querySelector(".sched-custom input")?.addEventListener("input", () => {
+    const custom = document.querySelector('.sched-options input[value="custom"]');
+    if (custom) custom.checked = true;
+  });
+</script>
+{% elif tab == 'users' %}
+{# 로그인 사용 켜기·끄기 (확인 모달) #}
+<section class="crawl settings-block">
+  <div class="crawl-head">
+    <h2>로그인 사용</h2>
+    <span class="pill {% if login_on %}run-success{% endif %}">{{ '켜짐' if login_on else '꺼짐' }}</span>
+  </div>
+  <p class="crawl-line wrap-text">켜면 '지금 수집' 버튼과 설정 메뉴는 <b>관리자로 로그인한 경우에만</b>, 연봉·인원 메뉴는 <b>로그인한 경우에만</b> 보이고 쓸 수 있습니다. 끄면 누구나 제한 없이 쓸 수 있습니다. 공고·수집 기록 화면은 로그인과 관계없이 볼 수 있습니다.</p>
+  {% if not login_on and problems %}
+  <ul class="auth-checks">{% for p in problems %}<li>{{ p }}</li>{% endfor %}</ul>
+  {% endif %}
+  <div class="crawl-line muted wrap-text">구글 클라우드 콘솔에 등록할 리디렉션 URI: <code>{{ redirect_uri }}</code></div>
+  <div class="crawl-line muted wrap-text">구글은 https 도메인 주소만 허용합니다 (http는 localhost만 예외, IP 주소 불가). 지금 주소가 http IP라면 도메인과 HTTPS를 준비한 뒤 그 주소로 접속해 등록하세요.</div>
+  <div class="login-toggle">
+    <button type="button" class="gen-btn" data-open="login-modal" {% if not login_on and problems %}disabled{% endif %}>로그인 사용 {{ '끄기' if login_on else '켜기' }}</button>
+  </div>
+</section>
+
+<dialog class="modal" id="login-modal" aria-labelledby="login-modal-title">
+  <div class="modal-head">
+    <h2 id="login-modal-title">로그인 사용을 {{ '끌까요' if login_on else '켤까요' }}?</h2>
+    <button type="button" class="modal-close" data-close aria-label="닫기">×</button>
+  </div>
+  {% if login_on %}
+  <p class="modal-body">끄면 로그인하지 않은 사람도 '지금 수집', 연봉·인원 메뉴, 설정 메뉴(사용자 관리 포함)를 쓸 수 있습니다.</p>
+  {% else %}
+  <p class="modal-body">켜면 '지금 수집'과 설정 메뉴는 관리자로 로그인한 경우에만, 연봉·인원 메뉴는 로그인한 경우에만 보이고 쓸 수 있습니다. 로그인하지 않은 사용자는 공고·수집 기록만 볼 수 있습니다.</p>
+  {% endif %}
+  <form method="post" action="/settings/login" class="modal-actions">
+    <input type="hidden" name="enabled" value="{{ '0' if login_on else '1' }}">
+    <button type="button" class="modal-cancel" data-close autofocus>취소</button>
+    <button type="submit" class="btn-origin">{{ '끄기' if login_on else '켜기' }}</button>
+  </form>
+</dialog>
+
+{# 사용자 목록·등급 #}
+<section class="crawl settings-block">
+  <div class="crawl-head">
+    <h2>사용자</h2>
+    <span class="crawl-meta">{{ users | length }}명 · 구글로 처음 로그인하면 자동 가입 (일반 등급)</span>
+  </div>
+  {% if users %}
+  <div class="table-wrap">
+  <table class="runs users">
+    <thead><tr><th>사용자</th><th>가입</th><th>최근 로그인</th><th>로그인 기기</th><th>등급</th></tr></thead>
+    <tbody>
+      {% for u in users %}
+      {% set is_me = access.user and access.user.id == u.id %}
+      <tr>
+        <td><div class="user-cell"><b>{{ u.name or '-' }}</b>{% if is_me %} <span class="pill">나</span>{% endif %}</div><div class="muted small">{{ u.email }}</div></td>
+        <td class="nowrap">{{ u.created_at | kst }}</td>
+        <td class="nowrap">{{ u.last_login_at | kst }}</td>
+        <td class="nowrap">
+          {% set n = devices.get(u.id, []) | length %}
+          {% if n %}<a href="#devices-{{ u.id }}">{{ n }}곳</a>{% else %}<span class="muted small">없음</span>{% endif %}
+        </td>
+        <td class="nowrap">
+          {% if u.email in admin_emails %}
+          <span class="pill run-success">관리자</span> <span class="muted small">설정 파일 지정</span>
+          {% elif is_me %}
+          <span class="pill {% if u.role == 'admin' %}run-success{% endif %}">{{ role_labels.get(u.role, u.role) }}</span> <span class="muted small">내 등급은 변경 불가</span>
+          {% else %}
+          <form class="role-form" method="post" action="/settings/users/{{ u.id }}/role">
+            <select name="role" aria-label="{{ u.email }} 등급">
+              {% for key, label in role_labels.items() %}<option value="{{ key }}" {% if u.role == key %}selected{% endif %}>{{ label }}</option>{% endfor %}
+            </select>
+            <button type="submit">저장</button>
+          </form>
+          {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  </div>
+  {% else %}
+  <p class="crawl-line muted">아직 로그인한 사용자가 없습니다.</p>
+  {% endif %}
+  {# 로그인 기기: 사용자별로 어느 기기·언제·어느 IP로 로그인했는지, 기기별·전체 로그아웃 #}
+  {% if devices %}
+  <h3 class="devices-title">로그인 기기</h3>
+  {% for u in users if devices.get(u.id) %}
+  {% set my_devices = devices[u.id] %}
+  <div class="device-group" id="devices-{{ u.id }}">
+    <div class="device-group-head">
+      <div class="device-info"><b>{{ u.name or u.email }}</b> <span class="muted small"><span class="nowrap">{{ u.email }}</span> · <span class="nowrap">{{ my_devices | length }}곳</span></span></div>
+      <form method="post" action="/settings/users/{{ u.id }}/logout">
+        <button type="submit" class="device-btn is-all" title="이 사용자가 로그인한 모든 기기에서 로그아웃합니다">모두 로그아웃</button>
+      </form>
+    </div>
+    {{ device_list(my_devices, current_fam, device_info, '/settings/devices') }}
+  </div>
+  {% endfor %}
+  {% endif %}
+  <p class="crawl-line muted wrap-text">설정 파일(config.yaml auth.admin_emails)의 관리자: {{ admin_emails | join(', ') or '없음' }} — 항상 관리자이며 여기서 바꿀 수 없습니다.</p>
+</section>
+{% else %}
+<p class="muted small">검색 필터는 수집을 시작할 때 파일에서 읽어 메모리에 올려 씁니다. 여기서 바꾼 내용은 진행 중인 수집에는 영향이 없고 다음 수집부터 적용됩니다.</p>
+
+{# 키워드 관리. 필터 생성 중에는 이 영역 전체를 잠근다 (static/settings.js) #}
+<section class="crawl settings-block {% if generating %}is-busy{% endif %}" id="keyword-panel" aria-busy="{{ 'true' if generating else 'false' }}">
+  <div class="crawl-head">
+    <h2>키워드</h2>
+    <span class="crawl-meta">{{ keywords_path }}</span>
+  </div>
+
+  {% if keywords %}
+  <ul class="chips">
+    {% for k in keywords %}
+    <li class="chip">
+      <span>{{ k }}</span>
+      <form method="post" action="/settings/keywords/delete">
+        <input type="hidden" name="keyword" value="{{ k }}">
+        <button type="submit" class="chip-del" aria-label="{{ k }} 삭제" title="삭제" {% if generating %}disabled{% endif %}>×</button>
+      </form>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="crawl-line muted">등록된 키워드가 없습니다.</p>
+  {% endif %}
+
+  <form class="kw-add" method="post" action="/settings/keywords">
+    <input type="text" name="keyword" maxlength="{{ max_keyword_length }}" placeholder="키워드 입력 (예: 백엔드 개발)" required aria-label="새 키워드" {% if generating %}disabled{% endif %}>
+    <button type="submit" {% if generating %}disabled{% endif %}>등록</button>
+  </form>
+
+  {# 지역: 공통 지역코드(시도 / 시도 시군구) 중에서 골라 등록한다. 필터 생성 때 사이트별 지역 코드로 매핑된다 #}
+  <div class="crawl-head region-head">
+    <h2>지역</h2>
+    <span class="crawl-meta">{{ regions_path }} · 지역코드 {{ region_codes_path }}</span>
+  </div>
+  {% if regions %}
+  <ul class="chips">
+    {% for r in regions %}
+    <li class="chip">
+      <span>{{ r | region_label }}</span>
+      <form method="post" action="/settings/regions/delete">
+        <input type="hidden" name="region" value="{{ r }}">
+        <button type="submit" class="chip-del" aria-label="{{ r | region_label }} 삭제" title="삭제" {% if generating %}disabled{% endif %}>×</button>
+      </form>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="crawl-line muted">등록된 지역이 없습니다. 지역이 없으면 필터 생성 때 지역 조건은 그대로 둡니다.</p>
+  {% endif %}
+  <form class="kw-add region-add" method="post" action="/settings/regions">
+    <select name="sido" aria-label="시도" required data-region-sido {% if generating %}disabled{% endif %}>
+      {% for sido in region_codes %}<option value="{{ sido }}">{{ sido }}</option>{% endfor %}
+    </select>
+    <select name="city" aria-label="시군구" data-region-city {% if generating %}disabled{% endif %}>
+      <option value="">전체</option>
+      {% for city in (region_codes.values() | first) or [] %}<option value="{{ city }}">{{ city }}</option>{% endfor %}
+    </select>
+    <button type="submit" {% if generating %}disabled{% endif %}>등록</button>
+  </form>
+  <script type="application/json" id="region-codes">{{ region_codes | tojson }}</script>
+
+  <div class="gen">
+    <form method="post" action="/settings/generate" class="gen-form">
+      <button type="submit" class="gen-btn" {% if not (keywords or regions) or generating %}disabled{% endif %}>{% if generating %}<span class="spinner" aria-hidden="true"></span>생성 중…{% else %}필터 생성{% endif %}</button>
+      <label class="gen-opt"><input type="checkbox" name="refresh" value="1" {% if generating %}disabled{% endif %}> 사이트에서 직무·지역 목록 새로 받기</label>
+      <span class="gen-status" role="status">{% if generating %}필터를 생성하는 중입니다. 끝나면 결과가 표시됩니다.{% endif %}</span>
+    </form>
+    <p class="crawl-line muted wrap-text">등록된 키워드와 지역을 사이트별 직무·지역 선택지(매핑 데이터)와 맞춰 각 사이트의 직무 필터와 지역 필터를 만들고 검색 필터 파일에 반영합니다. 다른 조건은 그대로 둡니다. 맞는 직무(지역)가 하나도 없으면 그 사이트의 직무(지역) 필터는 바꾸지 않습니다.</p>
+  </div>
+
+  {% if generation %}
+  <div class="gen-result">
+    <div class="crawl-line muted wrap-text">{{ generation.at }} 생성 · 키워드 {{ generation.keywords | join(', ') or '없음' }} · 지역 {{ generation.regions | join(', ') or '없음' }}</div>
+    <div class="crawl-list">
+      {% for r in generation.results %}
+      <div class="crawl-card">
+        <div class="crawl-card-top">
+          <span class="crawl-name">{{ site_labels.get(r.site, r.site) }} <span class="muted">{{ r.filter_field or '' }}</span></span>
+          <span class="pill gen-{{ r.status }}">{{ generate_status.get(r.status, r.status) }}</span>
+        </div>
+        {% for m in r.matches %}
+        <div class="crawl-line wrap-text"><b>{{ m.name }}</b> <span class="muted">← {{ m.keywords | join(', ') }}</span></div>
+        {% endfor %}
+        {% if r.unmatched %}<div class="crawl-line muted wrap-text">맞는 직무 없음: {{ r.unmatched | join(', ') }}</div>{% endif %}
+        {% for m in r.region_matches %}
+        <div class="crawl-line wrap-text"><b>{{ m.name }}</b> <span class="muted">← {{ m.regions | map('region_label') | join(', ') }}</span></div>
+        {% endfor %}
+        {% if r.region_unmatched %}<div class="crawl-line muted wrap-text">맞는 지역 없음: {{ r.region_unmatched | map('region_label') | join(', ') }}</div>{% endif %}
+        {% if r.message %}<div class="crawl-line {% if r.status == 'error' %}error{% else %}muted{% endif %} wrap-text">{{ r.message }}</div>{% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+</section>
+
+{# 사이트별 검색 필터 (수집 상태 카드와 같은 모양) #}
+<section class="crawl settings-block">
+  <div class="crawl-head">
+    <h2>검색 필터</h2>
+    <span class="crawl-meta">사이트(크롤러 모듈)별 파일</span>
+  </div>
+  {% if sites %}
+  <div class="crawl-list">
+    {% for x in sites %}
+    {% for s in x.searches or [none] %}
+    <div class="crawl-card">
+      <div class="crawl-card-top">
+        <span class="crawl-name">{{ x.label }} {% if s %}<span class="muted">{{ s.name }}</span>{% endif %}</span>
+        {% if x.error %}<span class="pill run-failed">오류</span>{% elif s %}<span class="pill">최대 {{ s.max_pages }}페이지</span>{% endif %}
+      </div>
+      {% if x.error %}
+      <div class="crawl-line error wrap-text">{{ x.error }}</div>
+      {% elif s %}
+      <dl class="cond">
+        {% for row in s.rows %}
+        <div class="cond-row {% if row.is_job %}is-job{% endif %}">
+          <dt title="{{ row.key }}">{{ row.label }}</dt>
+          <dd>{% for v in row.texts %}<span class="tag">{{ v }}</span>{% endfor %}{% if row.is_fixed %}<span class="tag tag-fixed" title="크롤러가 늘 이 값으로 수집합니다 (필터 생성도 이 값으로 씀)">고정</span>{% endif %}</dd>
+        </div>
+        {% endfor %}
+      </dl>
+      {% else %}
+      <div class="crawl-line muted">검색 조건이 없습니다.</div>
+      {% endif %}
+      <div class="card-foot">
+        <div class="crawl-line muted" title="{{ x.path }}">{{ x.path }} · {{ x.modified_at | kst }} 수정</div>
+        {% if x.generated %}<div class="crawl-line muted wrap-text">필터 생성 {{ x.generated.at }} · {{ x.generated.keywords | join(', ') }}{% if x.generated.regions %} · {{ x.generated.regions | join(', ') }}{% endif %}</div>{% endif %}
+        {% if x.catalog %}<div class="crawl-line muted">직무 목록 {{ x.catalog.count }}개 · {{ x.catalog.fetched_at }} 받음</div>
+        {% elif x.job_field %}<div class="crawl-line muted">직무 목록 없음 (필터 생성 시 받아옴)</div>{% endif %}
+      </div>
+    </div>
+    {% endfor %}
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="crawl-line muted">검색 필터 파일이 없습니다.</p>
+  {% endif %}
+</section>
+{% endif %}
+<script src="/static/region_select.js?v=1" defer></script>
+<script src="/static/settings.js?v=4" defer></script>
+{% endblock %}
