@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% from "_devices.html" import device_list %}
+{% from "_devices.html" import device_list, device_icon %}
 {% block title %}설정{% endblock %}
 {% block content %}
 <h1 class="page-title">설정</h1>
@@ -115,13 +115,22 @@
     <tbody>
       {% for u in users %}
       {% set is_me = access.user and access.user.id == u.id %}
-      <tr>
+      {% set my_devices = devices.get(u.id, []) %}
+      <tr class="user-row">
         <td><div class="user-cell"><b>{{ u.name or '-' }}</b>{% if is_me %} <span class="pill">나</span>{% endif %}</div><div class="muted small">{{ u.email }}</div></td>
         <td class="nowrap">{{ u.created_at | kst }}</td>
         <td class="nowrap">{{ u.last_login_at | kst }}</td>
         <td class="nowrap">
-          {% set n = devices.get(u.id, []) | length %}
-          {% if n %}<a href="#devices-{{ u.id }}">{{ n }}곳</a>{% else %}<span class="muted small">없음</span>{% endif %}
+          {% if my_devices %}
+          {# 기기 종류별 아이콘 + 대수. 누르면 바로 아래 행에 기기 목록이 펼쳐진다 (static/settings.js) #}
+          {% set kinds = [] %}{% for d in my_devices %}{% set _ = kinds.append(device_info(d.user_agent).kind) %}{% endfor %}
+          {% set counts = [] %}{% for k, label in kind_labels.items() if k in kinds %}{% set _ = counts.append((k, label, kinds.count(k))) %}{% endfor %}
+          <button type="button" class="dev-toggle" data-dev-toggle aria-expanded="false" aria-controls="devices-{{ u.id }}"
+                  aria-label="로그인 기기 {% for k, label, n in counts %}{{ label }} {{ n }}대{{ ', ' if not loop.last }}{% endfor %} 목록 보기">
+            {% for k, label, n in counts %}<span class="dev-chip is-{{ k }}" title="{{ label }} {{ n }}대">{{ device_icon(k) }}<b>{{ n }}</b></span>{% endfor %}
+            <svg class="dev-chev" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          {% else %}<span class="muted small">없음</span>{% endif %}
         </td>
         <td class="nowrap">
           {% if u.email in admin_emails %}
@@ -138,28 +147,26 @@
           {% endif %}
         </td>
       </tr>
+      {% if my_devices %}
+      {# 펼치는 행: 이 사용자의 로그인 기기 (어느 기기·언제·어느 IP), 기기별·전체 로그아웃 #}
+      <tr class="devices-row" id="devices-{{ u.id }}" inert>
+        <td colspan="5"><div class="devices-slide"><div class="devices-slide-inner"><div class="devices-panel">
+          <div class="device-group-head">
+            <div class="device-info"><b>로그인 기기 {{ my_devices | length }}곳</b> <span class="muted small nowrap">{{ u.email }}</span></div>
+            <form method="post" action="/settings/users/{{ u.id }}/logout">
+              <button type="submit" class="device-btn is-all" title="이 사용자가 로그인한 모든 기기에서 로그아웃합니다">모두 로그아웃</button>
+            </form>
+          </div>
+          {{ device_list(my_devices, current_fam, device_info, '/settings/devices') }}
+        </div></div></div></td>
+      </tr>
+      {% endif %}
       {% endfor %}
     </tbody>
   </table>
   </div>
   {% else %}
   <p class="crawl-line muted">아직 로그인한 사용자가 없습니다.</p>
-  {% endif %}
-  {# 로그인 기기: 사용자별로 어느 기기·언제·어느 IP로 로그인했는지, 기기별·전체 로그아웃 #}
-  {% if devices %}
-  <h3 class="devices-title">로그인 기기</h3>
-  {% for u in users if devices.get(u.id) %}
-  {% set my_devices = devices[u.id] %}
-  <div class="device-group" id="devices-{{ u.id }}">
-    <div class="device-group-head">
-      <div class="device-info"><b>{{ u.name or u.email }}</b> <span class="muted small"><span class="nowrap">{{ u.email }}</span> · <span class="nowrap">{{ my_devices | length }}곳</span></span></div>
-      <form method="post" action="/settings/users/{{ u.id }}/logout">
-        <button type="submit" class="device-btn is-all" title="이 사용자가 로그인한 모든 기기에서 로그아웃합니다">모두 로그아웃</button>
-      </form>
-    </div>
-    {{ device_list(my_devices, current_fam, device_info, '/settings/devices') }}
-  </div>
-  {% endfor %}
   {% endif %}
   <p class="crawl-line muted wrap-text">설정 파일(config.yaml auth.admin_emails)의 관리자: {{ admin_emails | join(', ') or '없음' }} — 항상 관리자이며 여기서 바꿀 수 없습니다.</p>
 </section>
@@ -306,5 +313,5 @@
 </section>
 {% endif %}
 <script src="/static/region_select.js?v=1" defer></script>
-<script src="/static/settings.js?v=4" defer></script>
+<script src="/static/settings.js?v=8" defer></script>
 {% endblock %}

@@ -700,8 +700,28 @@ mark.hl { background: var(--hl); color: inherit; border-radius: 3px; padding: 0 
 .settings-block code { font-size: 12px; background: var(--bg); padding: 1px 6px; border-radius: 4px; overflow-wrap: anywhere; }
 .users td { vertical-align: middle; }
 .user-cell { display: flex; align-items: center; gap: 6px; }
-.devices-title { font-size: 15px; margin: 18px 0 8px; }
 .device-group { border: 1px solid var(--border); border-radius: 10px; margin-bottom: 10px; overflow: hidden; scroll-margin-top: 70px; }
+/* 사용자 표의 로그인 기기 칸: 기기 종류 아이콘 + 대수, 누르면 아래 행이 펼쳐진다 (static/settings.js) */
+.dev-toggle { display: inline-flex; align-items: center; gap: 6px; font: inherit; height: 32px; padding: 0 6px 0 8px; cursor: pointer;
+  border: 1px solid var(--border); border-radius: 8px; background: var(--surface); color: var(--text); }
+.dev-toggle:hover, .dev-toggle[aria-expanded="true"] { border-color: var(--accent); }
+.dev-chip { display: inline-flex; align-items: center; gap: 2px; color: var(--accent); }
+.dev-chip.is-unknown { color: var(--text-3); }
+.dev-chip svg { width: 17px; height: 17px; }
+.dev-chip b { font-size: 13px; color: var(--text); font-variant-numeric: tabular-nums; }
+.dev-chev { color: var(--text-3); transition: transform .2s; }
+.dev-toggle[aria-expanded="true"] .dev-chev { transform: rotate(180deg); color: var(--accent); }
+.user-row.is-open > td { background: var(--accent-soft); }
+.devices-row > td { padding: 0; border-top: 0; background: var(--accent-soft); }
+/* 좁은 화면에서 표가 옆으로 스크롤돼도 목록은 보이는 영역에 머문다 (--panel-w: settings.js가 표 영역 폭으로 정함) */
+.devices-slide { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .25s ease;
+  position: sticky; left: 0; max-width: var(--panel-w, none); }
+.devices-row.is-open .devices-slide { grid-template-rows: 1fr; }
+.devices-slide-inner { min-height: 0; overflow: hidden; }
+.devices-panel { margin: 0 12px 12px; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--surface);
+}
+.no-anim .devices-slide, .no-anim .dev-chev { transition: none; }
+@media (prefers-reduced-motion: reduce) { .devices-slide, .dev-chev { transition: none; } }
 .device-group-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 14px;
   border-bottom: 1px solid var(--border); background: var(--bg); }
 .devices { list-style: none; margin: 0; padding: 0; }

@@ -366,10 +366,13 @@ def test_devices_listed_and_logged_out_one_by_one(env):
     page = client.get("/settings", params={"tab": "users"}).text
     assert "iOS 18.0 · Safari" in page and "Windows PC" in page and "IP testclient" in page
     assert 'aria-label="휴대폰"' in page and 'aria-label="PC"' in page
-    assert "이 기기" in page and f'href="#devices-{rows[iphone].user_id}">2곳' in page
+    uid = rows[iphone].user_id
+    assert "이 기기" in page and f'aria-controls="devices-{uid}"' in page and 'id="devices-%d"' % uid in page
+    assert 'aria-label="로그인 기기 PC 1대, 휴대폰 1대 목록 보기"' in page  # '2곳' 대신 기기 종류별 대수
+    assert page.count('class="devices-row"') == 2  # 기기가 있는 사용자(관리자·user)만 펼침 행
 
     res = client.post(f"/settings/devices/{rows[iphone].id}/logout", follow_redirects=False)
-    assert "err=1" not in res.headers["location"]
+    assert "err=1" not in res.headers["location"] and res.headers["location"].endswith(f"#devices-{uid}")  # 돌아가면 펼쳐 둔다
     assert phone.get("/salary", follow_redirects=False).status_code == 303  # 그 기기만
     assert pc.get("/salary", follow_redirects=False).status_code == 200
     res = client.post(f"/settings/devices/{rows[iphone].id}/logout", follow_redirects=False)

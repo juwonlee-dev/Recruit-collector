@@ -728,8 +728,9 @@ def create_app(session_factory: sessionmaker, config: AppConfig | None = None) -
 
     # ------------------------------------------------------------ 설정
 
-    def settings_redirect(message: str, error: bool = False, tab: str = "") -> RedirectResponse:
-        suffix = ("&err=1" if error else "") + (f"&tab={tab}" if tab else "")
+    def settings_redirect(message: str, error: bool = False, tab: str = "", anchor: str = "") -> RedirectResponse:
+        """anchor: 돌아가서 펼쳐 둘 곳 (예: devices-3 → 그 사용자의 로그인 기기 행)."""
+        suffix = ("&err=1" if error else "") + (f"&tab={tab}" if tab else "") + (f"#{anchor}" if anchor else "")
         return RedirectResponse(f"/settings?msg={quote(message)}{suffix}", status_code=303)
 
     async def form_value(request: Request, key: str) -> str:
@@ -802,6 +803,7 @@ def create_app(session_factory: sessionmaker, config: AppConfig | None = None) -
                 "devices": devices,
                 "current_fam": request.state.login.fam,
                 "device_info": tokens.device_info,
+                "kind_labels": tokens.KIND_LABELS,
                 "login_on": access.login_enabled,
                 "problems": login_problems(access),
                 "redirect_uri": redirect_uri(request),
@@ -988,7 +990,8 @@ def create_app(session_factory: sessionmaker, config: AppConfig | None = None) -
                 return settings_redirect("이미 로그아웃된 기기입니다.", error=True, tab="users")
             user = s.get(User, row.user_id)
             label = tokens.device_label(row.user_agent)
-        return settings_redirect(f"{user.email if user else ''}의 {label} 로그인을 로그아웃했습니다.", tab="users")
+        return settings_redirect(f"{user.email if user else ''}의 {label} 로그인을 로그아웃했습니다.", tab="users",
+                                 anchor=f"devices-{row.user_id}")
 
     # ------------------------------------------------------------ 마이페이지 (내 계정·내 로그인 기기)
 
