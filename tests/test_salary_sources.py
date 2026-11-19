@@ -100,13 +100,14 @@ def test_posting_falls_back_when_company_page_is_gone(sources, monkeypatch):
     monkeypatch.setattr(salary, "fetch_company", fetch)
     data = src.posting("크디랩(주)", "서울 영등포구", None)
     c = data["company"]
-    assert c["id"] == "n12" and c["source"]["key"] == "nps" and "삭제된 회사 페이지라" in c["fallback"]
+    # 대체 자료여도 ID는 올댓컴퍼니 ID: 연봉·인원 메뉴에서 담은 같은 회사와 비교함에 두 번 담기지 않는다
+    assert c["id"] == "1302598" and c["source"]["key"] == "nps" and "삭제된 회사 페이지라" in c["fallback"]
     assert data["match"] == "name_address" and data["candidates"][0]["id"] == "1302598"  # 다른 후보도 고를 수 있다
     assert [m["ym"] for m in c["months"]] == ["2026-08", "2026-09"]
 
     # 같은 회사를 회사 페이지·비교에서 열면: 삭제 확인은 하루 기억해 올댓컴퍼니에 다시 요청하지 않고, 남겨 둔 이름으로 찾는다
     data = src.company("1302598")
-    assert data["company"]["id"] == "n12" and fetched == ["1302598"]
+    assert data["company"]["id"] == "1302598" and fetched == ["1302598"]
     with sf() as s:
         assert s.get(AtcCompany, "1302598").gone_at is not None
 

@@ -5,6 +5,7 @@
   못 가져오면(삭제된 페이지 404, 요청 실패, 구조 변경) 그 이름·주소로 국민연금 사업장을 찾아 같은 모양의 자료를 만든다.
   삭제된 페이지는 하루 동안 다시 요청하지 않는다.
 - 국민연금에서 찾은 회사의 ID는 'n' + 그 달 자료의 seq (예: n6889186). 비교·즐겨찾기에도 그대로 쓴다.
+  단, 올댓컴퍼니 회사의 대체 자료로 보여줄 때는 올댓컴퍼니 ID를 그대로 둔다 (같은 회사가 두 ID로 담기지 않도록).
 - 모든 회사 자료에는 source(출처 이름·링크·안내)를, 대체 자료로 보여주면 fallback(이유)을 붙인다.
 - 공시 기준 평균연봉(OpenDART, recruit_collector/dart.py)은 화면이 따로 불러온다 (느린 공시 조회가 차트를 막지 않도록).
 """
@@ -171,6 +172,7 @@ class SalarySources:
             company, _ = self._fallback(known.name, nps.address_regions(known.address), reason)
             if not company:
                 raise SourceError(f"{reason} 국민연금 공공데이터에서도 '{known.name}'을(를) 찾지 못했습니다.") from e
+            company["id"] = cid  # 대체 자료여도 올댓컴퍼니 ID를 유지 (비교함·즐겨찾기에서 같은 회사로 보도록)
             return {"query": "", "match": None, "candidates": None, "company": company}
 
     def posting(self, company: str, location: str | None, raw: dict | None, cid: str | None = None) -> dict:
@@ -181,6 +183,7 @@ class SalarySources:
             return {**data, "query": query, "match": "manual"}
         regions = salary.posting_regions(location, raw)
         candidates, chosen, match, error = None, None, None, None
+        gone_id = None  # 고른 올댓컴퍼니 회사 페이지를 못 가져왔으면 그 ID
         try:
             candidates, chosen, match = self._atc(lambda http: salary.search(http, company, regions))
             self._remember([(c.id, c.name, c.address) for c in candidates])
@@ -193,7 +196,7 @@ class SalarySources:
                 return {"query": query, "match": match, "candidates": cand_dicts, "company": self._atc_company(chosen.id)}
             except Exception as e:
                 log.warning("올댓컴퍼니 회사 %s 조회 실패: %s", chosen.id, e)
-                error = e
+                error, gone_id = e, chosen.id
         reason = _reason(error, found_nothing=error is None)
         try:
             nps_company, nps_match = self._fallback(company, regions, reason)
@@ -202,6 +205,8 @@ class SalarySources:
                 return {"query": query, "match": None, "candidates": cand_dicts, "company": None}
             raise
         if nps_company:
+            if gone_id:  # 회사 페이지·비교에서 같은 회사를 열 때와 같은 ID (company()의 대체 자료와 맞춤)
+                nps_company["id"] = gone_id
             return {"query": query, "match": nps_match, "candidates": cand_dicts, "company": nps_company}
         if error is not None and cand_dicts is None:
             raise SourceError(f"{reason} 국민연금 공공데이터에서도 회사를 찾지 못했습니다.")
